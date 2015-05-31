@@ -1,0 +1,121 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-y: scroll;
+}
+
+h1 {
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: 900;
+}
+
+p {
+    font-size: 1em;
+    font-weight: 300;
+}
+
+small {
+    font-size: 0.66em;
+}
+
+pre, code {
+    font-family: "Courier 10 Pitch", Courier, monospace;
+}
+
+pre {
+    background: #eee;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    overflow: auto;
+    padding: 0.9em;
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    max-width: 100%;
+}
+
+.site-header {
+    color: #999;
+}
+
+.site-header a {
+    text-decoration: none;
+}
+
+.site-header img, .site-header span {
+    vertical-align: middle;
+}
+
+.site-footer {
+    color: #999;
+}
+
+.home-logo {
+    text-align: center;
+}
+
+.home-title {
+    text-align: center;
+}
+
+ul.post-list {
+    margin: 0;
+    padding: 0;
+}
+
+li.post-list-item {
+    list-style-type: none;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.post-tags ul {
+    margin: 30px 0px 30px 0px;
+    padding: 0;
+    line-height: 1.8em;
+}
+
+.post-tags li {
+    font-size: 0.9em;
+    color: #ddd;
+    list-style-type: none;
+    display: inline;
+    background-color: #666;
+    margin: auto 10px auto 0px;
+    padding: 4px 7px 4px 7px;
+}
+
+/* big screens */
+@media screen and (min-width: 1250px)
+{
+    .wrapper {
+        max-width: 1200px;
+    }
+}
+
+/* iPhone */
+@media screen and (max-device-width: 480px) {
+    * {
+        overflow: hidden; /* avoid horizontal scrolling because of long text */
+    }
+
+    .wrapper {
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+    }
+
+    .home-logo img {
+        max-width: 240px;
+    }
+}

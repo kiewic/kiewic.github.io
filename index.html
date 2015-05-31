@@ -1,1 +1,27 @@
-<h1>Hello wolrd!</h1>
+---
+layout: default
+---
+<div class="home">
+    <div class="wrapper">
+        <p class="home-logo"><img src="/content/home.png" /></p>
+        <h1 class="home-title">Monkey Weekend</h1>
+        {% include welcome.html %}
+
+        <ul class="post-list">
+        {% for post in site.posts %}
+          <li class="post-list-item">
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <h2>
+                    <a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                </h2>
+
+                <span class="post-list-excerpt">{{ post.excerpt }}</span>
+                <span class="post-meta">
+                    <a href="{{ post.url | prepend: site.baseurl }}">Full Post</a>
+                </span>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+{% include footer.html %}
