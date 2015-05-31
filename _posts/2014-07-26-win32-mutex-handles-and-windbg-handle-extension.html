@@ -1,0 +1,126 @@
+---
+layout: post
+title: Win32 Mutex, HANDLEs and WinDbg !handle extension.
+date: 2014-07-26 11:44:34.000000000 -07:00
+categories: []
+tags:
+- C++
+- MSDN
+- Win32
+- WinDbg
+status: publish
+type: post
+published: true
+---
+<p>A <strong>mutex</strong> is like a lock that is shared between processes. So if we run two instances of the following program at the same time, the second instance will hang/wait 10 seconds before acquiring the mutex.</p>
+<pre>#include "stdafx.h"
+#include &lt;Windows.h&gt;
+#include &lt;synchapi.h&gt;
+
+int main(int argc, _TCHAR* argv[])
+{
+    WCHAR* cacheMutexName = L"HelloWorldMutex";
+    HANDLE handle = ::CreateMutex(nullptr, FALSE, cacheMutexName);
+
+    DWORD result = WaitForSingleObject(handle, INFINITE);
+
+    switch (result)
+    {
+    case WAIT_OBJECT_0:
+        printf("The thread got ownership of the mutex.\r\n");
+        break;
+    case WAIT_ABANDONED:
+        printf("The thread got ownership of an abandoned mutex.\r\n");
+        break;
+    }
+
+    // Countdown.
+    for (int i = 10; i &gt; 0; i--)
+    {
+        wprintf(L"%d\r\n", i);
+        Sleep(1000);
+    }
+    wprintf(L"0\r\n");
+
+    ReleaseMutex(handle);
+    printf("Mutex released.\r\n");
+
+    return 0;
+}</pre>
+<p>In Win32, once you get the mutex, you can distinguish between two different cases. The first case is <code style="font-style:inherit;">WAIT_OBJECT_0</code> and it means the previous owner released the mutex properly by calling <code style="font-style:inherit;">ReleaseMutex()</code> and the second case is <code style="font-style:inherit;">WAIT_ABANDONED</code> and it means the previous owner terminated without calling <code style="font-style:inherit;">ReleaseMutex()</code>.</p>
+<p>To reproduce the <code>WAIT_ABANDONED</code> case with the sample program, press <strong>CTRL + C</strong> in the first instance before the countdown hits zero.</p>
+<p>When using WinDbg, during live debugging or during dump analysis, the <strong>!handle</strong> extension comes very handy.</p>
+<p>Just get the handle value:</p>
+<pre>0:000&gt; dv
+ argc = 0n1
+ argv = 0x010f6f28
+ handle = 0x00000038
+ result = 0xcccccccc
+ cacheMutexName = 0x003f5858 "HelloWorldMutex"</pre>
+<p>And print all the handle info:</p>
+<pre>0:000&gt; !handle 0x00000038 f
+Handle 38
+ Type Mutant
+ Attributes 0
+ GrantedAccess 0x1f0001:
+ Delete,ReadControl,WriteDac,WriteOwner,Synch
+ QueryState
+ HandleCount 3
+ PointerCount 98306
+ Name \Sessions\BaseNamedObjects\HelloWorldMutex
+ Object Specific Information
+ Mutex is Owned
+ Mutant Owner 11ac.1628</pre>
+<p>Now we know <strong>11ac.1628</strong> is the owner of the mutex:</p>
+<p>If we print the call stack for each thread in the second instance of the program:</p>
+<pre>0:000&gt; ~* kcn
+
+.  0  Id: 29f8.778 Suspend: 1 Teb: 7f15c000 Unfrozen
+ # 
+00 ntdll!NtWaitForSingleObject
+01 KERNELBASE!WaitForSingleObjectEx
+02 KERNELBASE!WaitForSingleObject
+03 MutexExample!main
+04 MutexExample!__tmainCRTStartup
+05 MutexExample!mainCRTStartup
+06 KERNEL32!BaseThreadInitThunk
+07 ntdll!__RtlUserThreadStart
+08 ntdll!_RtlUserThreadStart
+
+#  1  Id: 29f8.ec4 Suspend: 1 Teb: 7f159000 Unfrozen
+ # 
+00 ntdll!DbgBreakPoint
+01 ntdll!DbgUiRemoteBreakin
+02 KERNEL32!BaseThreadInitThunk
+03 ntdll!__RtlUserThreadStart
+04 ntdll!_RtlUserThreadStart</pre>
+<p>We do not see any <strong>11ac.1628</strong> thread.</p>
+<p>But if we print the call stacks of the first process intance:</p>
+<pre>0:000&gt; ~* kcn
+
+.  0  Id: 11ac.1628 Suspend: 1 Teb: 7fe7d000 Unfrozen
+ # 
+00 ntdll!NtDelayExecution
+01 KERNELBASE!SleepEx
+02 KERNELBASE!Sleep
+03 MutexExample!main
+04 MutexExample!__tmainCRTStartup
+05 MutexExample!mainCRTStartup
+06 KERNEL32!BaseThreadInitThunk
+07 ntdll!__RtlUserThreadStart
+08 ntdll!_RtlUserThreadStart
+
+#  1  Id: 11ac.1c48 Suspend: 1 Teb: 7fe7a000 Unfrozen
+ # 
+00 ntdll!DbgBreakPoint
+01 ntdll!DbgUiRemoteBreakin
+02 KERNEL32!BaseThreadInitThunk
+03 ntdll!__RtlUserThreadStart
+04 ntdll!_RtlUserThreadStart
+</pre>
+<p>Then we see the <strong>11ac.1628</strong> thread.</p>
+<p>In fact 0x11ac and 0x29f8 match the PID of the processes:</p>
+<pre>C:\&gt;tlist
+4524 MutexExample.exe
+10744 MutexExample.exe</pre>
+<p>Happy handle debugging!</p>

@@ -1,0 +1,77 @@
+---
+layout: post
+title: How to get the response content of a DownloadOperation or UploadOperation when
+  the result is not 200 OK?
+date: 2014-11-03 19:46:46.000000000 -08:00
+categories: []
+tags:
+- 401 Unauthorized
+- 403 Forbidden
+- 404 Not Found
+- 405 Method Not Allowed
+- 503 Service Unavailable
+- 504 Gateway Timeout
+- API
+- Background Transfer
+- HTTP
+- MSDN
+- Windows 10
+- Windows Phone 8.1
+- Windows 8
+- Windows Runtime
+- WinRT
+- Windows Store Apps
+- Windows.Networking.BackgroundTransfer
+status: publish
+type: post
+published: true
+---
+<p>It is common that REST APIs return useful information for developers in the response content when the request is not successful.</p>
+<p>For example, lets say you want to access the following URL from the Facebook API:</p>
+<pre>http://graph.facebook.com/v2.2/803370993032579</pre>
+<p>But you forget to set the authentication parameters in the request, so you make a request to the URL without setting the OAuth token. By inspecting <strong>DownloadOperation.Progress.Status</strong>, you see the response was <strong>400 Bad Request</strong>. But that is not enough information to fix the problem!</p>
+<p>The actual Facebook server response contains more information, look at the raw HTTP response:</p>
+<pre>Access-Control-Allow-Origin: *
+Cache-Control: no-store
+Connection: keep-alive
+Content-Length: 146
+Content-Type: application/json; charset=UTF-8
+Date: Tue, 04 Nov 2014 03:25:14 GMT
+Expires: Sat, 01 Jan 2000 00:00:00 GMT
+Facebook-API-Version: v2.2
+Pragma: no-cache
+WWW-Authenticate: OAuth "Facebook Platform" "invalid_token" "An access token is required to request this resource."
+X-FB-Debug: MUJRrIP4wQYZWjXwzGkjsvt8+QaLFJlfAX3w9CRaAXdcSQt5Zs6X8/bd1zWfQzMQBu60XbBF//LpRFR3i2Ejwg==
+X-FB-Rev: 1479988
+
+{
+  "error": {
+    "message": "An access token is required to request this resource.",
+    "type": "OAuthException",
+    "code": 104
+  }
+}</pre>
+<p>You can access the rest of the error information using <strong>DownloadOperation.GetResultStreamAt()</strong> or<strong> UploadOperation.GetResultStreamAt()</strong>. You have to get the IInputStream, create a DataReader, load the DataReader and finally read the response content as string.</p>
+<p>Here is the example:</p>
+<pre>// using Windows.Networking.BackgroundTransfer
+// using System.Diagnostics;
+
+IStorageFile resultFile = await ApplicationData.Current.LocalFolder.CreateFileAsync(
+    "blah.txt",
+    CreationCollisionOption.ReplaceExisting);
+BackgroundDownloader downloader = new BackgroundDownloader();
+Uri uri = new Uri("http://graph.facebook.com/v2.2/803370993032579");
+DownloadOperation download = downloader.CreateDownload(uri, resultFile);
+
+await download.StartAsync();
+
+Debug.WriteLine(download.Progress.Status); // 400 Bad Request
+
+IInputStream inputStream = download.GetResultStreamAt(0);
+DataReader reader = new DataReader(inputStream);
+reader.InputStreamOptions = InputStreamOptions.Partial;
+
+var bytesLoaded = await reader.LoadAsync(1000000);
+
+// Useful error information:
+Debug.WriteLine(reader.ReadString(reader.UnconsumedBufferLength));</pre>

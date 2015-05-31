@@ -1,0 +1,20 @@
+---
+layout: post
+title: What is System.Diagnostics.Debug.WriteLine() equivalent in C++/CX and JavaScript?
+date: 2013-04-26 00:00:04.000000000 -07:00
+categories: []
+tags:
+- Windows Runtime
+- WinRT
+- Windows Store Apps
+status: publish
+type: post
+published: true
+---
+<p>In Windows Store Apps, to print something to the Output &amp;gt; Debug window use:</p>
+<p>In C#/VB:</p>
+<pre>System.Diagnostics.Debug.WriteLine("Hello monkey!");</pre>
+<p>In JavaScript:</p>
+<pre>console.log("Hello monkey!");</pre>
+<p>In C++/CX:</p>
+<pre>OutputDebugString(L"Hello monkey!\r\n");</pre>

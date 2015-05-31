@@ -1,0 +1,44 @@
+---
+layout: post
+title: How to kill or terminate a process in Kernel Debugger?
+date: 2014-09-16 18:30:09.000000000 -07:00
+categories: []
+tags:
+- kd
+- kernel debugger
+- WinDbg
+- Windows
+status: publish
+type: post
+published: true
+meta:
+  _wpas_skip_facebook: '1'
+  _wpas_skip_google_plus: '1'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+author:
+  login: kiewic
+  email: kiewic@gmail.com
+  display_name: kiewic
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Follow these 3 steps:</p>
+<pre>1: kd&gt; !process
+PROCESS ffffe001675178c0
+ SessionId: 2 Cid: 0aa8 Peb: 7ff6a0165000 ParentCid: 02cc
+ // ...
+
+1: kd&gt; .kill ffffe001675178c0
+You need to continue execution (press 'g' &lt;enter&gt;) 
+for the kill attempt to occur.
+
+1: kd&gt; g</pre>
+<p>Done!</p>

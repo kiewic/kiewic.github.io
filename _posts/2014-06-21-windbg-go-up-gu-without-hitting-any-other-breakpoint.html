@@ -1,0 +1,25 @@
+---
+layout: post
+title: WinDbg go up (gu) without hitting any other breakpoint.
+date: 2014-06-21 15:36:47.000000000 -07:00
+categories: []
+tags:
+- WinDbg
+- Windows
+status: publish
+type: post
+published: true
+---
+<p>Today I defined hundreds of breakpoints, including breakpoints in functions A, B and C.</p>
+<p>When I break into function A, I want to go up (run until the current function returns) without breaking into other breakpoint.</p>
+<pre>MyApp!A &lt;--- First break.<br />MyApp!main &lt;--- I want to go back to main without breaking anywhere else.</pre>
+<p>Unfortunately, function A calls B and B calls C. So I have to break into B:</p>
+<pre>MyApp!B &lt;--- Second break.<br />MyApp!A<br />MyApp!main</pre>
+<p>And then into C:</p>
+<pre>MyApp!C &lt;--- Third break.<br />MyApp!B<br />MyApp!A<br />MyApp!main</pre>
+<p>Before coming back to main.</p>
+<p>And easy solution to this problem is to disable all breakpoints, go up, and re-enable all breakpoints, i.e.:</p>
+<pre>bd *; gu; be *;</pre>
+<p>You don't have to remove B and C breakpoints and define them again after going up.</p>
+<p> </p>
+<p> </p>

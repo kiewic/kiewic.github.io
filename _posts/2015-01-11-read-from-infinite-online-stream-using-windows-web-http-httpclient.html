@@ -1,0 +1,49 @@
+---
+layout: post
+title: Read from infinite online stream using Windows.Web.Http.HttpClient.
+date: 2015-01-11 22:55:30.000000000 -08:00
+categories: []
+tags:
+- C#
+- HTTP
+- MSDN
+- Windows 10
+- Windows Phone 8.1
+- Windows 8.1
+- Windows Runtime
+- WinRT
+- Windows Store Apps
+- Windows.Web.Http
+status: publish
+type: post
+published: true
+---
+<p>If  you have an infinite <strong>Transfer-Encoding: Chunked</strong> HTTP response, you can read it this way:</p>
+<pre>private async void Foo()
+{
+    // Example URI.
+    Uri uri = new Uri("http://localhost/?chunked=1&amp;length=10000000000&amp;delay=500");
+
+    HttpClient client = new HttpClient();
+    HttpResponseMessage response = await client.GetAsync(
+        uri,
+        HttpCompletionOption.ResponseHeadersRead);
+    IInputStream inputStream = await response.Content.ReadAsInputStreamAsync();
+
+    ulong totalBytesRead = 0;
+    IBuffer buffer = new Windows.Storage.Streams.Buffer(1000000);
+    do
+    {
+        buffer = await inputStream.ReadAsync(
+            buffer,
+            buffer.Capacity,
+            InputStreamOptions.Partial);
+
+        // ...
+
+        totalBytesRead += buffer.Length;
+        Debug.WriteLine(buffer.Length + " " + totalBytesRead);
+    } while (buffer.Length &gt; 0);
+
+    Debug.WriteLine(totalBytesRead);
+}</pre>
