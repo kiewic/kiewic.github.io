@@ -1,6 +1,8 @@
 body {
     font-family: 'Open Sans', sans-serif;
     overflow-y: scroll;
+    margin: 0px;
+    padding: 0px;
 }
 
 h1 {
@@ -32,6 +34,25 @@ pre {
     line-height: 1.3rem;
     overflow: auto;
     padding: 0.9em;
+}
+
+.site-ribbon {
+    color: #fff;
+    background-color: #F06628;
+    text-align: center;
+    border-color: #E34A28;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+}
+
+.site-ribbon p {
+    font-weight: bold;
+    line-height: 1.9rem;
+}
+
+.site-ribbon * {
+    margin: 0;
+    padding: 0;
 }
 
 .wrapper {
@@ -111,8 +132,8 @@ li.post-list-item {
     }
 
     .wrapper {
-        padding-left: 0.3em;
-        padding-right: 0.3em;
+        padding-left: 0.6em;
+        padding-right: 0.6em;
     }
 
     .home-logo img {
