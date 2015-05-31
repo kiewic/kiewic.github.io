@@ -15,7 +15,7 @@ h2 {
     font-weight: 900;
 }
 
-p {
+p, li {
     font-size: 1em;
     font-weight: 300;
 }
@@ -71,8 +71,14 @@ pre {
     text-decoration: none;
 }
 
-.site-header img, .site-header span {
-    vertical-align: middle;
+.site-header .left {
+    float:left;
+    margin-right: 20px;
+}
+
+.site-header .right {
+    float:left;
+    max-width: 50%;
 }
 
 .site-footer {
@@ -87,13 +93,28 @@ pre {
     text-align: center;
 }
 
+.home a, .home a:visited {
+    text-decoration: none;
+    color: #4183c4;
+}
+
+.home a:hover {
+    text-decoration: underline;
+}
+
+.post {
+    clear: both;
+}
+
 ul.post-list {
     margin: 0;
     padding: 0;
 }
 
-li.post-list-item {
+.post-list li {
     list-style-type: none;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .post-meta {
@@ -109,10 +130,10 @@ li.post-list-item {
 
 .post-tags li {
     font-size: 0.9em;
-    color: #ddd;
+    color: #eee;
     list-style-type: none;
     display: inline;
-    background-color: #666;
+    background-color: #999;
     margin: auto 10px auto 0px;
     padding: 4px 7px 4px 7px;
 }
