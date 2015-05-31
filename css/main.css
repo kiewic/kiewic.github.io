@@ -91,6 +91,8 @@ pre {
 
 .home-title {
     text-align: center;
+    font-size: 3.5em;
+    line-height: 3rem;
 }
 
 .home a, .home a:visited {
