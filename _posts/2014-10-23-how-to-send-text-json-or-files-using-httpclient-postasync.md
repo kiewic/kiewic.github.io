@@ -71,7 +71,7 @@ This is equivalent to submit the following HTML form from a web browser:
         <input type="submit" />
     </form>
 
-These values can be easily accessed from PHP using the [$_POST][php_post] array. Or from ASP.NET using [Request.Form][aspnet_form] property.
+These values can be accessed from PHP using the [$_POST][php_post] array. Or from ASP.NET using [Request.Form][aspnet_form] property.
 
 ## HttpMultipartFormDataContent
 
@@ -90,12 +90,15 @@ First, create a sample file:
 Then, send a request like this:
 
     IInputStream inputStream = await file.OpenAsync(FileAccessMode.Read);
+    
     HttpMultipartFormDataContent multipartContent =
         new HttpMultipartFormDataContent();
+    
     multipartContent.Add(
         new HttpStreamContent(inputStream),
         "myFile",
         file.Name);
+        
     multipartContent.Add(
         new HttpStringContent("Hello World"),
         "myText");
@@ -129,12 +132,42 @@ The raw POST request looks like this:
 
 These values can be accessed from PHP using the [$_FILES][php_files] array. Or from ASP.NET using the [Request.Files][apsnet_files] property.
 
-Notice that HttpClient encodes attachment file names using [RFC 2047][rfc_2047] to support file names with non-ASCII characters.
+Notice that HttpClient encodes attachment file names using [RFC 2047][rfc_2047] to support file names with non-ASCII characters:
+
+    filename*=UTF-8''foo.txt
+
+## HttpBufferContent
+
+**HttpBufferContent** is similar to **HttpStringContent**, however in this case, the content does not necessary need to be a sting, it can be a binary file or any sequence of bytes.
+
+    IBuffer buffer = new byte[] { 0x1, 0x2, 0x3 }.AsBuffer();
+
+    HttpBufferContent content = new HttpBufferContent(buffer);
+    content.Headers.Add("Content-Type", "application/octet-stream");
+
+    HttpClient client = new HttpClient();
+    HttpResponseMessage response = await client.PostAsync(uri, content);
+
+The raw POST request looks like this:
+
+    POST / HTTP/1.1
+    Accept-Encoding: gzip, deflate
+    Content-Length: 3
+    Content-Type: application/octet-stream
+    Host: localhost
+    Connection: Keep-Alive
+    Cache-Control: no-cache
+
+    <0x01><0x02><0x03>
+
+In PHP you can read the content with [file_get_contents("php://input")][php_file_get_contents]. In ASP.NET with [Request.InputStream][aspnet_inputstream].
 
 
-[php_post]: http://php.net/manual/en/reserved.variables.post.php 
+[php_post]: http://php.net/manual/en/reserved.variables.post.php
 [php_files]: http://php.net/manual/en/reserved.variables.files.php
-[aspnet_form]: http://msdn.microsoft.com/query/dev12.query?appId=Dev12IDEF1&l=EN-US&k=k(System.Web.HttpRequestBase.Form)%3bk(TargetFrameworkMoniker-.NETFramework%2cVersion%3dv4.5)%3bk(DevLang-csharp)&rd=true
-[aspnet_files]: http://msdn.microsoft.com/query/dev12.query?appId=Dev12IDEF1&l=EN-US&k=k(System.Web.HttpRequestBase.Files);k(TargetFrameworkMoniker-.NETFramework,Version%3Dv4.5);k(DevLang-csharp)&rd=true
+[php_file_get_contents]: https://php.net/manual/en/function.file-get-contents.php
+[aspnet_form]: https://msdn.microsoft.com/en-us/library/system.web.httprequestbase.form(v=vs.110).aspx
+[aspnet_files]: https://msdn.microsoft.com/en-us/library/system.web.httprequestbase.files(v=vs.110).aspx
+[aspnet_inputstream]: https://msdn.microsoft.com/en-us/library/system.web.httprequestbase.inputstream(v=vs.110).aspx
 [rfc_2047]: http://tools.ietf.org/html/rfc2047
 
