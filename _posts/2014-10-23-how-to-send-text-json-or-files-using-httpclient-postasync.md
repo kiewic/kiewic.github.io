@@ -34,7 +34,7 @@ This sends a POST request like this:
 
     { "firstName": "John" }
 
-See here for examples of [how to serialize or parse JSON content](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh770289.aspx).
+See here for examples of [how to serialize or parse JSON content][msdn_json].
 
 ## HttpFormUrlEncodedContent
 
@@ -62,9 +62,9 @@ This sends a POST request like this:
 
     Name=Bob&Age=18&Gender=Male
 
-This is equivalent to submit the following HTML form from a web browser:
+This is equivalent to submitting the following HTML form from a web browser:
 
-    <form action="http://kiewic.com" method="post">
+    <form action="http://kiewic.com/" method="post">
         <input name="Name" type="text" value="Bob" />
         <input name="Age" type="text" value="18" />
         <input name="Gender" type="text" value="Male" />
@@ -130,11 +130,19 @@ The raw POST request looks like this:
     Hello World
     --c9b47f5b-ca6c-43bd-a953-6ea78b2ee24b--
 
-These values can be accessed from PHP using the [$_FILES][php_files] array. Or from ASP.NET using the [Request.Files][apsnet_files] property.
-
 Notice that HttpClient encodes attachment file names using [RFC 2047][rfc_2047] to support file names with non-ASCII characters:
 
     filename*=UTF-8''foo.txt
+
+This is equivalent to submitting the following HTML form from a web browser:
+
+    <form action="http://kiewic.com/" method="post" enctype="multipart/form-data">
+        <p><input name="myFile" type="file" /></p>
+        <p><input name="myText" type="text" value="Hello World" /></p>
+        <p><input type="submit" /></p>
+    </form>
+
+These values can be accessed from PHP using the [$_FILES][php_files] array. Or from ASP.NET using the [Request.Files][aspnet_files] property.
 
 ## HttpBufferContent
 
@@ -163,6 +171,7 @@ The raw POST request looks like this:
 In PHP you can read the content with [file_get_contents("php://input")][php_file_get_contents]. In ASP.NET with [Request.InputStream][aspnet_inputstream].
 
 
+[msdn_json]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh770289.aspx
 [php_post]: http://php.net/manual/en/reserved.variables.post.php
 [php_files]: http://php.net/manual/en/reserved.variables.files.php
 [php_file_get_contents]: https://php.net/manual/en/function.file-get-contents.php

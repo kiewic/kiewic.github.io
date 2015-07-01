@@ -16,6 +16,14 @@ Run Jekyll with Bundler:
 
     bundle exec jekyll serve
 
+To preview the site with drafts:
+
+    bundle exec jekyll serve --drafts
+
+Jekyll docs:
+
+http://jekyllrb.com/docs/home/
+
 Jekyll examples:
 
 https://github.com/jekyll/jekyll/wiki/Sites
