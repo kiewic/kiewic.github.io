@@ -109,6 +109,10 @@ pre {
     clear: both;
 }
 
+.post td {
+    padding: 10px 2px 10px 2px;
+}
+
 ul.post-list {
     margin: 0;
     padding: 0;
