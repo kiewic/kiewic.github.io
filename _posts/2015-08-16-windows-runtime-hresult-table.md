@@ -193,6 +193,14 @@ Another socket is bound to the same port.
 
 
 
+### 0x8007273D (WSAEOPNOTSUPP) <sup>ref needed</sup>
+
+`Windows::Networking::Sockets::StreamSocket::EnableTransferOwnership`
+
+The attempted operation is not supported for the type of object referenced.
+
+[StackOverflow](http://stackoverflow.com/questions/32026579/universal-app-cannot-bind-streamsocketlistener-after-enabletransferownership)
+
 
 
 ### 0x8000000E (E_ILLEGAL_METHOD_CALL)
@@ -210,6 +218,8 @@ Another socket is bound to the same port.
 The maximum number of secrets that may be stored in a single system has been exceeded.
 
 [StackOverflow](http://stackoverflow.com/questions/27178552/passwordcredential-backgroundtransfer)
+
+
 
 
 
