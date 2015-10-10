@@ -5,6 +5,12 @@ date: 2015-08-16 00:00:00.000000000 -08:00
 tags: [WinRT, Windows Runtime, Windows Store Apps, UWP, Windows, MSDN]
 ---
 
+## Contents
+{:.no_toc}
+
+* Table of Contents Placeholder
+{:toc}
+
 ## Windows.Web.Http.HttpClient.GetAsync()
 
 Also applies to `Windows.Web.Http.HttpClient.SendRequestAsync()`

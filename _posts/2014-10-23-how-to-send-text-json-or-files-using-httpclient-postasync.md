@@ -5,7 +5,13 @@ date: 2014-10-23 00:00:00
 tags: [MSDN, Windows 10, UWP, Windows 8.1, Windows Phone 8.1, Windows Runtime, WinRT, Windows Store Apps, Windows.Web.Http]
 ---
 
-This is a common question in StackOverflow and MSDN forums. So, let’s take a look at our three main options.
+This is a common question in StackOverflow and MSDN forums. So, let’s take a look at the main options.
+
+## Contents
+{:.no_toc}
+
+* Table of Contents Placeholder
+{:toc}
 
 ## HttpStringContent
 
