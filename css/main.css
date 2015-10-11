@@ -146,19 +146,41 @@ ul.post-list {
 }
 
 .post-tags ul {
-    margin: 30px 0px 30px 0px;
+    margin: 1em 0px 1em 0px;
     padding: 0;
-    line-height: 1.8em;
 }
 
 .post-tags li {
-    font-size: 0.9em;
-    color: #eee;
+    font-size: x-small;
+    line-height: 2.5em;
+    color: #fff;
     list-style-type: none;
     display: inline;
-    background-color: #999;
-    margin: auto 10px auto 0px;
+    background-color: #aaa;
+    margin: auto 5px auto 0px;
     padding: 4px 7px 4px 7px;
+}
+
+.related-posts {
+    margin: 1em 0em 1em 0em;
+    padding: 0em 1em 0.5em 1em;
+    background-color: #fffde7;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff9c4;
+}
+
+.related-posts h4 {
+    padding-left: 40px;
+}
+
+.related-posts a {
+    color: #324fe1;
+    text-decoration: none;
+}
+
+.related-posts a:active {
+    color: #ee0000;
 }
 
 /* big screens */
@@ -171,7 +193,7 @@ ul.post-list {
 
 /* iPhone */
 @media screen and (max-device-width: 480px) {
-    * {
+    body, head, div {
         overflow: hidden; /* avoid horizontal scrolling because of long text */
     }
 
