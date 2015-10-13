@@ -43,7 +43,7 @@ Let the program run and pause at `Console.ReadLine()`.
     00c3efc8 00e500c1 (MethodDesc 00d437a4 +0x71 ConsoleHelloWorld.Program.Main(System.String[]))
     ...
 
-Find the address of **String.Contains()** with:
+Find the address of **String.Contains()** using:
 
     !name2ee *!System.String.Contains
 
@@ -60,7 +60,7 @@ Set a breakpoint using `bp`:
 
     bp 73f21734
 
-Continue the execution, press ENTER and wait to hit the breakpoint:
+Continue the execution, press ENTER and wait until the breakpoint is hit:
 
     0:003> g
     Breakpoint 0 hit
@@ -79,7 +79,7 @@ Done! The callstack looks like this:
     0092f424 00ba009e ConsoleHelloWorld.Program.Main(System.String[]) [c:\ConsoleHelloWorld\Program.cs @ 17]
     0092f5c0 746c2552 [GCFrame: 0092f5c0] 
 
-Stack objects look like this:
+The stack objects look like this:
 
     0:000> !dso
     ESP/REG  Object   Name
@@ -95,11 +95,11 @@ As soon as the debugger starts, configure the debugger to break when **clrjit.dl
 
     sxe ld clrjit
 
-When **clrjit.dll** loads look for the method address:
+Once **clrjit.dll** is loaded, look for the method address:
 
     !name2ee ConsoleHelloWorld.exe ConsoleHelloWorld.Program.Main
 
-The output is highlights the method is not JITTED yet:
+The output tells you the method is not JITTED yet:
 
     Module:      009d2edc
     Assembly:    ConsoleHelloWorld.exe
@@ -108,16 +108,16 @@ The output is highlights the method is not JITTED yet:
     Name:        ConsoleHelloWorld.Program.Main(System.String[])
     Not JITTED yet. Use !bpmd -md 009d37a4 to break on run.
 
-Set a breakpoint using `bpmd`:
+Set a breakpoint using `!bpmd`:
 
     !bpmd -md 009d37a4 
 
-Output tells the breakpoint is pending:
+The breakpoint is pending:
 
     MethodDesc = 009d37a4
     Adding pending breakpoints...
 
-Continue execution, later the code is JITTED and breakpoint is hit:
+Continue the execution. Then, the code is JITTED and the breakpoint is hit:
 
     JITTED ConsoleHelloWorld!ConsoleHelloWorld.Program.Main(System.String[])
     Setting breakpoint: bp 00BA007B [ConsoleHelloWorld.Program.Main(System.String[])]
