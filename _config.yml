@@ -1,5 +1,5 @@
 # Site settings
-title: Monkey Weekend (Version 2)
+title: Monkey Weekend
 email: hello@kiewic.com
 permalink: /:year-:month-:day/:title
 description: This is my blog where I post about Windows programming.
