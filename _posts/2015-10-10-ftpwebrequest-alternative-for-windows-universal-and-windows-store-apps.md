@@ -9,9 +9,9 @@ If you are here because:
 * `System.Net.FtpWebRequest` is not available in Windows Store and Windows Universal apps.
 * `Windows.Networking.BackgroundTransfer.BackgroundUploader` does not support FTP uploads.
 
-Take a look at the [FtpClient GitHub][FtpClient] project, a FTP uploader made of sockets.
+Take a look at the [FtpClient GitHub][FtpClient] project, a FTP uploader made with sockets.
 
-Upload a file is as easy as:
+To do a FTP upload, use the following C# snippet:
 
     FtpClient client = new FtpClient();
     await client.ConnectAsync(
