@@ -174,7 +174,10 @@ Also applies to `Windows.Networking.Sockets.DatagramSocket.BindAsync()`
     * `Windows::Networking::BackgroundTransfer`
     * The maximum number of secrets that may be stored in a single system has been exceeded. (Exception from HRESULT: 0x80070565)
     * Read more on [stackoverflow.com](http://stackoverflow.com/questions/27178552/passwordcredential-backgroundtransfer)
-
+* 0X80072EEF
+    * WININET_E_LOGIN_FAILURE
+    * `Windows::Networking::BackgroundTransfer::DownloadOperation::StartAsync`
+    * The FTP server did not accept the given user name and password. If no credentials were provided, the FTP server is not configured to allow anonymous connections.
 
 <!--
 
