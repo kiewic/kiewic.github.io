@@ -13,7 +13,7 @@ tags: [WinRT, Windows Runtime, Windows Store Apps, UWP, Windows, MSDN]
 
 ## Windows.Web.Http.HttpClient.GetAsync()
 
-Also applies to `Windows.Web.Http.HttpClient.SendRequestAsync()`
+Also applies to `HttpClient.SendRequestAsync()`, `HttpClient.PostAsync()`, `HttpClient.PutAsync()`, etc.
 
 * 0x80070002
     * ERROR_FILE_NOT_FOUND
@@ -48,15 +48,27 @@ Also applies to `Windows.Web.Http.HttpClient.SendRequestAsync()`
     * `HttpRequestMessage.RequestUri` is null.
 * 0x80072EE7
     * WININET_E_NAME_NOT_RESOLVED
-    * No network access available and the URI host name is a domain name.
+    * The server name or address could not be resolved
+    * Cannot contact DNS server or there are no DNS records for the host name.
 * 0x80072EFD
     * WININET_E_CANNOT_CONNECT
     * No network access available and the URI host name is an IP address.
 * 0x80072F0D
     * WININET_E_INVALID_CA
     * The certificate authority is invalid or incorrect.
-    * If using a self-signed server certificate, add the certificate to the Package Trusted Root Certificate Authorities store. See example on [stackoverflow.com](http://stackoverflow.com/questions/29395219/dont-know-how-to-add-ssl-certificate-on-windows-phone-8-1-portable-class-librar/29419301#29419301)
-    * Less recommended, ignore the certificate error using `HttpBaseProtocolFilter.IgnorableServerCertificateErrors`. See example on [stackoverflow.com](http://stackoverflow.com/a/23875601/27211)
+    * The Issuer is not in the Trusted Root Certification Authorities store.
+    * If using a self-signed server certificate, add the certificate to the Package Trusted Root Certification Authorities store. See example on [stackoverflow.com](http://stackoverflow.com/questions/29395219/dont-know-how-to-add-ssl-certificate-on-windows-phone-8-1-portable-class-librar/29419301#29419301)
+    * Not recommended: ignore the error by adding `ChainValidationResult.Untrusted` to `HttpBaseProtocolFilter.IgnorableServerCertificateErrors`. See example on [stackoverflow.com][ignore_cert_errors]
+* 0x80072F06
+    * WININET_E_SEC_CERT_CN_INVALID
+    * The host name in the certificate is invalid or does not match.
+    * Certificate was issued to a different domain name. E.g.: certificate was issued to *www.example.com* and you you are accessing *foo.exmaple.com*
+    * Not recommended: ignore the error by adding `ChainValidationResult.InvalidName` to `HttpBaseProtocolFilter.IgnorableServerCertificateErrors`. See example on [stackoverflow.com][ignore_cert_errors]
+* 0x80072F05
+    * WININET_E_SEC_CERT_DATE_INVALID
+    * The date in the certificate is invalid or has expired
+    * Not recommended: ignore the error by adding `ChainValidationResult.Expired` to `HttpBaseProtocolFilter.IgnorableServerCertificateErrors`. See example on [stackoverflow.com][ignore_cert_errors]
+
 
 
 ## Windows.Web.Http and ControlChannelTrigger
@@ -190,4 +202,5 @@ How to find error constants?
 
 
 [msdn_json]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh770289.aspx
+[ignore_cert_errors]: http://stackoverflow.com/a/23875601/27211
 
