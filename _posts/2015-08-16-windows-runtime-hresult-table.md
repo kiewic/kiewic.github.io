@@ -62,7 +62,7 @@ Also applies to `HttpClient.SendRequestAsync()`, `HttpClient.PostAsync()`, `Http
 * 0x80072F06
     * WININET_E_SEC_CERT_CN_INVALID
     * The host name in the certificate is invalid or does not match.
-    * Certificate was issued to a different domain name. E.g.: certificate was issued to *www.example.com* and you you are accessing *foo.exmaple.com*
+    * Certificate was issued to a different domain name. E.g.: certificate was issued to *www.example.com* and you are accessing *foo.example.com*
     * Not recommended: ignore the error by adding `ChainValidationResult.InvalidName` to `HttpBaseProtocolFilter.IgnorableServerCertificateErrors`. See example on [stackoverflow.com][ignore_cert_errors]
 * 0x80072F05
     * WININET_E_SEC_CERT_DATE_INVALID
