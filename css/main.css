@@ -89,8 +89,9 @@ pre {
     max-width: 50%;
 }
 
-.site-footer {
+.site-footer p {
     color: #999;
+    text-align: center;
 }
 
 .home-logo {
