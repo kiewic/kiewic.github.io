@@ -69,7 +69,14 @@ Also applies to `HttpClient.SendRequestAsync()`, `HttpClient.PostAsync()`, `Http
     * The date in the certificate is invalid or has expired
     * Not recommended: ignore the error by adding `ChainValidationResult.Expired` to `HttpBaseProtocolFilter.IgnorableServerCertificateErrors`. See example on [stackoverflow.com][ignore_cert_errors]
 
+    
+## Windows.Web.Http.HttpClient.PostAsync()
 
+* 0x80070057
+    * E_INVALIDARG
+    * `System.ArgumentException`
+    * Value does not fall within the expected range.
+    * This error could happen when posting a `HttpStreamContent` pointing to an empty file or the end of a stream; or posting a zero-length `HttpBufferContent`, 
 
 ## Windows.Web.Http and ControlChannelTrigger
 
