@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use Windows 10 Runtime/Store/Universal APIs in a Desktop/Console App?
+title: How to use Windows 10 Runtime/Store/Universal APIs in Desktop/Console Apps?
 date: 2015-11-24 00:00:00.000000000 -08:00
 tags: [WinRT, Windows Runtime, Windows Store Apps, UWP, Windows, MSDN, C#, Windows 10]
 ---
@@ -8,7 +8,7 @@ tags: [WinRT, Windows Runtime, Windows Store Apps, UWP, Windows, MSDN, C#, Windo
 1. Create a Desktop App or Console App.
 2. In **Solution Explorer**, right click the project name and select **Unload Project**.
 3. Right click the project name and select **Edit MyApp.csproj** file.
-4. Add `<TargetPlatformVersion>` within the `<PropertyGroup>` tags:
+4. Add the `<TargetPlatformVersion>` tag:
 
         <PropertyGroup>
             <TargetPlatformVersion>10.0</TargetPlatformVersion>
@@ -22,5 +22,6 @@ tags: [WinRT, Windows Runtime, Windows Store Apps, UWP, Windows, MSDN, C#, Windo
 9. Go to **C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5** and select **System.Runtime.dll**.
 10. If you need to use `async` and `await`, click **Browse...** again and include **System.Runtime.WindowsRuntime.dll** too.
 
-Done. Happy coding!
+Done.
 
+Happy coding!
