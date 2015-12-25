@@ -21,6 +21,7 @@ Also applies to `HttpClient.SendRequestAsync()`, `HttpClient.PostAsync()`, `Http
 * 0x80070490
     * ERROR_NOT_FOUND
     * Element not found.
+    * A dialog cannot be displayed because the parent window handle has not been set.
     * The request was started in a process or thread that does not have a window. Start the request from a UI thread or disable UI features using `HttpBaseProtocolFilter::AllowUI = false`
     * Read more on [stackoverflow.com](http://stackoverflow.com/questions/24361588/windows-web-http-httpclientgetasync-throws-an-incomplete-exception-when-invalid)
 * 0X8007007B
@@ -46,6 +47,12 @@ Also applies to `HttpClient.SendRequestAsync()`, `HttpClient.PostAsync()`, `Http
 * 0x8000000E
     * E_ILLEGAL_METHOD_CALL
     * `HttpRequestMessage.RequestUri` is null.
+* 800C000E
+    * System.Net.Http.HttpRequestException
+    * INET_E_SECURITY_PROBLEM
+    * An error occurred while sending the request. ---> System.Runtime.InteropServices.COMException: A security problem occurred. (Exception from HRESULT: 0x800C000E)
+    * Do not include the user name and password in the URI (RFC 3986 3.2.1 User Information). For example, `http://user:password@example.com` will trigger this error.
+    * See fix on [stackoverflow.com][httpclienthandler_credentials]
 * 0x80072EE7
     * WININET_E_NAME_NOT_RESOLVED
     * The server name or address could not be resolved
@@ -210,4 +217,5 @@ How to find error constants?
 
 [msdn_json]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh770289.aspx
 [ignore_cert_errors]: http://stackoverflow.com/a/23875601/27211
+[httpclienthandler_credentials]: http://stackoverflow.com/questions/34365570/security-error-occured-with-http-request-and-universal-apps/34368622#34368622
 
