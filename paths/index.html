@@ -1,0 +1,84 @@
+---
+layout: simplePage
+title: SVG Paths
+style: |
+  #theMainDiv {
+      border: 1px solid blue;
+  }
+  
+  #theOtherDiv svg {
+      border: 1px solid green;
+  }
+  
+  #theOtherDiv input[type="text"] {
+    width: 100%;
+  }
+
+  .rcorners {
+      border-radius:10px;
+      background: LemonChiffon;
+      margin: 10px 0px 10px 0px;
+      padding: 5px 15px 5px 15px;
+  }
+---
+
+<div class="rcorners">
+    <p><input id="theFile" type="file" accept="image/svg+xml" /></p>
+    <p><button id="theButton">Get Paths</button></p>
+</div>
+<div id="theMainDiv"></div>
+<div id="theOtherDiv"></div>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script>
+    function processSvg() {
+        var myInputFile = document.getElementById("theFile");
+        var file = myInputFile.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.readAsText(file, "UTF-8");
+            console.log("loading ...");
+
+            reader.onload = function (evt) {
+                //console.log(evt);
+
+                // Obtain the read file data.
+                var fileString = evt.target.result;
+
+                var myMainDiv = d3.select("#theMainDiv");
+                var myOtherDiv = d3.select("#theOtherDiv");
+                
+                // First, remove old svg in #theOtherDiv.
+                var oldPaths = d3.select("#theOtherDiv").selectAll("*");
+                oldPaths.remove();
+
+                //console.log(myMainDiv);
+                if (myMainDiv[0][0]) {
+                    myMainDiv[0][0].innerHTML = fileString;
+
+                    var paths = d3.select("#theMainDiv").selectAll("path");
+                    for (var i = 0; i < paths[0].length; i++) {
+                        var myPath = paths[0][i];
+                        var mySvg = myOtherDiv.append("svg");
+                        mySvg.html(myPath.outerHTML);
+                        var box = myPath.getBBox();
+                        mySvg.attr({
+                            'height': box.height,
+                            'width': box.width
+                        });
+
+                        var myDiv = myOtherDiv.append("div");
+                        myDiv.attr('class', 'rcorners');
+                        var myInput = myDiv.append("p").append("input");
+                        myInput.attr({
+                            'type': 'text',
+                            'value': myPath.getAttribute('d'),
+                        });
+                    }
+                }
+            };
+        }
+    }
+
+    var myButton = document.getElementById("theButton");
+    myButton.addEventListener("click", processSvg);
+</script>
