@@ -64,7 +64,7 @@ Also applies to `HttpClient.SendRequestAsync()`, `HttpClient.PostAsync()`, `Http
     * WININET_E_INVALID_CA
     * The certificate authority is invalid or incorrect.
     * The Issuer is not in the Trusted Root Certification Authorities store.
-    * If using a self-signed server certificate, add the certificate to the Package Trusted Root Certification Authorities store. See example on [stackoverflow.com](http://stackoverflow.com/questions/29395219/dont-know-how-to-add-ssl-certificate-on-windows-phone-8-1-portable-class-librar/29419301#29419301)
+    * If using a self-signed server certificate, add the certificate to the Package Trusted Root Certification Authorities store. See example on [stackoverflow.com][add_self_signed_certificate_1]
     * Not recommended: ignore the error by adding `ChainValidationResult.Untrusted` to `HttpBaseProtocolFilter.IgnorableServerCertificateErrors`. See example on [stackoverflow.com][ignore_cert_errors]
 * 0x80072F06
     * WININET_E_SEC_CERT_CN_INVALID
@@ -76,7 +76,7 @@ Also applies to `HttpClient.SendRequestAsync()`, `HttpClient.PostAsync()`, `Http
     * The date in the certificate is invalid or has expired
     * Not recommended: ignore the error by adding `ChainValidationResult.Expired` to `HttpBaseProtocolFilter.IgnorableServerCertificateErrors`. See example on [stackoverflow.com][ignore_cert_errors]
 
-    
+
 ## Windows.Web.Http.HttpClient.PostAsync()
 
 * 0x80070057
@@ -102,10 +102,18 @@ Also applies to `HttpClient.SendRequestAsync()`, `HttpClient.PostAsync()`, `Http
 
 ## System.Net.HttpClient
 
+Also applies to `HttpClient.SendAsync()`.
+
 * 0x80072f08
     * ERROR_INTERNET_HTTPS_TO_HTTP_ON_REDIR
     * The application is moving from an SSL to an non-SSL connection because of a redirect.
     * Disable auto-redirect and handle redirection manually. See example on [stackoverflow.com](http://stackoverflow.com/questions/32992164/getting-exception-in-system-net-httpclient-a-redirect-request-will-change-a-se/32998982#32998982)
+* 0x80131500
+    * COR_E_EXCEPTION
+    * System.Net.WebException
+    * The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel. ---> System.Security.Authentication.AuthenticationException: The remote certificate is invalid according to the validation procedure.
+    * If using a self-signed server certificate, add the certificate to the Package.appxmanifest. See example on [stackoverflow.com][add_self_signed_certificate_2]
+
 
 
 ## Windows.Networking.Sockets and IInputStream.ReadAsync()
@@ -182,6 +190,9 @@ Also applies to `Windows.Networking.Sockets.DatagramSocket.BindAsync()`
     * Remote machine (server) aborts connection during SSL negotiation.
 
 
+## System.Net.WebSockets.ClientWebSocket
+* 0x80072EFE
+    * ERROR_INTERNET_CONNECTION_ABORTED
 
 
 ## Windows.Networking.BackgroundTransfer
@@ -217,5 +228,7 @@ How to find error constants?
 
 [msdn_json]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh770289.aspx
 [ignore_cert_errors]: http://stackoverflow.com/a/23875601/27211
+[add_self_signed_certificate_1]: http://stackoverflow.com/questions/29395219/dont-know-how-to-add-ssl-certificate-on-windows-phone-8-1-portable-class-librar/29419301#29419301
+[add_self_signed_certificate_2]: http://stackoverflow.com/questions/34822640/how-to-ignor-self-signed-certificates-with-system-net-http-httpclient-in-univers/34822679#34822679
 [httpclienthandler_credentials]: http://stackoverflow.com/questions/34365570/security-error-occured-with-http-request-and-universal-apps/34368622#34368622
 
