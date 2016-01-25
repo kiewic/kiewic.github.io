@@ -1,7 +1,7 @@
 # Site settings
 title: Monkey Weekend
 email: hello@kiewic.com
-permalink: /:year-:month-:day/:title
+permalink: /:title
 description: This is my blog where I post about Windows programming.
 baseurl: ""
 url: "http://monkeyweekend.com"
