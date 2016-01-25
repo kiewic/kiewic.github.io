@@ -3,6 +3,7 @@ layout: post
 title: How to use Windows 10 Runtime/Store/Universal APIs in Desktop/Console Apps?
 date: 2015-11-24 00:00:00.000000000 -08:00
 tags: [WinRT, Windows Runtime, Windows Store Apps, UWP, Windows, MSDN, C#, Windows 10]
+permalink: /2015-11-24/how-to-use-windows-10-runtime-store-universal-apis-in-desktop-console-apps
 ---
 
 1. Create a Desktop App or Console App.
