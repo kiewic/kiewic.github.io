@@ -130,6 +130,11 @@ pre {
     padding: 10px 2px 10px 2px;
 }
 
+ul.post-list {
+    margin: 0;
+    padding: 0;
+}
+
 .post-list-item {
     list-style-type: none;
     margin: 0;
