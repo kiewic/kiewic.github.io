@@ -94,6 +94,15 @@ pre {
     text-align: center;
 }
 
+.site-footer a, .site-footer a:visited {
+    text-decoration: none;
+    color: #4183c4;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
 .home-logo {
     text-align: center;
 }
@@ -122,7 +131,7 @@ pre {
     text-decoration: none;
 }
 
-.post a:active {
+.post a:hover {
     color: #ee0000;
 }
 
