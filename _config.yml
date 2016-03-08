@@ -2,9 +2,9 @@
 title: Monkey Weekend
 email: hello@kiewic.com
 permalink: /:title
-description: This is my blog where I post about Windows programming.
+description: This is my personal blog where I post about Windows programming.
 baseurl: ""
-url: "http://monkeyweekend.com"
+url: "http://kiewic.com"
 twitter_username: kiewic
 github_username: kiewic
 disqusid: 3372890
