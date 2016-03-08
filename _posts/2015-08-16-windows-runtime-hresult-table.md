@@ -100,6 +100,8 @@ Also applies to `HttpClient.SendRequestAsync()`, `HttpClient.PostAsync()`, `Http
     * Client certificate is not supported with Control Channel Trigger.
 * 0x80072F75
     * ERROR_HTTP_PUSH_ENABLE_FAILED
+    * Exception from HRESULT: 0x80072F75
+    * Read more in [stackoverflow.com][cct_on_phone]
 
 
 ## System.Net.HttpClient
@@ -233,4 +235,5 @@ How to find error constants?
 [add_self_signed_certificate_1]: http://stackoverflow.com/questions/29395219/dont-know-how-to-add-ssl-certificate-on-windows-phone-8-1-portable-class-librar/29419301#29419301
 [add_self_signed_certificate_2]: http://stackoverflow.com/questions/34822640/how-to-ignor-self-signed-certificates-with-system-net-http-httpclient-in-univers/34822679#34822679
 [httpclienthandler_credentials]: http://stackoverflow.com/questions/34365570/security-error-occured-with-http-request-and-universal-apps/34368622#34368622
+[cct_on_phone]: http://stackoverflow.com/questions/35491519/controlchanneltrigger-background-task-in-universal-windows-apps-and-streammessag
 
