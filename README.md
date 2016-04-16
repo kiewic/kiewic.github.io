@@ -1,10 +1,6 @@
 # kiewic.github.io
 
-The mother of all github pages. Hahaha!
-
-### Development Instructions
-
-Set up local environment:
+### Set up development environment:
 
 https://help.github.com/articles/using-jekyll-with-pages/
 
@@ -12,13 +8,11 @@ Ruby Development Kit:
 
 https://github.com/oneclick/rubyinstaller/wiki/Development-Kit
 
-Run Jekyll with Bundler:
+Version installed on my PC:
 
-    bundle exec jekyll serve
+ruby 2.1.6p336 (2015-04-13 revision 50298) [i386-mingw32]
 
-To preview the site with drafts:
-
-    bundle exec jekyll serve --drafts
+### Docs
 
 Jekyll docs:
 
@@ -32,8 +26,6 @@ Liquid for Designers
 
 https://github.com/shopify/liquid/wiki/liquid-for-designers
 
-### Disqus Docs
-
 What HTML tags are allowed within comments?
 
 https://help.disqus.com/customer/portal/articles/466253-what-html-tags-are-allowed-within-comments
@@ -41,3 +33,11 @@ https://help.disqus.com/customer/portal/articles/466253-what-html-tags-are-allow
 Syntax highlighting:
 
 https://help.disqus.com/customer/portal/articles/665057-syntax-highlighting
+
+Run Jekyll with Bundler:
+
+    bundle exec jekyll serve
+
+To preview the site with drafts:
+
+    bundle exec jekyll serve --drafts
