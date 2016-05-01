@@ -32,12 +32,12 @@ small {
     font-size: 0.66em;
 }
 
-pre, code {
+pre code {
     font-family: "Courier 10 Pitch", Courier, monospace;
 }
 
 pre {
-    background: #eee;
+    background-color: #f3f6fa;
     font-size: 1rem;
     line-height: 1.3rem;
     overflow: auto;
@@ -139,6 +139,15 @@ pre {
     padding: 10px 2px 10px 2px;
 }
 
+.post p code {
+    padding: 2px 4px;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+    color: #567482;
+    background-color: #f3f6fa;
+    border-radius: 0.3rem;
+}
+
 ul.post-list {
     margin: 0;
     padding: 0;
@@ -169,7 +178,7 @@ ul.post-list {
 }
 
 .post-tags li {
-    font-size: x-small;
+    font-size: small;
     line-height: 2.5em;
     color: #fff;
     list-style-type: none;
@@ -205,7 +214,7 @@ ul.post-list {
 @media screen and (min-width: 1250px)
 {
     .wrapper {
-        max-width: 1200px;
+        max-width: 1100px;
     }
 }
 

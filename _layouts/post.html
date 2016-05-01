@@ -30,7 +30,7 @@ comments: true
                             {% assign tags_match = tags_match | plus: 1 %}
                         {% endif %}
                     {% endfor %}
-                    {% if tags_match >= 3 %}
+                    {% if tags_match >= 1 %}
                         {% assign total_post_selected = total_post_selected | plus: 1 %}
                         <li><a href="{{ post.url }}" title="{{ tags_match }} tags in common.">{{ post.title }}</a></li>
                     {% endif %}
@@ -46,5 +46,3 @@ comments: true
     </div>
 </div>
 {% include footer.html %}
-
-
