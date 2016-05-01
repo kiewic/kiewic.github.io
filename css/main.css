@@ -97,6 +97,7 @@ pre {
 .site-footer a, .site-footer a:visited {
     text-decoration: none;
     color: #4183c4;
+    padding-left: 4px;
 }
 
 .site-footer a:hover {
