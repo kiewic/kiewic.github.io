@@ -25,6 +25,10 @@ Select the path in one of the boxes (there may be only one), copy it, and use it
 
 And that is it.
 
+## Live Example
+
+<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYzhhM2M0N2QtMmM5Yi00ZGFjLTg4MTItMDgyYjY3YTA1ZjExIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+
 ## Troubleshooting
 
 ### The shapes are not centered?
@@ -50,7 +54,7 @@ Yes, starts and triangles:
 
 ## Credits
 
-Icons in this article were obtained from the [AIGA collection created by Edward Boatman][thenounproject]. You can download SVG files from here, too.
+Icons in this article were obtained from the [AIGA collection created by Edward Boatman][edward-boatman]. You can download SVG files from [here][thenounproject], too.
 
 [waffle-chart]: https://app.powerbi.com/visuals/show/WaffleChart
 [video-1]: https://www.youtube.com/watch?v=1vRqYUsm3Vk
@@ -58,7 +62,8 @@ Icons in this article were obtained from the [AIGA collection created by Edward 
 [paths]: http://kiewic.com/paths
 [example-1]: https://drive.google.com/file/d/0B3v_NS_EPj8-UkIxX3RXTnczcFE/view?usp=sharing 
 [github]: https://github.com/kiewic/PowerBI-visuals/tree/waffleChartV2
-[thenounproject]: https://thenounproject.com/edward/collection/aiga/
-
+[edward-boatman]: https://thenounproject.com/edward/collection/aiga/
+[thenounproject]: https://thenounproject.com/
+[live-example]: https://app.powerbi.com/view?r=eyJrIjoiYzhhM2M0N2QtMmM5Yi00ZGFjLTg4MTItMDgyYjY3YTA1ZjExIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9
 
 
