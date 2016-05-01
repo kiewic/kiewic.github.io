@@ -3,6 +3,12 @@ layout: post
 title: Custom Shapes in the Power BI Waffle Chart
 date: 2016-04-30 00:00:00.000000000 -08:00
 tags: [example, avatar, shapes, available code, image as a field, infographics]
+style: |
+  /* settings here can  be overwritten from main.css */
+  iframe.power-bi {
+      width: 800px;
+      height: 600px;
+  }
 ---
 
 Hello,
@@ -27,7 +33,7 @@ And that is it.
 
 ## Live Example
 
-<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYzhhM2M0N2QtMmM5Yi00ZGFjLTg4MTItMDgyYjY3YTA1ZjExIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+<iframe class="power-bi" src="https://app.powerbi.com/view?r=eyJrIjoiYzhhM2M0N2QtMmM5Yi00ZGFjLTg4MTItMDgyYjY3YTA1ZjExIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
 
 ## Troubleshooting
 
