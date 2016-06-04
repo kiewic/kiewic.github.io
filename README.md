@@ -2,7 +2,6 @@
 
 ### Set up development environment:
 
-- [Using Jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/)
 - [Using Jekyll with GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
 - [Ruby Development Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
 
