@@ -3,6 +3,7 @@
 ### Set up development environment:
 
 - [Using Jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/)
+- [Using Jekyll with GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
 - [Ruby Development Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
 
 ### Update
@@ -19,8 +20,9 @@
 - [Jekyll docs](http://jekyllrb.com/docs/home/)
 - [Jekyll examples](https://github.com/jekyll/jekyll/wiki/Sites)
 - [Liquid for Designers](https://github.com/shopify/liquid/wiki/liquid-for-designers)
-- [What HTML tags are allowed within comments?](https://help.disqus.com/customer/portal/articles/466253-what-html-tags-are-allowed-within-comments)
-- [Syntax highlighting](https://help.disqus.com/customer/portal/articles/665057-syntax-highlighting)
+- DISQUS
+  - [What HTML tags are allowed within comments?](https://help.disqus.com/customer/portal/articles/466253-what-html-tags-are-allowed-within-comments)
+  - [Syntax highlighting](https://help.disqus.com/customer/portal/articles/665057-syntax-highlighting)
 
 Run Jekyll with Bundler:
 
