@@ -9,12 +9,16 @@ Some notes just for future reference.
 
 There are two packages for implementing OData services in ASP.NET:
 
-* **Microsoft.AspNet.WebApi.OData** for OData v3
-* **Microsoft.AspNet.OData** for OData v4
+- **Microsoft.AspNet.WebApi.OData** for OData v3, and depends on:
+    - Microsoft.Data.OData
+- **Microsoft.AspNet.OData** for OData v4, and depends on:
+    - Microsoft.OData.Core
+    - Microsoft.OData.Edm
+    - Microsoft.Spatial
 
 To implement an OData v4 service (a server), follow the steps at:
 
-http://odata.github.io/WebApi/
+[http://odata.github.io/WebApi/](http://odata.github.io/WebApi/)
 
 To implement a C# client:
 
