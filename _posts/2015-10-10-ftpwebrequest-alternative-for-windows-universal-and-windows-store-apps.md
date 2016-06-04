@@ -14,15 +14,17 @@ Take a look at the [FtpClient GitHub][FtpClient] project, a FTP uploader made wi
 
 To do a FTP upload, use the following C# snippet:
 
-    FtpClient client = new FtpClient();
-    await client.ConnectAsync(
-        new HostName("example.com"),
-        "21",
-        "anonymous",
-        "anonymous");
+{% highlight csharp %}
+FtpClient client = new FtpClient();
+await client.ConnectAsync(
+    new HostName("example.com"),
+    "21",
+    "anonymous",
+    "anonymous");
 
-    byte[] data = Encoding.UTF8.GetBytes("Hello world!");
-    await client.UploadAsync("/foo/bar.txt", data);
+byte[] data = Encoding.UTF8.GetBytes("Hello world!");
+await client.UploadAsync("/foo/bar.txt", data);
+{% endhighlight %}
 
 Read more [here][README].
 

@@ -13,16 +13,18 @@ However, HeyHttp only runs on Windows and it is a server itself, so some extra s
 
 Although there are discussions in the forums about porting Let's Encrypt to Windows, I just went to my Ubuntu machine, downloaded the enlistment, and executed the script in manual mode. These are the commands needed:
 
-    $ git clone https://github.com/letsencrypt/letsencrypt
+{% highlight shell %}
+$ git clone https://github.com/letsencrypt/letsencrypt
 
-    $ ./letsencrypt-auto certonly --manual
+$ ./letsencrypt-auto certonly --manual
 
-    Make sure your web server displays the following content at
-    http://heyhttp.org/.well-known/acme-challenge/EAJKZ2tzWFGgiXA5iOfA7PsTqhkVM82VPQGYvYpX0-g before continuing:
+Make sure your web server displays the following content at
+http://heyhttp.org/.well-known/acme-challenge/EAJKZ2tzWFGgiXA5iOfA7PsTqhkVM82VPQGYvYpX0-g before continuing:
 
-    ...
+...
 
-    Press ENTER to continue
+Press ENTER to continue
+{% endhighlight %}
 
 In the middle of this process, you need to create a file with a key and copy the file to the wwwroot folder on your Windows server.
 
@@ -30,11 +32,13 @@ Now, go back to Linux and complete the authentication to get two pem files, one 
 
 In the forums, [forum][Ryan Hilliker] posted the following **OpenSSL** command to convert the **pem** files into a **pfx** file:
 
-    sudo -s
+{% highlight shell %}
+sudo -s
 
-    cd /etc/letsencrypt/live/heyhttp.org
+cd /etc/letsencrypt/live/heyhttp.org
 
-    openssl pkcs12 -export -out "certificate.pfx" -inkey "privkey.pem" -in "cert.pem" -certfile chain.pem
+openssl pkcs12 -export -out "certificate.pfx" -inkey "privkey.pem" -in "cert.pem" -certfile chain.pem
+{% endhighlight %}
 
 Copy the resulting pfx file to your Windows machine, double click on it, and install it wherever you want (in the case of HeyHttp, choose "local machine" and then "personal store").
 

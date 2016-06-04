@@ -9,23 +9,25 @@ How to set a breakpoint in managed code using WinDBG?
 
 E.g., breakpoints in the `Main` method and `System.String.Contains` method using the following console application:
 
-    namespace ConsoleHelloWorld
+{% highlight csharp %}
+namespace ConsoleHelloWorld
+{
+    class Program
     {
-        class Program
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
+            string foo = "The Unimaginary Friend";
+
+            Console.ReadLine();
+
+            if (!foo.Contains("Hello"))
             {
-                string foo = "The Unimaginary Friend";
-
-                Console.ReadLine();
-
-                if (!foo.Contains("Hello"))
-                {
-                    Console.WriteLine("Inside if block.");
-                }
+                Console.WriteLine("Inside if block.");
             }
         }
     }
+}
+{% endhighlight %}
 
 ## Code Already JITTED
 

@@ -17,17 +17,26 @@ style: |
 ---
 The following CSS snippet will display your Emoji characters correclty in all browsers running on Windows, including Internet Explorer and Google Chrome.
 
-    .emojiText {
-        font-family:"Segoe UI Symbol";
-    }
+
+{% highlight css %}
+.emojiText {
+    font-family:"Segoe UI Symbol";
+}
+{% endhighlight %}
+
 
 Then apply the CSS style to your text:
 
-    <p>
-        Websites are funnier with emojis/emoticons:
-        <span class="emojiText">&#128565; &#128126;</span>
-    </p>
+
+{% highlight html %}
+<p>
+    Websites are funnier with emojis/emoticons:
+    <span class="emojiText">&#128565; &#128126;</span>
+</p>
+{% endhighlight %}
+
 
 Example:
+
 
 <span class="emojiText">&#128565; &#128126;</span>

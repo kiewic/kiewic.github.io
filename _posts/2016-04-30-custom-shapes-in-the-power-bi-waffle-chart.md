@@ -53,9 +53,11 @@ Yes, head to the [GitHub repo][github] to get access to the source code.
 
 Yes, starts and triangles:
 
-    Group,Values,Shapes
-    A,50,"M 0 -1 L 0.588 0.809 -0.951 -0.309 0.951 -0.309 -0.588 0.809 Z"
-    B,75,"M150 0 L75 200 L225 200 Z"
+{% highlight plaintext %}
+Group,Values,Shapes
+A,50,"M 0 -1 L 0.588 0.809 -0.951 -0.309 0.951 -0.309 -0.588 0.809 Z"
+B,75,"M150 0 L75 200 L225 200 Z"
+{% endhighlight %}
 
 
 ## Credits
