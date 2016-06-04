@@ -44,6 +44,12 @@ pre {
     padding: 0.9em;
 }
 
+/* Rouge highlighter wraps code in <figure> tags. */
+figure {
+    margin: 0px;
+    padding: 0px;
+}
+
 .site-ribbon {
     color: #fff;
     background-color: #F06628;

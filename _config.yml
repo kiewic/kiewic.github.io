@@ -1,5 +1,5 @@
 # Site settings
-title: Monkey Weekend
+title: kiewic (formerly Monkey Weekend)
 email: hello@kiewic.com
 permalink: /:title
 description: This is my personal blog where I post about Windows programming.
@@ -8,4 +8,5 @@ url: "http://kiewic.com"
 github_username: kiewic
 twitter:
   username: kiewic
+highlighter: rouge
 disqusid: 3372890
