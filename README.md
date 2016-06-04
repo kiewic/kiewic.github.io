@@ -20,6 +20,7 @@
 - [Jekyll examples](https://github.com/jekyll/jekyll/wiki/Sites)
 - [Code Snippet Highlighting](http://jekyllrb.com/docs/templates/#code-snippet-highlighting)
 - [Liquid for Designers](https://github.com/shopify/liquid/wiki/liquid-for-designers)
+- [kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html)
 - DISQUS
   - [What HTML tags are allowed within comments?](https://help.disqus.com/customer/portal/articles/466253-what-html-tags-are-allowed-within-comments)
   - [Syntax highlighting](https://help.disqus.com/customer/portal/articles/665057-syntax-highlighting)
