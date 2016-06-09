@@ -1,21 +1,27 @@
 ---
 layout: default
 ---
-<div class="home">
-    <div class="wrapper">
-        <p class="home-logo" title="This monkey is wearing a jetpack."><img src="/content/home.png" /></p>
-        <h1 class="home-title" title="a.k.a. kiewic">Monkey Weekend</h1>
 
-        <ul class="post-list">
-        {% for post in site.posts %}
-            <li class="post-list-item">
-                <div>
-                    <a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-                </div>
-            </li>
+{% include header.html %}
+
+<div class="home">
+    <main class="wrapper">
+
+        {% for post in site.posts limit:2 %}
+            {% assign content = post.content %}
+            {% include postContent.html title=post.title date=post.date content=post.content url=post.url %}
+            <div class="post-break"></div>
         {% endfor %}
-        </ul>
-    </div>
+
+        <div class="post-list">
+            <h1>Archive</h1>
+            {% for post in site.posts offset:2 %}
+                <article class="post-list-item">
+                    <span class="post-title"><a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
+                    <span class="post-time" ><time datetime="{{ post.date | date: "%FT%T%:z" }}">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+                </article>
+            {% endfor %}
+        </div>
+    </main>
 </div>
 {% include footer.html %}
