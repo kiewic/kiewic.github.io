@@ -252,6 +252,15 @@ figure {
         padding-right: 0.6em;
     }
 
+    .post-list-item {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .post-list-item .post-title {
+        margin-left: 7.5rem;
+    }
+
     /* This is for the Power BI post and "online decode" posts. */
     .post img,
     .post iframe,
