@@ -3,35 +3,37 @@ layout: default
 comments: true
 ---
 {% include header.html %}
-<main class="wrapper">
-    {% include postContent.html title=page.title date=page.date content=content %}
-    <div class="post-tags">
-        <ul>
-            {% for tag in page.tags %}
-            <li>{{tag}}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="related-posts">
-        <h4>Related Posts</h4>
-        <ul>
-            {% assign total_post_selected = 0 %}
-            {% for post in site.related_posts %}
-                {% assign tags_match = 0 %}
-                {% for tag in post.tags %}
-                    {% if page.tags contains tag %}
-                        {% assign tags_match = tags_match | plus: 1 %}
+<main>
+    <div class="wrapper">
+        {% include postContent.html title=page.title date=page.date content=content %}
+        <div class="post-tags">
+            <ul>
+                {% for tag in page.tags %}
+                <li>{{tag}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="related-posts">
+            <h4>Related Posts</h4>
+            <ul>
+                {% assign total_post_selected = 0 %}
+                {% for post in site.related_posts %}
+                    {% assign tags_match = 0 %}
+                    {% for tag in post.tags %}
+                        {% if page.tags contains tag %}
+                            {% assign tags_match = tags_match | plus: 1 %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if tags_match >= 1 %}
+                        {% assign total_post_selected = total_post_selected | plus: 1 %}
+                        <li><a href="{{ post.url }}" title="{{ tags_match }} tags in common.">{{ post.title }}</a></li>
                     {% endif %}
                 {% endfor %}
-                {% if tags_match >= 1 %}
-                    {% assign total_post_selected = total_post_selected | plus: 1 %}
-                    <li><a href="{{ post.url }}" title="{{ tags_match }} tags in common.">{{ post.title }}</a></li>
+                {% if total_post_selected == 0 %}
+                    <li>No related posts.</li>
                 {% endif %}
-            {% endfor %}
-            {% if total_post_selected == 0 %}
-                <li>No related posts.</li>
-            {% endif %}
-        </ul>
+            </ul>
+        </div>
     </div>
 </main>
 <div class="disqus wrapper">

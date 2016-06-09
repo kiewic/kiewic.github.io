@@ -4,15 +4,12 @@ layout: default
 
 {% include header.html %}
 
-<div class="home">
-    <main class="wrapper">
-
+<main>
+    <div class="home wrapper">
         {% for post in site.posts limit:2 %}
-            {% assign content = post.content %}
             {% include postContent.html title=post.title date=post.date content=post.content url=post.url %}
             <div class="post-break"></div>
         {% endfor %}
-
         <div class="post-list">
             <h1>Archive</h1>
             {% for post in site.posts offset:2 %}
@@ -22,6 +19,6 @@ layout: default
                 </article>
             {% endfor %}
         </div>
-    </main>
-</div>
+    </div>
+</main>
 {% include footer.html %}
