@@ -43,6 +43,23 @@ Example:
 <span class="emojiText">
     <span title="dizzy face">&#128565;</span>
     <span title="alien monster">&#128126;</span>
+    <span title="octopus">&#x1F419;</span>
+    <span title="cookie">&#x1F36A;</span>
+    <span title="fist">&#x270A;</span>
+    <span title="thumbs up">&#x1F44D;</span>
+    <span title="turtle">&#x1F422;</span>
+    <span title="thumbs down">&#x1F44E;</span>
+    <span title="triangular flag on post">&#x1F6A9;</span>
+    <span title="cloud">&#x2601;</span>
+    <span title="envelope">&#x2709;</span>
+    <span title="hammer">&#x1F528;</span>
+    <span title="airplane">&#x2708;</span>
+    <span title="earth americas">&#x1F30E;</span>
+</span>
+
+Unicode Private Use Area (PUA) example:
+
+<span class="emojiText">
     <span title="camera">&#xE722;</span>
     <span title="comment">&#xE90A;</span>
     <span title="contact">&#xE77B;</span>
