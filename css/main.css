@@ -128,10 +128,9 @@ figure {
     text-decoration: underline;
 }
 
-.post-title,
-.post-title a,
-.post-title a:visited,
-.post-title a:hover {
+.post .post-title,
+.post .post-title a,
+.post .post-title a:visited {
     color: #000;
 }
 
