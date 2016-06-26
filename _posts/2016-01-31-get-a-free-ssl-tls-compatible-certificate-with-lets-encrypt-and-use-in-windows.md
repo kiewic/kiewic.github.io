@@ -44,6 +44,26 @@ Copy the resulting pfx file to your Windows machine, double click on it, and ins
 
 That's it, now the secure connection is trusted and you can go and spend those five dollars on a latte.
 
+## Renewing certificate
+
+Let's Encrypt certificate expire in 90 days. To renew the certificate, you will need to execute the next command:
+
+{% highlight shell %}
+sudo letsencrypt renew --manual-public-ip-logging-ok
+{% endhighlight %}
+
+And create a new pfx file with the resulting files as done above.
+
+## Backing up and restoring Let's Encrypt account files
+
+The key files that you need to keep backed up are:
+
+1. Your account directory at `/etc/letsencrypt/accounts/acme-v01.api.letsencrypt.org/directory/`
+2. Your domain config file at `/etc/letsencrypt/renewal/heyhttp.org.conf`
+3. Your domain keys directory at ` /etc/letsencrypt/live/heyhttp.org/`, which in reality are symbolic links to the archive of keys.
+4. The directory containing the archive of keys at `/etc/letsencrypt/archive/heyhttp.org/`
+
+
 
 [newsletter]: https://www.dreamhost.com/newsletter/0116.html
 [letsencrypt]: https://letsencrypt.org/
