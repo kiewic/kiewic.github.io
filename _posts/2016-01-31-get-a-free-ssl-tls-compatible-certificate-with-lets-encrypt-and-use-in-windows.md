@@ -60,7 +60,7 @@ The key files that you need to keep backed up are:
 
 1. Your account directory at `/etc/letsencrypt/accounts/acme-v01.api.letsencrypt.org/directory/`
 2. Your domain config file at `/etc/letsencrypt/renewal/heyhttp.org.conf`
-3. Your domain keys directory at ` /etc/letsencrypt/live/heyhttp.org/`, which in reality are symbolic links to the archive of keys.
+3. Your domain keys directory at `/etc/letsencrypt/live/heyhttp.org/`, which in reality are symbolic links to the archive of keys.
 4. The directory containing the archive of keys at `/etc/letsencrypt/archive/heyhttp.org/`
 
 
