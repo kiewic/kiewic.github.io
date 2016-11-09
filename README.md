@@ -4,6 +4,10 @@ Run Jekyll with Bundler:
 
     bundle exec jekyll serve
 
+Preview the site with drafts:
+
+    bundle exec jekyll serve --drafts
+
 ### Update
 
     bundle update github-pages
@@ -24,10 +28,6 @@ Run Jekyll with Bundler:
 - DISQUS
   - [Syntax highlighting][disqus-syntax-highlighting]
   - [What HTML tags are allowed within comments?][html-tags-are-allowed]
-
-To preview the site with drafts:
-
-    bundle exec jekyll serve --drafts
 
 [Development-Kit]: https://github.com/oneclick/rubyinstaller/wiki/Development-Kit
 [jekyllrb]: http://jekyllrb.com/docs/home/
