@@ -3,6 +3,7 @@ layout: post
 title: How to send text, JSON or files using HttpClient.PostAsync()
 date: 2014-10-23 00:00:00
 tags: [MSDN, Windows 10, UWP, Windows 8.1, Windows Phone 8.1, Windows Runtime, WinRT, Windows Store Apps, Windows.Web.Http]
+category: winrt
 permalink: /2014-10-23/how-to-send-text-json-or-files-using-httpclient-postasync
 ---
 
@@ -198,7 +199,6 @@ Cache-Control: no-cache
 {% endhighlight %}
 
 In PHP you can read the content with [file_get_contents("php://input")][php_file_get_contents]. In ASP.NET with [Request.InputStream][aspnet_inputstream].
-
 
 [msdn_json]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh770289.aspx
 [php_post]: http://php.net/manual/en/reserved.variables.post.php

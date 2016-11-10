@@ -2,6 +2,7 @@
 layout: post
 title: FtpWebRequest Alternative for Windows Universal and Windows Store Apps
 tags: [MSDN, Windows 8.1, Windows Phone 8.1, Windows 10, Windows Runtime, WinRT, Windows Store Apps, Windows Universal Apps, Windows.Networking.BackgroundTransfer, System.Net.FtpWebRequest, C#]
+category: winrt
 permalink: /2015-10-10/ftpwebrequest-alternative-for-windows-universal-and-windows-store-apps
 ---
 

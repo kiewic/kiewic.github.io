@@ -17,14 +17,8 @@ comments: true
             <h4>Related Posts</h4>
             <ul>
                 {% assign total_post_selected = 0 %}
-                {% for post in site.related_posts %}
-                    {% assign tags_match = 0 %}
-                    {% for tag in post.tags %}
-                        {% if page.tags contains tag %}
-                            {% assign tags_match = tags_match | plus: 1 %}
-                        {% endif %}
-                    {% endfor %}
-                    {% if tags_match >= 1 %}
+                {% for post in site.posts %}
+                    {% if post.category == page.category and post.url != page.url %}
                         {% assign total_post_selected = total_post_selected | plus: 1 %}
                         <li><a href="{{ post.url }}" title="{{ tags_match }} tags in common.">{{ post.title }}</a></li>
                     {% endif %}
