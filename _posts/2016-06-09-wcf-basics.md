@@ -13,7 +13,7 @@ However, there are situations in which, as a developer, you do need to deal with
 How the web service is exposed is defined in <binding> tags in the web.config file. There are three kinds of bindings:
 
 - `webHttpBinding` is an HTTP-based binding with XML or JSON.
-- `basicHttpBinding` and `wsHttpBinding` are SOAP-based bindings. A discussion of these two bindings are beyond the scope of this post. For more details, check this answer on stackoverflow.com.
+- `basicHttpBinding` and `wsHttpBinding` are SOAP-based bindings. A discussion of these two bindings are beyond the scope of this post. For more details, check [this stackoverflow answer][basichttpbinding-vs-wshttpbinding].
  
 When using the `webHttpBinding` binding, you also need to expose an `endpointBehaviors` in the web.config file.
 
@@ -135,7 +135,6 @@ public class FooThing
 
  
 And that's it.
- 
- 
- 
- 
+
+[basichttpbinding-vs-wshttpbinding]: http://stackoverflow.com/questions/2650785/basichttpbinding-vs-wshttpbinding-vs-webhttpbinding
+
