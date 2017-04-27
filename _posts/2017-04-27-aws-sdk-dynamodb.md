@@ -16,7 +16,7 @@ Then, open a terminal/console, and install the AWS Javascript SDK:
 npm install aws-sdk --save
 ````
 
-Then, copy and paste the following snippet into a Javascript file and execute. Don't forget to replace the region, the access key ID adn the access key ID.
+Then, copy and paste the following snippet into a Javascript file and execute. Don't forget to replace the region, the access key ID and the access key ID.
 
 <script src="https://gist.github.com/kiewic/b175e6a926d3ddd7277463980e8bd3b2.js"></script>
 
