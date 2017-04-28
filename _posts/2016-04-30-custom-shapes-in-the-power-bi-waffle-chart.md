@@ -27,11 +27,8 @@ And that is it.
 
 ## Live Example
 
-<iframe
-    style="width: 100%; height: 600px;"
-    src="https://app.powerbi.com/view?r=eyJrIjoiYzhhM2M0N2QtMmM5Yi00ZGFjLTg4MTItMDgyYjY3YTA1ZjExIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9"
-    frameborder="0" 
-    allowFullScreen="allowFullScreen"></iframe>
+<iframe style="width: 100%; height: 600px;" src="https://app.powerbi.com/view?r=eyJrIjoiYmEwYjg4Y2MtMTlhZS00ODhlLWFiZDUtYjgxZmIzNGUzODAyIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+
 
 ## Troubleshooting
 
