@@ -13,6 +13,15 @@ comments: true
                 {% endfor %}
             </ul>
         </div>
+    </div>
+</main>
+<section>
+    <div class="wrapper">
+        {% include facebookComments.html %}
+    </div>
+</section>
+<section>
+    <div class="wrapper">
         <div class="related-posts">
             <h4>Related Posts</h4>
             <ul>
@@ -29,8 +38,5 @@ comments: true
             </ul>
         </div>
     </div>
-</main>
-<div class="disqus wrapper">
-    {% include disqus.html %}
-</div>
+</section>
 {% include footer.html %}
