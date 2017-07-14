@@ -84,16 +84,6 @@ figure {
     text-decoration: none;
 }
 
-.site-header .left {
-    float:left;
-    margin-right: 20px;
-}
-
-.site-header .right {
-    float:left;
-    max-width: 50%;
-}
-
 .site-footer p {
     color: #999;
     text-align: center;
@@ -112,12 +102,22 @@ figure {
     padding-left: 0.25rem;
 }
 
+.site-title {
+    display: inline-block;
+}
+
+.site-title img {
+    vertical-align: middle;
+}
+
 .site-title h1 {
     font-size: 1.66rem;
+    vertical-align: middle;
+    display: inline-block;
 }
 
 .site-title a {
-    color: #000;
+    color: #002040;
 }
 
 .home a, .home a:visited {
