@@ -65,7 +65,7 @@ Icons in this article were obtained from the [AIGA collection created by Edward 
 [video-2]: https://www.youtube.com/watch?v=7z-UZKkbJaI
 [paths]: http://kiewic.com/paths
 [example-1]: https://drive.google.com/file/d/0B3v_NS_EPj8-UkIxX3RXTnczcFE/view?usp=sharing 
-[github]: https://github.com/kiewic/PowerBI-visuals/tree/waffleChartV2
+[github]: https://github.com/kiewic/PowerBI-WaffleChart
 [edward-boatman]: https://thenounproject.com/edward/collection/aiga/
 [thenounproject]: https://thenounproject.com/
 [live-example]: https://app.powerbi.com/view?r=eyJrIjoiYzhhM2M0N2QtMmM5Yi00ZGFjLTg4MTItMDgyYjY3YTA1ZjExIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9
