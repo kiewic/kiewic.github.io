@@ -103,7 +103,12 @@ figure {
 }
 
 .site-title {
-    display: inline-block;
+    display: table;
+}
+
+.site-title div {
+    display: table-cell;
+    padding-right: 0.75em; /* Leave some space between the monkey and the text */
 }
 
 .site-title img {
