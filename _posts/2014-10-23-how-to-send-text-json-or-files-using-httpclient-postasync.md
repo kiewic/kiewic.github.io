@@ -20,7 +20,7 @@ This is a common question in StackOverflow and MSDN forums. So, let’s take a l
 Send a string:
 
 {% highlight csharp %}
-// E.g. a JSON string.
+// E.g. a JSON string
 HttpStringContent stringContent = new HttpStringContent(
     "{ \"firstName\": \"John\" }",
     UnicodeEncoding.Utf8,
@@ -46,7 +46,7 @@ Cache-Control: no-cache
 { "firstName": "John" }
 {% endhighlight %}
 
-See here for examples of [how to serialize or parse JSON content][msdn_json].
+See here examples of [how to serialize or parse JSON content][msdn_json] on Windows Universal apps.
 
 ## HttpFormUrlEncodedContent
 
@@ -89,11 +89,11 @@ This is equivalent to submitting the following HTML form from a web browser:
 </form>
 {% endhighlight %}
 
-These values can be accessed from PHP using the [$_POST][php_post] array. Or from ASP.NET using [Request.Form][aspnet_form] property.
+The list of key-value pairs can be accessed from PHP using the [$_POST][php_post] array, or from ASP.NET using the [Request.Form][aspnet_form] property.
 
 ## HttpMultipartFormDataContent
 
-Send files, or text and files mixed, better known as **multipart/form-data**.
+Send files, or a mix of text and files, better known as **multipart/form-data**.
 
 First, create a sample file:
 
@@ -168,11 +168,11 @@ This is equivalent to submitting the following HTML form from a web browser:
 </form>
 {% endhighlight %}
 
-These values can be accessed from PHP using the [$_FILES][php_files] array. Or from ASP.NET using the [Request.Files][aspnet_files] property.
+The files can be accessed from PHP using the [$_FILES][php_files] array, or from ASP.NET using the [Request.Files][aspnet_files] property.
 
 ## HttpBufferContent
 
-**HttpBufferContent** is similar to **HttpStringContent**, however in this case, the content does not necessary need to be a sting, it can be a binary file or any sequence of bytes.
+**HttpBufferContent** is similar to **HttpStringContent**, however in this case, the content does not necessarily need to be a string, it can be a binary file or any sequence of bytes.
 
 {% highlight csharp %}
 IBuffer buffer = new byte[] { 0x1, 0x2, 0x3 }.AsBuffer();
