@@ -102,27 +102,29 @@ figure {
     padding-left: 0.25rem;
 }
 
-.site-title {
+.site-header .site-title {
     display: table;
 }
 
-.site-title div {
+.site-header .site-title div {
     display: table-cell;
     padding-right: 0.75em; /* Leave some space between the monkey and the text */
 }
 
-.site-title img {
+.site-header .site-title img {
     vertical-align: middle;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.site-title h1 {
+.site-header .site-title h1 {
     font-size: 1.66rem;
     vertical-align: middle;
     display: inline-block;
 }
 
-.site-title a {
-    color: #002040;
+.site-header .site-title a {
+    color: #333;
 }
 
 .home a, .home a:visited {
