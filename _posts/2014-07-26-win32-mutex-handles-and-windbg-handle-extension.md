@@ -9,15 +9,16 @@ tags:
 - Win32
 - WinDbg
 status: publish
-type: post
 published: true
 permalink: /2014-07-26/win32-mutex-handles-and-windbg-handle-extension
 icon: traffic-light.svg
 ---
-<p>A <strong>mutex</strong> is like a lock that is shared between processes. So if we run two instances of the following program at the same time, the second instance will hang/wait 10 seconds before acquiring the mutex.</p>
-<pre>#include "stdafx.h"
-#include &lt;Windows.h&gt;
-#include &lt;synchapi.h&gt;
+A **mutex** is like a lock that is shared between processes. So if we run two instances of the following program at the same time, the second instance will hang/wait 10 seconds before acquiring the mutex.
+
+{% highlight cpp %}
+#include "stdafx.h"
+#include <Windows.h>
+#include <synchapi.h>
 
 int main(int argc, _TCHAR* argv[])
 {
@@ -37,7 +38,7 @@ int main(int argc, _TCHAR* argv[])
     }
 
     // Countdown.
-    for (int i = 10; i &gt; 0; i--)
+    for (int i = 10; i > 0; i--)
     {
         wprintf(L"%d\r\n", i);
         Sleep(1000);
@@ -48,19 +49,30 @@ int main(int argc, _TCHAR* argv[])
     printf("Mutex released.\r\n");
 
     return 0;
-}</pre>
-<p>In Win32, once you get the mutex, you can distinguish between two different cases. The first case is <code style="font-style:inherit;">WAIT_OBJECT_0</code> and it means the previous owner released the mutex properly by calling <code style="font-style:inherit;">ReleaseMutex()</code> and the second case is <code style="font-style:inherit;">WAIT_ABANDONED</code> and it means the previous owner terminated without calling <code style="font-style:inherit;">ReleaseMutex()</code>.</p>
-<p>To reproduce the <code>WAIT_ABANDONED</code> case with the sample program, press <strong>CTRL + C</strong> in the first instance before the countdown hits zero.</p>
-<p>When using WinDbg, during live debugging or during dump analysis, the <strong>!handle</strong> extension comes very handy.</p>
-<p>Just get the handle value:</p>
-<pre>0:000&gt; dv
+}
+{% endhighlight %}
+
+In Win32, once you get the mutex, you can distinguish between two different cases. The first case is `WAIT_OBJECT_0` and it means the previous owner released the mutex properly by calling `ReleaseMutex()` and the second case is `WAIT_ABANDONED` and it means the previous owner terminated without calling `ReleaseMutex()`.
+
+To reproduce the `WAIT_ABANDONED` case with the sample program, press `CTRL + C` in the first instance before the countdown hits zero.
+
+When using WinDbg, during live debugging or during dump analysis, the `!handle` extension comes very handy.
+
+Just get the handle value:
+
+{% highlight hexdump %}
+0:000> dv
  argc = 0n1
  argv = 0x010f6f28
  handle = 0x00000038
  result = 0xcccccccc
- cacheMutexName = 0x003f5858 "HelloWorldMutex"</pre>
-<p>And print all the handle info:</p>
-<pre>0:000&gt; !handle 0x00000038 f
+ cacheMutexName = 0x003f5858 "HelloWorldMutex"
+{% endhighlight %}
+
+And print all the handle info:
+
+{% highlight bash %}
+0:000> !handle 0x00000038 f
 Handle 38
  Type Mutant
  Attributes 0
@@ -72,10 +84,15 @@ Handle 38
  Name \Sessions\BaseNamedObjects\HelloWorldMutex
  Object Specific Information
  Mutex is Owned
- Mutant Owner 11ac.1628</pre>
-<p>Now we know <strong>11ac.1628</strong> is the owner of the mutex:</p>
-<p>If we print the call stack for each thread in the second instance of the program:</p>
-<pre>0:000&gt; ~* kcn
+ Mutant Owner 11ac.1628
+{% endhighlight %}
+
+Now we know `11ac.1628` is the owner of the mutex:
+
+If we print the call stack for each thread in the second instance of the program:
+
+{% highlight hexdump %}
+0:000> ~* kcn
 
 .  0  Id: 29f8.778 Suspend: 1 Teb: 7f15c000 Unfrozen
  # 
@@ -95,10 +112,15 @@ Handle 38
 01 ntdll!DbgUiRemoteBreakin
 02 KERNEL32!BaseThreadInitThunk
 03 ntdll!__RtlUserThreadStart
-04 ntdll!_RtlUserThreadStart</pre>
-<p>We do not see any <strong>11ac.1628</strong> thread.</p>
-<p>But if we print the call stacks of the first process intance:</p>
-<pre>0:000&gt; ~* kcn
+04 ntdll!_RtlUserThreadStart
+{% endhighlight %}
+
+We do not see any `11ac.1628` thread.
+
+But if we print the call stacks of the first process intance:
+
+{% highlight hexdump %}
+0:000> ~* kcn
 
 .  0  Id: 11ac.1628 Suspend: 1 Teb: 7fe7d000 Unfrozen
  # 
@@ -119,10 +141,16 @@ Handle 38
 02 KERNEL32!BaseThreadInitThunk
 03 ntdll!__RtlUserThreadStart
 04 ntdll!_RtlUserThreadStart
-</pre>
-<p>Then we see the <strong>11ac.1628</strong> thread.</p>
-<p>In fact 0x11ac and 0x29f8 match the PID of the processes:</p>
-<pre>C:\&gt;tlist
+{% endhighlight %}
+
+Then we see the `11ac.1628` thread.
+
+In fact `0x11ac` and `0x29f8` match the PID of the processes:
+
+{% highlight doscon %}
+C:\>tlist
 4524 MutexExample.exe
-10744 MutexExample.exe</pre>
-<p>Happy handle debugging!</p>
+10744 MutexExample.exe
+{% endhighlight %}
+
+Happy handle debugging!
