@@ -220,50 +220,24 @@ figure {
     }
 }
 
-/* iPhone */
-@media screen and (max-device-width: 480px) {
-    body, head, div {
-        overflow-x: hidden; /* avoid horizontal scrolling because of long text */
-    }
-
-    .wrapper {
-        padding-left: 0.6em;
-        padding-right: 0.6em;
-    }
-
-    .post-list-item {
-        font-size: 1rem;
-        line-height: 1.25;
-    }
-
-    /* This is for the Power BI post and "online decode" posts. */
-    .post img,
-    .post iframe,
-    .post textarea {
-        max-width: 95%;
-    }
-}
-
 /* flexbox stuff */
 .post-list {
     display: flex;
     flex-direction: column;
 }
 
-.post-list-item {
+.post-list .post-list-item {
     display: flex;
     flex-direction: row;
     font-size: 1.2rem;
     margin-top: 2px;
     margin-bottom: 2px;
-    /* background-color: greenyellow; */
 }
 
-.post-list-item .post-list-date {
+.post-list .post-list-date {
     min-width: 120px;
     flex-grow: 0;
     color: #bbb;
-    /* background-color: tomato; */
 }
 
 .post-list .post-list-icon {
@@ -279,10 +253,6 @@ figure {
     margin-bottom: 2px;
 }
 
-svg path {
-    fill: #ff0066;
-}
-
 .post-list .post-list-title {
     flex-grow: 100;
 }
@@ -294,4 +264,34 @@ svg path {
 
 .post-list .post-list-title a:hover {
     color: #3091d1;
+}
+
+/* iPhone */
+@media screen and (max-device-width: 480px) {
+    body, head, div {
+        overflow-x: hidden; /* avoid horizontal scrolling because of long text */
+    }
+
+    .wrapper {
+        padding-left: 0.6em;
+        padding-right: 0.6em;
+    }
+
+    .post-list .post-list-item {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .post-list .post-list-date {
+        min-width: 100px;
+        flex-grow: 0;
+        color: #bbb;
+    }
+
+    /* This is for the Power BI post and "online decode" posts. */
+    .post img,
+    .post iframe,
+    .post textarea {
+        max-width: 95%;
+    }
 }
