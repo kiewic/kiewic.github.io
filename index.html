@@ -6,16 +6,16 @@ layout: default
 
 <main>
     <div class="home wrapper">
-        {% for post in site.posts limit:2 %}
+        {% for post in site.posts limit:0 %}
             {% include postContent.html title=post.title date=post.date content=post.content url=post.url %}
             <div class="post-break"></div>
         {% endfor %}
         <div class="post-list">
-            <h1>Archive</h1>
-            {% for post in site.posts offset:2 %}
+            {% for post in site.posts offset:0 %}
                 <article class="post-list-item">
-                    <span class="post-title"><a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
-                    <span class="post-time" ><time datetime="{{ post.date | date: "%FT%T%:z" }}">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+                    <div class="post-list-date" ><time datetime="{{ post.date | date: "%FT%T%:z" }}">{{ post.date | date: "%b %-d, %Y" }}</time></div>
+                    <div class="post-list-icon"><img src="{% if post.icon %}{{ post.icon | prepend: '/assets/images/' }}{% else %}/assets/images/not-found.svg{% endif %}" /></div>
+                    <div class="post-list-title"><a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
                 </article>
             {% endfor %}
         </div>

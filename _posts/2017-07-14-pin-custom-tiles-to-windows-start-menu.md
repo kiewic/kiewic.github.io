@@ -4,6 +4,7 @@ title: Pin useful information to Windows' start menu with the F8 app
 date: 2017-07-14 01:00:00.000000000 -07:00
 tags: [Windows, start menu, Windows 10, Windows store app]
 category: apps
+icon: pin.svg
 ---
 
 Download and install the [F8 app][f8] to convert Windows start menu tiles into *keyboard shortcut reminders* or notes about anything else.

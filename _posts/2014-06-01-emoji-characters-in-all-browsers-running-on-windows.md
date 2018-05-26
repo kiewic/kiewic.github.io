@@ -15,6 +15,7 @@ style: |
       font-size: 2rem;
       font-family: "Segoe MDL2 Assets", "Segoe UI Symbol";
   }
+icon: happy-poop.svg
 ---
 The following CSS snippet will display your Emoji characters correctly in all browsers running on Windows, including Internet Explorer and Google Chrome.
 

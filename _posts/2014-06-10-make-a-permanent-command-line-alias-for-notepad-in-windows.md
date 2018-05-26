@@ -12,6 +12,7 @@ status: publish
 type: post
 published: true
 permalink: /2014-06-11/make-a-permanent-command-line-alias-for-notepad-in-windows
+icon: terminal.svg
 ---
 
 Are you a huge fan of <a href="http://notepad-plus-plus.org/">Notepad++</a> like I am?

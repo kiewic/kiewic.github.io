@@ -133,9 +133,7 @@ figure {
     text-decoration: underline;
 }
 
-.post .post-title,
-.post .post-title a,
-.post .post-title a:visited {
+.post .post-title {
     color: #000;
 }
 
@@ -214,29 +212,6 @@ figure {
     margin-top: 5rem;
 }
 
-.post-list a,
-.post-list a:visited {
-    color: #4183c4;
-}
-
-.post-list-item {
-    position: relative;
-    font-size: 1.2rem;
-    line-height: 1.5;
-}
-
-.post-list-item .post-title {
-    display: block; /* Without this, the second row does not respect the margin-left. */
-    margin-left: 9rem;
-}
-
-.post-list-item .post-time {
-    color: #aaa;
-    position: absolute;
-    top: 0rem;
-    left: 0rem;
-}
-
 /* big screens */
 @media screen and (min-width: 1100px)
 {
@@ -261,14 +236,62 @@ figure {
         line-height: 1.25;
     }
 
-    .post-list-item .post-title {
-        margin-left: 7.5rem;
-    }
-
     /* This is for the Power BI post and "online decode" posts. */
     .post img,
     .post iframe,
     .post textarea {
         max-width: 95%;
     }
+}
+
+/* flexbox stuff */
+.post-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-list-item {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    /* background-color: greenyellow; */
+}
+
+.post-list-item .post-list-date {
+    min-width: 120px;
+    flex-grow: 0;
+    color: #bbb;
+    /* background-color: tomato; */
+}
+
+.post-list .post-list-icon {
+    min-width: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.post-list .post-list-icon img {
+    max-width: 24px;
+    max-height: 24px;
+    margin-bottom: 2px;
+}
+
+svg path {
+    fill: #ff0066;
+}
+
+.post-list .post-list-title {
+    flex-grow: 100;
+}
+
+.post-list .post-list-title a,
+.post-list .post-list-title a:visited {
+    color: #555;
+}
+
+.post-list .post-list-title a:hover {
+    color: #3091d1;
 }

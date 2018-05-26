@@ -4,6 +4,7 @@ title: HttpMultipartFormDataContent vs HttpMultipartContent
 tags: [MSDN, Windows 10, UWP, Windows 8.1, Windows Phone 8.1, Windows Runtime, WinRT, Windows Store Apps, Windows.Web.Http]
 category: winrt
 permalink: /2014-04-01/httpmultipartformdatacontent-vs-httpmultipartcontent
+icon: form.svg
 ---
 
 Here is an example of how to use the **HttpMultipartFormDataContent** class from the Windows.Web.Http namespace:

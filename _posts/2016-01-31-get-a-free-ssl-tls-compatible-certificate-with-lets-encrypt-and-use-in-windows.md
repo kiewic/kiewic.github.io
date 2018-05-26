@@ -3,6 +3,7 @@ layout: post
 title: How to get a free SSL/TLS compatible certificate from Let's Encrypt and make it work in Windows.
 date: 2016-01-31 12:00:00.000000000 -08:00
 tags: [SSL, TLS, OpenSSL, HeyHttp]
+icon: secure.svg
 ---
 
 Recently in the [Dreamhost newsletter][newsletter], I discovered that [Let's Encrypt][letsencrypt] has been offering, since December 2015, free certificates that are compatible with SSL/TLS. What a great chance to get a certificate for the [HeyHttp][heyhttp] project. [Comodo PositiveSSL][positivessl] certificates are available for 5 dollars, but why not keep your five dollars and get this free certificate?
