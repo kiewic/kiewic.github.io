@@ -173,17 +173,17 @@ figure {
 }
 
 .post-tags ul {
-    margin: 1em 0px 1em 0px;
+    margin: 2em 0px 1em 0px;
     padding: 0;
 }
 
 .post-tags li {
-    font-size: small;
+    font-size: x-small;
     line-height: 2.5em;
     color: #fff;
     list-style-type: none;
     display: inline;
-    background-color: #aaa;
+    background-color: #1976d2;
     margin: auto 5px auto 0px;
     padding: 4px 7px 4px 7px;
 }
