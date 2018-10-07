@@ -2,7 +2,7 @@
 layout: post
 title: Mexico City subway map for Android
 date: 2018-10-06 12:00:00.000000000 -07:00
-tags: [Windows, start menu, Windows 10, Windows store app]
+tags: [Android, app, Mexico City, CDMX]
 category: apps
 icon: app.svg
 ---
