@@ -4,7 +4,7 @@ title: WCF Basics
 date: 2016-06-09 00:00:00.000000000 -07:00
 tags: [WCF, ASP.NET, ASP.NET WebApi, C#, MSDN]
 category: .net
-icon: developer.svg
+icon: send
 ---
 
 Before ASP.NET WebApi, there was a technology called Windows Communication Foundation (WCF). WCF was mainly created to communicate between two systems using web services based on the SOAP protocol. But then, REST web services (based only on the HTTP protocol) gained wide popularity. WCF also added support for REST. But, ASP.NET WebApi is by far the preferred technology.

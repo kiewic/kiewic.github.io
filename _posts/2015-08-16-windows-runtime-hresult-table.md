@@ -4,7 +4,7 @@ title: Windows Runtime HRESULT Table
 date: 2015-08-16 00:00:00.000000000 -08:00
 tags: [WinRT, Windows Runtime, Windows Store Apps, UWP, Windows, MSDN]
 permalink: /2015-08-16/windows-runtime-hresult-table
-icon: error.svg
+icon: build
 ---
 
 ## Contents

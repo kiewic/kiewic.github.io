@@ -1,9 +1,9 @@
 ---
 layout: default
+material-design-icons: true
 ---
 
 {% include header.html %}
-
 <main>
     <div class="home wrapper">
         {% for post in site.posts limit:0 %}
@@ -13,8 +13,8 @@ layout: default
         <div class="post-list">
             {% for post in site.posts offset:0 %}
                 <article class="post-list-item">
-                    <div class="post-list-date" ><time datetime="{{ post.date | date: "%FT%T%:z" }}">{{ post.date | date: "%b %-d, %Y" }}</time></div>
-                    <div class="post-list-icon"><img src="{% if post.icon %}{{ post.icon | prepend: '/assets/images/' }}{% else %}/assets/images/not-found.svg{% endif %}" /></div>
+                    <div class="post-list-date"><time datetime="{{ post.date | date: "%FT%T%:z" }}">{{ post.date | date: "%b %-d, %Y" }}</time></div>
+                    <div class="post-list-icon"><i class="material-icons">{% if post.icon %}{{ post.icon }}{% else %}&#xE87C;{% endif %}</i></div>
                     <div class="post-list-title"><a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
                 </article>
             {% endfor %}

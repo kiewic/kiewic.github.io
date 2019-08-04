@@ -4,7 +4,7 @@ title: Accessing the Entity Framework Database Using the Command Prompt
 date: 2015-12-15 00:00:00.000000000 -08:00
 tags: [ASP.NET, Entity Framework, LocalDB]
 category: .net
-icon: database.svg
+icon: save
 ---
 
 Access a default database created by Entity Framework.

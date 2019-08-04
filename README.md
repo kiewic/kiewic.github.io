@@ -19,16 +19,18 @@ Preview the site with drafts:
 
 ### Docs
 
+- [Material Icons Guide][icons]
+- [Liquid for Designers][liquid-for-designers]
 - [Ruby Development Kit][Development-Kit]
 - [Jekyll docs][jekyllrb]
 - [Jekyll sites examples][jekyll-wiki]
 - [Code Snippet Highlighting][code-snippet-highlighting]
-- [Liquid for Designers][liquid-for-designers]
 - [kramdown Quick Reference][kramdown-quickref]
 - DISQUS
   - [Syntax highlighting][disqus-syntax-highlighting]
   - [What HTML tags are allowed within comments?][html-tags-are-allowed]
 
+[icons]: https://google.github.io/material-design-icons/
 [Development-Kit]: https://github.com/oneclick/rubyinstaller/wiki/Development-Kit
 [jekyllrb]: http://jekyllrb.com/docs/home/
 [jekyll-wiki]: https://github.com/jekyll/jekyll/wiki/Sites

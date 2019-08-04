@@ -4,7 +4,7 @@ title: Getting started with ASP.NET OData WebApi
 date: 2016-04-11 00:00:00.000000000 -08:00
 tags: [AspNet, OData]
 category: .net
-icon: vs.svg
+icon: web
 ---
 
 Some notes just for future reference.

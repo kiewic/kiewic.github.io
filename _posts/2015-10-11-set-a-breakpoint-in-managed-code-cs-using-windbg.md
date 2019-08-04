@@ -4,6 +4,7 @@ title: Set a Breakpoint in Managed Code (C#) Using WinDBG
 tags: [MSDN, WinDBG, Windows, Debugging, SOS.dll, C#]
 category: windbg
 permalink: /2015-10-11/set-a-breakpoint-in-managed-code-cs-using-windbg
+icon: extension
 ---
 
 How to set a breakpoint in managed code using WinDBG?

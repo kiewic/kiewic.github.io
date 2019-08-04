@@ -4,7 +4,7 @@ title: Custom Shapes in the Power BI Waffle Chart
 date: 2016-04-30 00:00:00.000000000 -08:00
 tags: [example, avatar, shapes, available code, image as a field, infographics, Microsoft Power BI, powerbi]
 category: powerbi
-icon: powerbi.svg
+icon: bar_chart
 ---
 
 Hello,

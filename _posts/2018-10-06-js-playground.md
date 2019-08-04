@@ -4,7 +4,7 @@ title: JavaScript playground
 date: 2018-10-06 13:00:00.000000000 -07:00
 tags: [JS, JavaScript, samples, d3js]
 category: javascript
-icon: js.svg
+icon: toys
 ---
 
 Try the examples:

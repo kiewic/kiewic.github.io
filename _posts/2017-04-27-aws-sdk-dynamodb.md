@@ -4,7 +4,7 @@ title: How to insert or delete items from a DynamoDB table using Node.js
 date: 2017-04-08 00:00:00.000000000 -07:00
 tags: [AWS, AWS SDK, DynamoDB, JavaScript]
 category: aws
-icon: aws.svg
+icon: delete
 ---
 
 To get started with DynamoDb, follow these steps:
