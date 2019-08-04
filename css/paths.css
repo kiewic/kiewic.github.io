@@ -1,0 +1,25 @@
+#theMainDiv {
+    border: 1px solid blue;
+    width: 33%;
+}
+
+#theOtherDiv svg {
+    border: 1px solid green;
+}
+
+#theOtherDiv input[type="text"] {
+width: 100%;
+}
+
+.rcorners {
+    border-radius:10px;
+    background: LemonChiffon;
+    margin: 10px 0px 10px 0px;
+    padding: 5px 15px 5px 15px;
+}
+
+.moreInfo {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: small;
+}

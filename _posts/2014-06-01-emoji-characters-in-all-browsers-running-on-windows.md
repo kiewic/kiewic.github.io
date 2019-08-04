@@ -10,11 +10,6 @@ tags:
 - Firefox
 published: true
 permalink: /2014-06-01/emoji-characters-in-all-browsers-running-on-windows
-style: |
-  .emojiText {
-      font-size: 2rem;
-      font-family: "Segoe MDL2 Assets", "Segoe UI Symbol";
-  }
 icon: happy-poop.svg
 ---
 The following CSS snippet will display your Emoji characters correctly in all browsers running on Windows, including Internet Explorer and Google Chrome.
@@ -37,11 +32,10 @@ Then apply the CSS style to your text:
 </p>
 {% endhighlight %}
 
-
-Example:
-
-
-<span class="emojiText">
+<div>
+    Example:
+</div>
+<div style="font-size: 2rem; font-family: 'Segoe MDL2 Assets', 'Segoe UI Symbol'">
     <span title="dizzy face">&#128565;</span>
     <span title="alien monster">&#128126;</span>
     <span title="octopus">&#x1F419;</span>
@@ -56,11 +50,11 @@ Example:
     <span title="hammer">&#x1F528;</span>
     <span title="airplane">&#x2708;</span>
     <span title="earth americas">&#x1F30E;</span>
-</span>
-
-Unicode Private Use Area (PUA) example:
-
-<span class="emojiText">
+</div>
+<div>
+    Unicode Private Use Area (PUA) example:
+</div>
+<div style="font-size: 2rem; font-family: 'Segoe MDL2 Assets', 'Segoe UI Symbol'">
     <span title="camera">&#xE722;</span>
     <span title="comment">&#xE90A;</span>
     <span title="contact">&#xE77B;</span>
@@ -75,4 +69,4 @@ Unicode Private Use Area (PUA) example:
     <span title="repair">&#xE90F;</span>
     <span title="settings">&#xE713;</span>
     <span title="world">&#xE909;</span>
-</span>
+</div>
