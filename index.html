@@ -1,9 +1,51 @@
 ---
 layout: default
+style: |
+  @font-face {
+    font-family: 'fontello';
+    src: url('/fontello/font/fontello.eot?59069982');
+    src:
+      url('/fontello/font/fontello.eot?59069982#iefix') format('embedded-opentype'),
+      url('/fontello/font/fontello.woff?59069982') format('woff'),
+      url('/fontello/font/fontello.ttf?59069982') format('truetype'),
+      url('/fontello/font/fontello.svg?59069982#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .demo-icon {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* You can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 ---
 
 {% include header.html %}
-
 <main>
     <div class="home wrapper">
         {% for post in site.posts limit:0 %}
@@ -13,8 +55,8 @@ layout: default
         <div class="post-list">
             {% for post in site.posts offset:0 %}
                 <article class="post-list-item">
-                    <div class="post-list-date" ><time datetime="{{ post.date | date: "%FT%T%:z" }}">{{ post.date | date: "%b %-d, %Y" }}</time></div>
-                    <div class="post-list-icon"><img src="{% if post.icon %}{{ post.icon | prepend: '/assets/images/' }}{% else %}/assets/images/not-found.svg{% endif %}" /></div>
+                    <div class="post-list-date"><time datetime="{{ post.date | date: "%FT%T%:z" }}">{{ post.date | date: "%b %-d, %Y" }}</time></div>
+                    <div class="post-list-icon"><i class="demo-icon">{% if post.fontIcon %}{{ post.icon }}{% else %}&#xe801;{% endif %}</i></div>
                     <div class="post-list-title"><a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
                 </article>
             {% endfor %}

@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="chart-bar" unicode="&#xe800;" d="M688-97l0 894 223 0 0-894-223 0z m-335 0l0 671 223 0 0-671-223 0z m-335 0l0 448 223 0 0-448-223 0z" horiz-adv-x="928" />
+
+<glyph glyph-name="chart-bar-1" unicode="&#xe801;" d="M357 350v-286h-143v286h143z m214 286v-572h-142v572h142z m572-643v-72h-1143v858h71v-786h1072z m-357 500v-429h-143v429h143z m214 214v-643h-143v643h143z" horiz-adv-x="1142.9" />
+
+<glyph glyph-name="mobile" unicode="&#xe802;" d="M480 840q42 0 71-29t29-71l0-780q0-40-29-70t-71-30l-380 0q-40 0-70 30t-30 70l0 780q0 42 30 71t70 29l380 0z m-190-940q30 0 50 15t20 35q0 22-20 36t-50 14q-28 0-49-15t-21-35 21-35 49-15z m210 150l0 660-420 0 0-660 420 0z" horiz-adv-x="580" />
+
+<glyph glyph-name="emo-wink" unicode="&#xe803;" d="M261 800c-60 0-109-65-109-144 0-80 49-145 109-145s110 65 110 145c0 79-49 144-110 144z m343-98c-29 0-54-24-54-54 0-30 25-54 54-54l267 0c30 0 54 24 54 54 0 30-24 54-54 54l-267 0z m342-501c-13 0-27-5-37-16-4-4-8-8-12-12-111-109-253-164-396-165-142-2-285 50-396 155l-3 3-12 12c-21 21-54 20-75-1-20-21-20-55 1-76 3-4 8-8 14-14l3-3c132-124 301-186 469-184 169 1 337 67 468 195 5 5 9 10 14 14 20 22 20 56-1 77-10 10-23 15-37 15z" horiz-adv-x="999" />
+
+<glyph glyph-name="code" unicode="&#xe804;" d="M1000 849l500-500-500-500-154 154 346 346-346 346z m-692-500l346-346-154-154-500 500 500 500 154-154z" horiz-adv-x="1500" />
+
+<glyph glyph-name="popup" unicode="&#xe805;" d="M1091 850v-636h-273v-364h-818v636h273v364h818z m-273-545h182v363h-636v-182h454v-181z m-727-364h636v364h-636v-364z" horiz-adv-x="1091" />
+
+<glyph glyph-name="facebook-squared" unicode="&#xf30e;" d="M752 770q44 0 76-31t32-75l0-646q0-44-32-76t-76-32l-162 0 0 310 114 0 0 134-114 0 0 70q0 30 28 30l86 0 0 152-96 0q-74 0-124-54t-50-132l0-66-104 0 0-134 104 0 0-310-326 0q-44 0-76 32t-32 76l0 646q0 44 32 75t76 31l644 0z" horiz-adv-x="860" />
+</font>
+</defs>
+</svg>
