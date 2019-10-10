@@ -153,7 +153,6 @@ category: feedly
 * [What's New In DevTools (Chrome 66)](https://developers.google.com/web/updates/2018/02/devtools?utm_source=feed&utm_medium=feed&utm_campaign=updates_feed) on Mar 19
 * [New in Chrome 65](https://developers.google.com/web/updates/2018/03/nic65?utm_source=feed&utm_medium=feed&utm_campaign=updates_feed) on Mar 18
 * [Unblocking Clipboard Access](https://developers.google.com/web/updates/2018/03/clipboardapi?utm_source=feed&utm_medium=feed&utm_campaign=updates_feed) on Mar 15
-* [Unblocking Clipboard Access](https://developers.google.com/web/updates/2018/03/clipboardapi?utm_source=feed&utm_medium=feed&utm_campaign=updates_feed) on Mar 15
 * [ASP.NET Core 2.1-preview1: Introducing HTTPClient factory](https://blogs.msdn.microsoft.com/webdev/2018/02/28/asp-net-core-2-1-preview1-introducing-httpclient-factory/) on Mar 3
 * [ASP.NET Core 2.1.0-preview1: Improvements for using HTTPS](https://blogs.msdn.microsoft.com/webdev/2018/02/27/asp-net-core-2-1-https-improvements/) on Mar 3
 * [Unlock Query Performance with SQL Data Warehouse using Graphical Execution Plans](https://azure.microsoft.com/blog/unlock-query-performance-with-sql-data-warehouse-using-graphical-execution-plans/) on Feb 22
