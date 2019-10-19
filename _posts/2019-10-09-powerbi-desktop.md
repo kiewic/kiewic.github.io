@@ -5,6 +5,33 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI Desktop October 2019 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-october-2019-feature-summary/)
+    * Reporting
+        * Automatic page refresh for DirectQuery (preview)
+    * Analytics
+        * The new Q&A visual
+        * Improved user experience for Q&A
+        * Natural Language improvements for Q&A
+        * Q&A tooling (Preview)
+        * Support for SSAS and Azure AS including RLS
+    * Visualizations
+        * PowerApps visual is now included by default
+        * New xViz visuals
+            * Hierarchical Variance Table
+            * Linear Gauge
+            * Tag Cloud
+    * Data connectivity
+        * Sagra Emigo connector generally available
+        * Azure Cost Management connector updated
+        * New Workplace Analytics connector
+    * Data Preparation
+        * Query diagnostics
+        * Data profiling enhancements
+    * Template Apps
+        * Project Web App
+    * Other
+        * New file format: .pbids
+        * Performance improvements for modeling operations
 * [Power BI Desktop September 2019 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-september-2019-feature-summary/)
     * Reporting
         * Color and text classes in themes
@@ -842,9 +869,3 @@ icon: powerbi.svg
         * Option to Merge/Append as New Query
     * Other Improvements
         * Auto-recover Desktop files
-
-<!--
-
-output = []; $('h2 a').each((x, y) => output.push(`* [${y.innerText}](https://powerbi.microsoft.com${y.getAttribute('href')})`)); output.join('\n')
-
--->
