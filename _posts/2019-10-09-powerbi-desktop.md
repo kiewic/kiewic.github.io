@@ -5,6 +5,73 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI Desktop December 2019 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-december-2019-feature-summary/)
+    * Reporting
+        * Customize current theme (preview)
+        * Export current theme
+        * Setting table column or matrix value as a custom URL
+        * KPI visual formatting settings
+        * New decomposition tree formatting
+        * Filter pane toggle button in the new ribbon
+        * Automatic Page Refresh query details (preview)
+    * Analytics
+        * Load more for Analyze insights
+        * New DAX function: Quarter
+    * Visualizations
+        * Personalization of the visualization pane is now generally available
+        * New xViz visuals
+            * Hierarchy tree
+            * Bullet chart
+            * Parallel Coordinates
+            * Gantt chart
+        * New Zebra BI visuals
+            * Zebra BI charts
+            * Zebra BI tables
+        * Drill Down Combo Bar PRO by ZoomCharts
+        * Annotated Bar by Queryon
+        * Tachometer 5 Ranges
+        * ValQ licensing updates
+    * Data connectivity
+        * Azure Data Lake Storage Gen2 connector is now generally available
+        * Power Platform Dataflows connector
+        * PostgreSQL connector now includes the Npgsql provider
+        * AtScale connector is now generally available
+        * Azure Time Series Insights connector
+        * Data Virtuality connector
+        * Zucchetti HR Infinity connector
+    * Data Preparation
+        * Updates to AI Insights functions (preview)
+    * Template apps
+        * Omnichannel insights for Dynamics 365
+        * Customer service analytics for Dynamics 365
+        * Microsoft Forms Pro for Customer Service
+* [Power BI Desktop November 2019 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-november-2019-feature-summary/)
+    * Other
+        * Modern ribbon (preview)
+    * Reporting
+        * Decomposition tree visual (preview)
+    * Analytics
+        * Conditionally format button formatting
+    * Visualizations
+        * ArcGIS Maps for Power BI update
+        * New xViz visuals
+            * Advanced Gauge
+            * Hierarchical Filter
+        * ZoomCharts Drill-Down Waterfall Visual
+        * Financial Reporting Matrix by Profitbase
+        * Distribution
+        * Tree
+    * Data connectivity
+        * LinkedIn Sales Navigator connector
+        * Edit SAP variables experience now generally available
+        * Vena connector
+        * SiteImprove connector
+        * Product Insights connector
+        * Web By Example connector – support for extracting links
+    * Data Preparation
+        * AI functions in Power Query (Preview)
+    * Template apps
+        * LinkedIn Sales Navigator for Sales Operations
 * [Power BI Desktop October 2019 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-october-2019-feature-summary/)
     * Reporting
         * Automatic page refresh for DirectQuery (preview)
