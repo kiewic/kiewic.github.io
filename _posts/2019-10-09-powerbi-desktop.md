@@ -5,6 +5,79 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI Desktop March 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-march-2020-feature-summary/)
+    * Reporting
+        * New action types for buttons
+            * Page navigation
+            * Drill through (preview)
+        * Multi-column sort for tables
+        * Dual axis for line chart
+        * Filter pane search
+        * Updates to decomposition tree
+            * Bars per level formatting option
+            * Updates to behavior of data bar length
+        * New ribbon is now on by default
+    * Modeling
+        * New DAX function: COALESCE
+    * Visualizations
+        * Waterfall chart by xViz
+        * Updates to ArcGIS Maps
+            * New connection options
+            * Enterprise support is now generally available
+            * Support for multiple reference layers
+            * New table of contents
+    * Template Apps
+        * Azure DevOps dashboard by Data Maru
+        * TeamsPower by Encamina
+    * Data preparation
+        * Query diagnostics is now generally available
+    * Data connectivity
+        * Hive LLAP connector
+        * Cognite connector
+    * Other
+        * Enhanced dataset metadata (preview)
+        * Using default system credentials for web proxy
+        * New instructor-led administrator in a day training
+* [Power BI Desktop February 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-february-2020-feature-summary/)
+    * Dataset management
+            * Incremental refresh is now generally available
+    * Reporting
+        * Hierarchical slicer (preview)
+        * Updates to the new ribbon (preview)
+            * Title bar updates
+            * Keytips
+            * Accessibility
+    * Modeling
+        * New DAX Functions
+            * FirstNonBlankValue
+            * LastNonBlankValue
+    * Visualizations
+        * Funnel and pyramid chart by xViz
+        * OEE Dashboard by 3AG Systems
+        * Organization chart by MAQ Software
+        * PI VIZpack by PQ Systems
+            * Histogram
+            * Individuals control chart
+            * Individuals and moving range control chart
+            * Multi-group individuals chart
+            * X-bar control chart
+            * X-bar and range control chart
+            * P-chart
+            * U-chart
+        * Updates to Zebra BI tables and charts
+    * Template Apps
+        * Microsoft 365 usage analytics
+        * NFL analytics by P3
+        * Acterys for Quickbooks, Xero & WorkflowMax
+    * Data preparation
+        * Non-admin support for query diagnostics
+    * Data connectivity
+        * MicroStrategy connector is now generally available
+        * FHIR connector is now generally available
+        * Factset connector
+        * TIBCO connector
+        * Jamf Pro connector
+        * Asana connector
 * [Power BI Desktop December 2019 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-december-2019-feature-summary/)
     * Reporting
         * Customize current theme (preview)
