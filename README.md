@@ -1,5 +1,9 @@
 # kiewic.github.io
 
+Install:
+
+    bundle install --path vendor/bundle
+
 Run Jekyll with Bundler:
 
     bundle exec jekyll serve
@@ -8,16 +12,16 @@ Preview the site with drafts:
 
     bundle exec jekyll serve --drafts
 
-### Update
+Update:
 
     bundle update github-pages
 
-### Versions Installed
+## Versions Installed
 
     ruby 2.1.6p336 (2015-04-13 revision 50298) [i386-mingw32]
     jekyll 3.1.6
 
-### Docs
+## Docs
 
 - [Ruby Development Kit][Development-Kit]
 - [Jekyll docs][jekyllrb]

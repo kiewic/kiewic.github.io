@@ -10,4 +10,4 @@ twitter:
   username: kiewic
 highlighter: rouge
 disqusid: 3372890
-exclude: ['tools']
+exclude: ['tools', 'vendor']
