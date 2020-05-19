@@ -5,6 +5,81 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI Desktop May 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-may-2020-feature-summary/)
+    * Reporting
+        * Curate featured tables for Excel (preview)
+        * Apply all filters (preview)
+        * Enhancements to change detection (preview)
+            * Change detection simulation in Desktop
+            * Change detection queries in Performance Analyzer
+        * Drill through button action is now generally available
+            * Conditionally set the drill through destination
+            * Conditionally format disabled and enabled state tooltips
+            * Customize formatting for the disabled state
+        * Enhancements to page navigation action
+            * Conditionally set the navigation destination
+            * Support for shapes and images
+        * Buttons now support fill images
+        * Drop shadow support for visuals
+        * Filter pane migration
+    * Analytics
+        * Decomposition tree is now generally available
+    * Visualizations
+        * Packed bubble chart by xViz
+        * Updates to hierarchy filter by xViz
+        * Power Apps visual is now compatible with all languages supported in Power BI
+    * Modeling
+        * List separator and decimal symbol will now default to the standard DAX separators
+    * Data preparation
+        * Direct Query on Dataflows
+        * Web by example now automatically suggests tables by default
+        * Enhancements to Query Diagnostics: Privacy Level partitions
+    * Data connectivity
+        * Witivio connector
+        * Linkar connector
+        * Webtrends connector
+        * Planview ProjectPlace connector
+        * Shortcuts Business Insights connector
+        * Vessel Insights connector
+        * Zoho Creator connector
+    * Other
+        * Dataset impact analysis
+* [Power BI Desktop April 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-april-2020-feature-summary/)
+    * Reporting
+        * Personalize visuals (preview)
+        * Change detection for page refresh (preview)
+        * Relative time filter (preview)
+        * Rectangular lasso select across visuals
+        * Conditional formatting for totals and subtotals in table and matrix
+        * Customize theme dialog is now generally available
+        * Improved discoverability for conditional formatting
+    * Analytics
+        * Direct Query support for AI visuals
+            * Decomposition tree
+            * Key influencers
+        * Decomposition tree now supports tooltips
+        * Q&A updates
+            * Suggest questions
+            * Teach Q&A now supports measure conditions
+            * Q&A is now supported on Power BI datasets
+    * Visualizations
+        * Radar/Polar chart by xViz
+        * Comicgen by Gramener
+        * Pareto by sio2Graphs
+        * Growth Rate Combo Chart by Djeeni
+        * Smart Filter Pro by OKViz
+        * New Visualization icons
+    * Template Apps
+        * Power Platform Center of Excellence StartKit
+        * Azure Cognitive Search: analyze logs and metrics
+        * COVID-19 Apps
+    * Data preparation
+        * Enhancements to Query Diagnostics
+    * Data connectivity
+        * CDM Folder view for Azure Data Lake Storage Gen2
+    * Other
+        * New instructor-led training
+* [Announcing the New Personalize Visuals Experience for Power BI Reports](https://powerbi.microsoft.com/en-us/blog/announcing-the-new-personalize-visuals-experience-for-power-bi-reports/)
 * [Power BI Desktop March 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-march-2020-feature-summary/)
     * Reporting
         * New action types for buttons
