@@ -115,7 +115,7 @@ icon: powerbi.svg
         * New instructor-led administrator in a day training
 * [Power BI Desktop February 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-february-2020-feature-summary/)
     * Dataset management
-            * Incremental refresh is now generally available
+        * Incremental refresh is now generally available
     * Reporting
         * Hierarchical slicer (preview)
         * Updates to the new ribbon (preview)
