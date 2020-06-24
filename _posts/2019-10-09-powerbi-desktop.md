@@ -5,6 +5,39 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI Desktop June 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-june-2020-feature-summary/)
+    * Reporting
+        * Enhancements to mobile layout authoring
+            * New phone emulator
+            * Updated visualization pane
+            * Support for overlaid visuals
+        * Automatic page refresh is now generally available
+        * Hierarchical slicer is now generally available
+            * New options for expand/collapse icons
+            * Icons now scale with font size
+            * Ability to customize indentation for child items
+            * Supported with AI visuals
+        * Modern ribbon is now generally available
+        * RLS is now supported for Featured Tables in Excel’s Data Types gallery
+    * Analytics
+        * AI insights are now generally available
+    * Visualizations
+        * Line chart dot formatting options
+        * Radar chart by MAQ Software
+        * ValQ for Modern Visual Planning
+        * Advanced Trellis by xViz
+        * Updates to Gantt chart by xViz
+        * Updates to Cards with States by OKViz
+    * Template apps
+        * Agile HR Analytics
+        * Uber User Data Report
+    * Modeling
+        * Model view enabled for live connect (preview)
+        * Updates to Model view
+    * Data connectivity
+        * Palantir Foundry connector
+    * Other
+        * New Power BI trainings
 * [Power BI Desktop May 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-may-2020-feature-summary/)
     * Reporting
         * Curate featured tables for Excel (preview)
