@@ -5,6 +5,179 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI November 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-november-2020-feature-summary/)
+    * Reporting
+        * New Field List (Preview)
+        * New Model View (Preview)
+        * Apply all filters is now generally available
+        * Visual Zoom Slider
+        * Data point rectangle select extended to Map visual
+        * Certificate revocation check for web connections
+        * Paginated Reports Updates
+        * Crediting total labels for stacked visuals (Sept 2020)
+    * Analytics
+        * Anomaly Detection (Preview)
+        * Q&A now supports partial matching data values
+    * Data connectivity
+        * Hive LLAP connector generally available
+        * New connectors: Actian, Anaplan, Starburst Presto
+    * Service
+        * Certified and Promoted reports and apps
+        * The ‘new look’ of the Power BI service is live
+    * Visualizations
+        * New Visualizations
+        * Zebra BI 4.4
+        * New Visual by ZoomCharts: Drill Down Map PRO
+        * xViz Scatter/ Bubble chart
+        * Editor’s picks
+    * Developers
+        * Power BI Automation and APIs
+        * Fetch more data API 3.4
+        * Enhanced testing of your developed custom visual
+    * Coming Soon
+* [Power BI October 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-october-2020-feature-summary/)
+    * Reporting
+        * Canvas watermarks
+        * Personalize visuals is now generally available
+        * Data point rectangle select for Treemap
+    * Analytics
+        * Export data from Q&A visual
+    * Data preparation
+        * Dynamic M Query Parameters (preview)
+        * Automatic Table Detection from Excel files
+        * Automatic Table Detection from JSON files
+    * Data connectivity
+        * Broader geographical support for Power Platform Dataflows connector
+        * MariaDB now supports DirectQuery
+        * Updated SharePoint Online List Connector
+        * New connectors
+            * Spigit
+            * eWay-CRM
+    * Service
+        * Updates to the ‘new look’ experience and release plan
+    * Mobile
+        * Power BI for HoloLens 2 (preview)
+        * Automatic page refresh is now supported on the Windows app
+        * Support for notch displays
+    * Embedded
+        * Power BI Automation and APIs
+        * Power BI Embedded Analytics
+    * Visualizations
+        * Extended admin capability features are now generally available!
+        * New visuals
+        * Zebra BI Charts (version 4.3)
+        * Zebra BI Tables (version 4.3)
+        * RoadMap by ADWISE (version v1.5.0)
+        * ZoomCharts (version 1.6)
+        * Bullet Chart by xViz
+        * Editor’s picks
+    * Template Apps
+        * Simplified installation
+        * Find template apps from the Power BI Desktop
+        * DirectQuery support for template apps
+    * Community
+        * Power Platform Community Conference
+        * Data Stories Gallery theme
+    * Other
+        * Export data source to PBIDS in Power BI Desktop
+        * Icon update
+        * Desktop splash screen dismiss
+* [Power BI September 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-september-2020-feature-summary/)
+    * Analytics
+        * Smart narratives (preview)
+        * Q&A now supports arithmetic operations
+    * Reporting
+        * Data point rectangle select for additional charts
+        * Added general visual option to maintain layer order 
+        * Search for a workspace during publish
+        * Total labels for stacked visuals
+        * Mobile authoring enhancements
+        * Bookmark pane is now available in the Mobile layout view
+        * New options: turn off gridlines and snap to grid.
+    * Mobile
+        * Improved navigation tree (iOS and Android)
+        * Share from Power BI using your favorite apps (iOS and Android)
+        * Pinch and zoom is now available in all report views – on both phones and tablets (iOS and Android)
+        * Auto play a slideshow on startup (Windows)
+    * Service
+        * New capabilities in lineage view
+            * Search within lineage view
+            * Data source impact analysis
+        * Excel inherits the Power BI dataset’s sensitivity label when using a PivotTable connection
+        * Analyze in Excel provides Excel file instead of .ODC
+        * Deployment pipelines is now generally available
+    * Modeling
+        * Enhanced Dataset Metadata is now generally available
+        * Performance improvements to aggregation expressions involving columns of currency data type
+    * Data connectivity
+        * CDS connector (preview)
+        * Azure Databricks
+        * MariaDB
+        * Hexagon PPM Smart API
+        * Other data connectivity updates
+    * Community
+        * Spanish language community forum is now available
+        * Data Stories Gallery theme for October
+    * Visualizations
+        * Collage by CloudScope
+        * Advanced Trellis / Small Multiples Chart by xViz
+        * Waterfall Chart by xViz
+        * Editor’s picks
+    * Template Apps
+        * Multichannel Attribution Dashboard
+        * Workplace Analytics Dashboard
+* [Power BI Desktop August 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-august-2020-feature-summary/)
+    * Reporting
+        * Perspectives support for Personalize visuals (preview)
+        * Rectangular lasso select for data points (preview)
+        * Added dynamic formatting support to more visuals
+    * Analytics
+        * Direct Query support for Q&A (preview)
+    * Visualizations
+        * Linear Gauge by xViz
+        * Advanced Pie & Donut by xViz
+        * Ratings visual by TME AG
+        * Toggle switch by TME AG
+        * Drill down Pie PRO by ZoomCharts
+        * ADWISE RoadMap
+        * Updates to ArcGIS Maps
+        * Extending Admin capabilities for AppSource visuals
+    * Template Apps
+        * Agile CRM Analytics for Dynamics 365
+    * Data Preparation
+        * Text/CSV By Example (preview)
+    * Data connectivity
+        * Cherwell connector
+        * Automation Anywhere connector
+        * Acterys connector
+* [Power BI Desktop July 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-july-2020-feature-summary/)
+    * Reporting
+        * Gradient legend
+        * Ability to further customize slicer header text
+        * Relative time filter is now generally available
+    * Analytics
+        * Enhancements to Q&A
+            * Field synonyms
+            * Visual renames as suggested synonyms
+            * Orange underlines for ambiguous terms
+            * Updates to Q&A pop-out
+    * Visualizations
+        * Azure Maps visual (preview)
+            * Bubble layer
+            * 3D bar chart layer
+            * Reference layer
+            * Custom tile layer
+            * Real-time traffic overlay
+        * Updates to Multi-Axis Chart by xViz
+    * Modeling
+        * Support for Excel financial functions
+        * Model view enabled for live connect is now generally available
+    * Data Preparation
+        * Global option to disable automatic type detection
+    * Template Apps
+        * YouTube Analytics by MAQ Software
+    * Other
+        * Launch external tools from Power BI Desktop (preview)
 * [Power BI Desktop June 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-june-2020-feature-summary/)
     * Reporting
         * Enhancements to mobile layout authoring
