@@ -5,6 +5,50 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI December 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-december-2020-feature-summary/)
+    * Reporting
+        * DirectQuery for Power BI datasets and Azure Analysis Services (preview)
+        * Small multiples (preview)
+        * Data protection sensitivity labels in Power BI Desktop (preview)
+        * Increased rectangle select data point limit
+        * Selection pane is now available in the mobile layout view
+        * Automatic page refresh for Analysis Services and Power BI datasets
+    * Data preparation
+        * Recent changes to Power Query and Dataflows
+    * Data connectivity
+        * Microsoft Dataverse Connector
+        * Azure Time Series Insights Update
+        * SurveyMonkey Update
+        * Cognite Update
+    * Service
+        * Power BI search in Microsoft Search in Bing and Office now generally available
+        * Home List experience
+        * Custom publish message
+        * New export settings are available in the Power BI admin portal
+        * Power BI Premium per user public preview now available
+        * Quickly create reports in the Service (coming soon)
+    * Mobile
+        * Dark mode support in the Power BI Android app
+        * Anomaly detection is now supported in all mobile apps (iOS, Android and Windows)
+    * Embedded
+        * New look for Embedded scenarios
+        * New capabilities in embedding for your organization
+        * Personalize visuals experience now fully supported on embedded scenarios
+        * New Q&A embed experience
+        * Power BI APIs & Life-Cycle Management
+        * Coming Soon
+    * Visualizations
+        * New visuals
+        * Strip Plot by Nova Silva
+        * Intelligent Narratives by Arria NLG
+        * Editor’s picks
+    * Template Apps
+        * Test Your Analytics Maturity
+        * Apps on AppSource
+        * Power BI Gold suite
+    * Developers
+        * New Admin APIs and Service Principal authentication to make for better tenant metadata scanning
+        * Power BI Visuals Platform adds support for conditional formatting
 * [Power BI November 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-november-2020-feature-summary/)
     * Reporting
         * New Field List (Preview)
