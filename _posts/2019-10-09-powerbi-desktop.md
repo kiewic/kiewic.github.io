@@ -5,6 +5,91 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI March 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-march-2021-feature-summary/)
+    * Reporting
+        * DirectQuery for Power BI datasets and Azure Analysis Services (preview)
+        * Advanced Data Selection in Azure Maps Visual
+        * Color Picker Updates
+        * Updates to new Field List (preview)
+        * Word-wrap in Small Multiples titles (preview)
+        * Updates to background settings on Small Multiples (preview)
+    * Analytics
+        * X axis constant line for line charts
+    * Modeling
+        * Model View UI (preview)
+        * IF.EAGER
+        * CALCULATE filters are easier to use
+    * Data connectivity
+        * Kerberos-based SSO for Denodo
+        * Certified Connectors
+    * Service
+        * Featured content on Home Updates
+        * View dataset details from workspace list view
+        * Filter apps gallery to view only endorsed apps
+    * Visualizations
+        * New visuals
+        * SMART KPI List by Nova Silva
+        * Comparison Chart
+        * Combo Bar PRO Visual
+        * Editor’s picks
+    * Template Apps
+        * Download PBIX files for installed template apps
+        * Analyze Popular Stocks with Power BI
+        * Facebook Ads Overview Report – by Windsor.ai
+    * Embedded
+        * The new Power BI embedded analytics playground
+        * Power BI Embedded Generation 2 (preview)
+        * Power BI embedded analytics new Contoso demo
+        * New Client API documentation
+    * Other
+        * Windows 7 Deprecation
+        * Certificate revocation check controls now available in Desktop interface
+        * External Tools integration in Desktop generally available
+        * Power BI instructor led training – Advanced Data Modeling and data shaping
+        * Desktop change log
+* [Power BI February 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-february-2021-feature-summary/)
+    * Reporting
+        * DirectQuery for PBI datasets and Azure Analysis Services Updates (preview)
+        * Search Bar
+        * Model View Updates (preview)
+        * New Field List (preview)
+        * Small Multiples (preview): gridlines and background colors
+        * Color picker
+        * Smart guides for aligning objects are now available in the mobile layout view
+        * New filter operations: “is empty” and “is not empty”
+        * More granular control over certificate revocation check for web connections
+    * Analytics
+        * Anomaly detection now in ribbon
+    * Data connectivity
+        * Snowflake: Support for Custom Roles
+        * Parquet Files: Connector Available in Power BI Desktop
+        * Hive LLAP: Support for Windows Authentication
+        * Salesforce: API Update
+        * SAP HANA and BW: New Documentation
+    * Service
+        * Email subscription attachment
+    * Mobile
+        * Easily find your org’s endorsed content using the mobile app
+        * Power BI free license users can now navigate to workspaces in the mobile apps
+    * Visualizations
+        * New visuals
+        * Shielded HTML Viewer by Nova Silva
+        * Zebra BI Tables (version 4.5)
+        * Zebra BI Charts (version 4.5)
+        * ValQ 2.0 Released with Connected and Collaborative Planning Features
+        * Drill Down Combo PRO by ZoomCharts
+        * Editor’s picks
+    * Template Apps
+        * Microsoft partners: Installing a preconfigured template app
+        * Sales Analytics AI for Microsoft Business Central
+    * Developers
+        * Visual container fix
+        * EnumObjectInst with no datarole support
+    * Other
+        * New icon update
+        * Heads up: Microsoft 365, including Power BI, ending support for Internet Explorer 11 and legacy version of Microsoft Edge
+        * Paginated reports export API is now generally available
+        * Instructor led training February 24th and 25th
 * [Power BI December 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-december-2020-feature-summary/)
     * Reporting
         * DirectQuery for Power BI datasets and Azure Analysis Services (preview)
