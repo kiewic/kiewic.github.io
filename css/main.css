@@ -269,9 +269,10 @@ figure {
 }
 
 /* iPhone */
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 500px) {
     body, head, div {
         overflow-x: hidden; /* avoid horizontal scrolling because of long text */
+        /* background-color: tomato; */
     }
 
     .wrapper {
@@ -285,9 +286,7 @@ figure {
     }
 
     .post-list .post-list-date {
-        min-width: 100px;
-        flex-grow: 0;
-        color: #bbb;
+        display: none;
     }
 
     /* This is for the Power BI post and "online decode" posts. */
