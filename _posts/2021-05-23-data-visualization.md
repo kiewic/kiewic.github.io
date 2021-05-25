@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Data visualization tweets
+title: Best data visualization tweets
 date: 2021-05-23 00:00:00.000 -07:00
 category: twitter
+icon: powerbi.svg
 ---
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
