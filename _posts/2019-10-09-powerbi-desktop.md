@@ -5,6 +5,179 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI July 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-july-2021-feature-summary/)
+    * Reporting
+        * Small multiples
+        * Conditional formatting for more properties
+        * Power BI’s built-in visuals now include the Power Automate visual
+        * Sensitivity labels in Power BI Desktop
+        * Republish PBIX with option to not override label in destination.
+        * Inherit sensitivity label set to Excel files when importing data into Power BI
+    * Modeling
+        * New Model View
+        * DirectQuery for Azure Analysis Services & Power BI datasets Updates
+    * Data connectivity
+        * Amazon Athena (new connector)
+        * Databricks (updated connector)
+        * Dremio (updated connector)
+        * MariaDB (updated connector)
+    * Service
+        * Streaming dataflows
+        * Mandatory label policy
+        * Custom help link for sensitivity labels
+        * Datasets hub improvements
+        * Goals support in lineage view
+        * Scanner API (Admin REST APIs) enhancements to include dataset tables, columns, measures, DAX expressions, and mashup queries 
+    * Visualizations
+        * New visuals
+        * Charticulator (custom visual version 1.0.5)
+        * Multiple Sparklines
+        * Acterys Reporting
+        * PureViz Infographic – from PowerPoint to Power BI
+        * Dynamic radial bar chart by JTA
+        * Drill Down Waterfall PRO
+        * Control Chart XmR by Nova Silva
+        * Editor’s picks
+    * Template apps
+        * Analyze your email marketing performance using Mailchimp and ActiveCampaign
+    * Other
+        * Power BI Desktop Installer Changes & WebView2
+* [Power BI June 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-june-2021-feature-summary/)
+    * Reporting
+        * Paginated reports visual
+        * Area chart transparency sliders
+        * Inner padding for continuous axes
+        * Small multiples: responsiveness and conditional formatting
+    * Analytics
+        * Q&A improvement for inferred results
+    * Modeling
+        * Format strings now persisted when using DirectQuery for Power BI datasets and Azure Analysis Services
+    * Data preparation
+        * DirectQuery support for Dataflows
+        * Select all operation is now supported for Dynamic M Query Parameters 
+    * Data connectivity
+        * Assemble Views (new connector)
+        * BQE Core (new connector)
+        * SumTotal (new connector)
+        * Adobe Analytics (updated connector)
+        * Anaplan (updated connector)
+        * Azure Databricks (updated connector)
+        * Cognite Data Fusion (updated connector)
+        * Dynamics 365 Business Central (updated connector)
+        * FactSet Analytics (updated connector)
+        * Google BigQuery (updated connector)
+        * Starburst Enterprise (updated connector)
+        * Vessel Insight (updated connector)
+        * Workplace Analytics (updated connector)
+        * Snowflake (updated connector)
+        * Azure Consumption Insights (connector deprecated)
+    * Service
+        * Datasets discoverability
+        * Request access to datasets
+        * Mandatory label policy for Microsoft Information Protection sensitivity labels
+        * Admin API to Set and Remove Microsoft Information Protection sensitivity labels
+        * Automate deployments with new APIs and PowerShell samples 
+        * Manage Dataflows in deployment pipelines 
+        * Admin APIs for deployment pipelines
+    * Mobile
+        * A new look for the Power BI Windows app 
+        * Passing URL parameters to paginated reports
+    * Visualizations
+        * New visuals
+        * Drill Down Combo Bar PRO by ZoomCharts
+        * Dumbbell Bar Chart by Nova Silva
+        * graphomate bubbles 2021.2
+        * Zebra BI Tables 5.0
+        * Zebra BI Charts 5.0
+        * Editor’s picks
+    * Template apps
+        * Template app one-click update and republish
+        * Salesforce Analytics for Sales Managers
+    * Other
+        * Power BI Desktop Installer Changes
+        * June update of Power BI Report Builder
+        * Report action bar now available in the Power BI SharePoint Online Webpart
+* [Power BI May 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-may-2021-feature-summary/)
+    * Reporting
+        * Modern visual tooltips
+        * Small multiples: now on by default and updated roadmap
+        * New field list
+        * Support for removing the sensitivity label in Desktop
+    * Analytics
+        * Smart Narratives and Anomaly detection
+        * Q&A now supports DirectQuery for Power BI datasets and Azure Analysis Services
+    * Modeling
+        * DirectQuery for Power BI datasets and Azure Analysis Services
+        * Model View Updates
+    * Data connectivity
+        * New Connector: EQuIS
+        * Connector Update: Automation Anywhere
+        * Connector Update: Vena
+        * Connector Update: Azure Databricks
+        * Connector Update: Amazon Redshift
+        * Connector Update: Vertica
+        * Connector Deprecation: Microsoft Graph Security
+    * Service
+        * Quickly create reports from SharePoint lists
+        * Reports, apps and dataflows endorsement
+        * Datasets hub improvements
+        * Quick Edit Paginated Reports from the Service
+        * Single sign-on enabled for new on-premises data sources for paginated reports
+        * Downstream inheritance for sensitivity labels
+    * Mobile
+        * Work side by side with other apps on your iPad or Android tablet
+    * Visualizations
+        * New visuals
+        * ADWISE roadmap v2.0
+        * Bubble chart by Akvelon
+        * Cycle Plot by Nova Silva
+        * Drill Down Donut PRO by ZoomCharts
+        * Drill Down Map PRO by ZoomCharts
+        * Drill Down Pie PRO by ZoomCharts
+        * graphomate charts 2021.2
+        * graphomate matrix 2021.2
+        * Editor’s picks
+    * Template apps
+        * Dataflows Snapshot Analysis
+    * Developers
+        * Dialog boxes support for Power BI custom visuals
+        * Displaying a warning icon for a custom visual
+    * Other
+        * Share and Collaborate in Excel for the web connected to Power BI
+* [Power BI April 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-april-2021-feature-summary/)
+    * Reporting
+        * Power Automate for Power BI
+        * Small multiples: padding controls and combo chart support
+        * New and improved shapes
+        * Invert axis and continuous axis sorting
+    * Modeling
+        * DirectQuery for Power BI datasets and Azure Analysis Services
+        * CROSSFILTER supports many-to-many relationships
+        * Performance improvements to IF and SWITCH functions
+    * Data connectivity
+        * New Connector: Bloomberg Data and Analytics
+        * New Connector: SoftOne BI
+        * Text/CSV By Example now generally available
+        * Automatic Table Detection from Excel files now generally available
+        * Automatic Table Detection from JSON files now generally available
+    * Service
+        * Easy report sharing via links
+        * Improving the Create on top of published dataset experience
+        * New capabilities in Deployment Pipelines
+        * Enhancements to Sensitivity Labels
+            * Sensitivity labels in Power BI embedded now generally available
+            * Securing the full data journey from Azure to Office
+            * Admin API to Set and Remove labels in Power BI
+    * Visualizations
+        * Microsoft Charticulator visual
+        * New visuals
+        * Financial Reporting Matrix by Profitbase
+        * Merged Bar Chart by Nova Silva
+        * Editor’s picks
+    * Developers
+        * API v3.6.0 is now available
+    * Other
+        * Simplifying collection of diagnostic information
 * [Power BI March 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-march-2021-feature-summary/)
     * Reporting
         * DirectQuery for Power BI datasets and Azure Analysis Services (preview)
