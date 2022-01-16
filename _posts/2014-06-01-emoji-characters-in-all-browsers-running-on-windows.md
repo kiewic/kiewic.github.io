@@ -9,7 +9,7 @@ tags:
 - Internet Explorer
 - Firefox
 published: true
-permalink: /2014-06-01/emoji-characters-in-all-browsers-running-on-windows
+permalink: /emoji-characters-in-all-browsers-running-on-windows
 icon: happy-poop.svg
 ---
 The following CSS snippet will display your Emoji characters correctly in all browsers running on Windows, including Internet Explorer and Google Chrome.

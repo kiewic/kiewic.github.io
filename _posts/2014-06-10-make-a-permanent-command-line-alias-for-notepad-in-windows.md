@@ -11,7 +11,7 @@ tags:
 status: publish
 type: post
 published: true
-permalink: /2014-06-11/make-a-permanent-command-line-alias-for-notepad-in-windows
+permalink: /make-a-permanent-command-line-alias-for-notepad-in-windows
 icon: terminal.svg
 ---
 

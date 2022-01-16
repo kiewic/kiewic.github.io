@@ -10,7 +10,7 @@ tags:
 - WinDbg
 status: publish
 published: true
-permalink: /2014-07-26/win32-mutex-handles-and-windbg-handle-extension
+permalink: /win32-mutex-handles-and-windbg-handle-extension
 icon: traffic-light.svg
 ---
 A **mutex** is like a lock that is shared between processes. So if we run two instances of the following program at the same time, the second instance will hang/wait 10 seconds before acquiring the mutex.
