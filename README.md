@@ -16,10 +16,16 @@ Update:
 
     bundle update github-pages
 
+For the last update I had to use a different ruby version than the one installed with macOS:
+
+    brew install ruby@2.7
+
 ## Versions Installed
 
-    ruby 2.1.6p336 (2015-04-13 revision 50298) [i386-mingw32]
-    jekyll 3.1.6
+    ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin20]
+    jekyll 3.9.0
+
+This matches jekyll version from https://pages.github.com/versions/
 
 ## Docs
 
