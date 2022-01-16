@@ -4,7 +4,7 @@ email: hello@kiewic.com
 permalink: /:title
 description: This is my personal blog where I post about Windows programming.
 baseurl: ""
-url: "http://kiewic.com"
+url: "https://kiewic.github.io/"
 github_username: kiewic
 twitter:
   username: kiewic

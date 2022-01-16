@@ -15,9 +15,9 @@ The custom shapes can be anything that can be represented with an SVG path, such
 
 {% include image.html url="/assets/images/power-bi-waffle-chart.png" description="Power BI Waffle Chart" %}
 
-Once you have an SVG file, you can obtain a path by uploading it at [http://kiewic.com/paths][paths] and you will get a list of the paths that make up your SVG image.
+Once you have an SVG file, you can obtain a path by uploading it at [http://kiewic.github.io/paths][paths] and you will get a list of the paths that make up your SVG image.
 
-{% include image.html url="/assets/images/power-bi-waffle-chart-kiewic-paths.png" description="kiewic.com paths website screenshot" %}
+{% include image.html url="/assets/images/power-bi-waffle-chart-kiewic-paths.png" description="paths website screenshot" %}
 
 Select the path in one of the boxes (there may be only one), copy it, and use it as a string value in your Power BI input file (a CSV file is the easiest):
 
@@ -64,7 +64,7 @@ Icons in this article were obtained from the [AIGA collection][collection-aiga] 
 [waffle-chart]: https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381049?src=office&tab=Overview
 [video-1]: https://www.youtube.com/watch?v=1vRqYUsm3Vk
 [video-2]: https://www.youtube.com/watch?v=7z-UZKkbJaI
-[paths]: http://kiewic.com/paths
+[paths]: http://kiewic.github.io/paths
 [example-1]: https://drive.google.com/file/d/0B3v_NS_EPj8-UkIxX3RXTnczcFE/view?usp=sharing 
 [github]: https://github.com/kiewic/PowerBI-WaffleChart
 [collection-aiga]: https://thenounproject.com/edward/collection/aiga/
