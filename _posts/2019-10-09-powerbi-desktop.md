@@ -5,6 +5,216 @@ category: powerbi
 icon: powerbi.svg
 ---
 
+* [Power BI December 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-december-2021-feature-summary/)
+    * Reporting
+        * Sparklines
+        * New Format Pane updates
+    * Data connectivity and preparation
+        * Azure Data Explorer (Connector Update)
+        * FHIR (Connector Update)
+        * Dremio Software (Connector Update)
+        * BQE Core (Connector Update)
+        * TIBCO Data Virtualization
+        *
+        * Exasol (Connector Update)
+        * Starburst Enterprise (Connector Update)
+    * Service
+        * Admin & governance
+            * Email subscriptions access via Admin API
+        * Allow sharing links to include your changes to the report
+        * Announcing Public Preview of Hybrid Tables in Power BI Premium
+        * Deployment pipelines: assign a workspace to all pipeline stages
+    * Mobile
+        * New report default view
+        * Recommended Content supports hints (Android and iOS)
+        * Mobile support for Goals – latest updates
+    * Embedded Analytics
+        * Client API updates – Themes
+        * Power BI Developer in a Day instructor led and online course is updated
+    * Developers
+        * Improve your matrix performance with the new 4.1 API
+    * Visualizations
+        * New visuals in AppSource
+        * Shielded HTML Viewer by Nova Silva
+        * graphomate charts 2021.4
+        * Zebra BI Cards 1.0 by Zebra BI
+        * Leverage process mining through Business Intelligence by PmBI
+        * Drill Down Combo Bar PRO by ZoomCharts
+        * Paginated report visual
+        * Charticulator (version 1.2.0)
+    * Other
+        * Visualize your data quickly from Power Apps and Dynamics 365 apps
+* [Power BI November 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-november-2021-feature-summary/)
+    * Reporting
+        * New Format Pane
+        * Page and Bookmark Navigators
+            * Page Navigator
+            * Bookmark Navigator
+            * Formatting options
+        * Sort legend
+        * Bold/italic/underline for text formatting
+        * Text box super/subscript and bulleted lists
+        * Pie and donut chart rotation
+        * Scorecard visual
+        * Update on tenant-level Bing Maps feature switch
+    * Data connectivity and preparation
+        * Azure Synapse Analytics (New Connector)
+        * Google Sheets (New Connector)
+        * Azure Cosmos DB V2 (New Connector)
+        * Delta Sharing (New Connector)
+        * Google BigQuery (Connector Update)
+        * Cognite Data Fusion (Connector Update)
+        * Dremio Cloud (Connector Update)
+    * Service
+        * Admin & governance
+            * Datasets hub improvements
+            * Azure Lockbox Support for Power BI
+        * Power BI Goals
+            * Goal level permissions
+            * Power Automate Integration
+            * Moving goals around the scorecard
+            * Showing/hiding and moving columns
+    * Mobile
+        * Use QR codes with URL parameters (Android and iOS)
+        * Updated report filters (Android and iOS)
+    * Embedded Analytics
+        * Power BI Embedded Gen2
+        * Control embed token expiry
+        * Support embedding a Power BI report that contains a paginated report visual
+        * Explore your report in the developer playground
+    * Visualizations
+        * New visuals in AppSource
+        * Editor’s pick update
+        * Find report sample files easily in AppSource
+        * Inforiver standard edition by Lumel
+        * Drill Down Map PRO by ZoomCharts
+        * Lipstick Bar Chart by Nova Silva
+        * Charticulator (version 1.1.2)
+    * Other
+        * Automatic Page Refresh now supports DirectQuery for PowerBI datasets and Azure Analysis services
+* [Power BI October 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-october-2021-feature-summary/)
+    * Reporting
+        * Heat map layer – Azure Maps Visual
+        * DirectQuery for Power BI datasets and Azure Analysis Services
+            * More flexibility when selecting tables
+            * Performance improvements
+        * Tenant-level feature switch for Bing Maps
+    * Modeling
+        * SWITCH performance optimization
+        * Bitwise functions in DAX
+    * Data connectivity and preparation
+        * Amazon Redshift (Connector Update)
+        * Dataverse (Connector Update)
+        * Google Analytics (Connector Update)
+        * Azure Cosmos DB V2 (New Connector)
+        * Azure Databricks (Connector Update)
+        * Amazon Athena
+        * SIS-CC-SDMX (New Connector)
+        * SumTotal (Connector Update)
+        * Usercube (New Connector)
+    * Service
+        * Admin & governance
+            * Premium Gen2
+            * New API for determining who has access to what Power BI assets
+        * Deployment pipeline APIs
+        * Upcoming automatic installation of the Power BI app for Microsoft Teams
+    * Embedded Analytics
+        * Export Power BI report to file API – Preview Update
+        * Object-Level Security (OLS) is now generally available in Power BI Embedded
+        * Adjust zoom level for embedded Power BI reports
+        * Updated Multi-Geo support for Power BI Embedded
+        * Power BI Embedded Playground update – Use your own embed token
+        * Power BI Angular component
+    * Developers
+        * Add modern tooltip to your custom visual
+        * Modal Dialog API update
+    * Visualizations
+        * Lollipop Bar Chart by Nova Silva
+        * Drill Down TimeSeries PRO visual by ZoomCharts
+        * Inforiver by Lumel
+        * Hierarchical bar chart by Excelnaccess.com
+        * New visuals in AppSource
+        * Editor’s pick of the month
+    * Other
+        * ODBC support for paginated reports
+        * New instructor led training, BETA version is available for – DAX in a day
+* [Power BI September 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-september-2021-feature-summary/)
+    * Reporting
+        * New formatting options for buttons
+        * Toggle total columns in waterfall charts
+        * Line chart series labels
+        * Sensitivity label support for Power BI template files
+    * Analytics
+        * Insights
+        *
+    * Modeling
+        * Shortcut expression for CALCULATE now supports aggregation functions
+        * New parameter for XIRR function
+        * Making it easier to format based on a user’s locale
+    * Data connectivity and preparation
+        * The Power BI Connector in Power Automate
+        * AssembleViews (Connector Update)
+        * Azure Databricks (Connector Update)
+        * Bloomberg Enterprise Data and Analytics (Connector Update)
+        * DataVirtuality (Connector Update)
+        * Exasol (Connector Update)
+        * Vena (Connector Update)
+    * Service
+        * Power BI Goals: automated status rules
+        *
+        * Power BI Goals: improved filtering
+        *
+        * APIs to determine who has access to what Power BI artifacts
+        *
+        * Service Principal support for read-only Admin APIs
+        *
+    * Mobile
+        * Goals now available in Power BI Mobile apps
+        * Explore content that’s relevant to you (Android and iOS)
+        * Now you can request access to reports from your mobile app
+    * Developers
+        * We are moving Power BI visual offers to Commercial Marketplace within Partner Center
+    * Visualizations
+        * PAFnow Process Mining flowchart visual by Process Analytics Factory GMBH
+        * Drill Down Network PRO by ZoomCharts
+        * Annotated Bar by Queryon
+        * Graphomate pictograms 2021.2 by Graphomate
+        * New visuals in AppSource
+        * Editor’s pick of the month
+    * Paginated Reports
+        * New version of Power BI Report Builder
+    * Ideas forum updates
+* [Power BI August 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-august-2021-feature-summary/)
+    * Reporting
+        * Customize shape formatting
+        * X-axis constant line improvements
+        * Default sensitivity label policy in Power BI desktop
+    * Analytics
+        * Sharing Q&A synonyms
+    * Modeling
+        * New way of expressing Date and DateTime values
+        * Evaluation configuration settings
+    * Data connectivity and preparation
+        * One Dataflow Connector (Connector Update)
+        * Automy Data Analytics (New Connector)
+        * Azure Databricks (Connector Update)
+        * Dremio (Connector Update)
+        * Google BigQuery (Connector Update)
+        * Quickbase (Connector Update)
+    * Service
+        * Sensitivity labels for paginated reports
+        * Leverage automatic aggregations to enhance performance over DirectQuery datasets
+        * Power BI REST API support for DAX Queries
+        * Detailed historical activity information for Premium datasets
+    * Mobile
+        * New mobile report footer
+    * Visualizations
+        * New Power BI visuals’ store experience
+        * New visuals
+        * Timeline by Queryon
+        * Drill Down Graph PRO by ZoomCharts
+        * BIpm custom visual by ProcessM
+        * Editor’s pick
 * [Power BI July 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-july-2021-feature-summary/)
     * Reporting
         * Small multiples
@@ -15,7 +225,7 @@ icon: powerbi.svg
         * Inherit sensitivity label set to Excel files when importing data into Power BI
     * Modeling
         * New Model View
-        * DirectQuery for Azure Analysis Services & Power BI datasets Updates
+        * DirectQuery for Azure Analysis Services & Power BI datasets Updates
     * Data connectivity
         * Amazon Athena (new connector)
         * Databricks (updated connector)
@@ -27,7 +237,7 @@ icon: powerbi.svg
         * Custom help link for sensitivity labels
         * Datasets hub improvements
         * Goals support in lineage view
-        * Scanner API (Admin REST APIs) enhancements to include dataset tables, columns, measures, DAX expressions, and mashup queries 
+        * Scanner API (Admin REST APIs) enhancements to include dataset tables, columns, measures, DAX expressions, and mashup queries
     * Visualizations
         * New visuals
         * Charticulator (custom visual version 1.0.5)
@@ -49,12 +259,12 @@ icon: powerbi.svg
         * Inner padding for continuous axes
         * Small multiples: responsiveness and conditional formatting
     * Analytics
-        * Q&A improvement for inferred results
+        * Q&A improvement for inferred results
     * Modeling
         * Format strings now persisted when using DirectQuery for Power BI datasets and Azure Analysis Services
     * Data preparation
         * DirectQuery support for Dataflows
-        * Select all operation is now supported for Dynamic M Query Parameters 
+        * Select all operation is now supported for Dynamic M Query Parameters
     * Data connectivity
         * Assemble Views (new connector)
         * BQE Core (new connector)
@@ -76,12 +286,12 @@ icon: powerbi.svg
         * Request access to datasets
         * Mandatory label policy for Microsoft Information Protection sensitivity labels
         * Admin API to Set and Remove Microsoft Information Protection sensitivity labels
-        * Automate deployments with new APIs and PowerShell samples 
-        * Manage Dataflows in deployment pipelines 
+        * Automate deployments with new APIs and PowerShell samples
+        * Manage Dataflows in deployment pipelines
         * Admin APIs for deployment pipelines
     * Mobile
-        * A new look for the Power BI Windows app 
-        * Passing URL parameters to paginated reports
+        * A new look for the Power BI Windows app
+        * Passing URL parameters to paginated reports
     * Visualizations
         * New visuals
         * Drill Down Combo Bar PRO by ZoomCharts
@@ -91,7 +301,7 @@ icon: powerbi.svg
         * Zebra BI Charts 5.0
         * Editor’s picks
     * Template apps
-        * Template app one-click update and republish
+        * Template app one-click update and republish
         * Salesforce Analytics for Sales Managers
     * Other
         * Power BI Desktop Installer Changes
@@ -102,7 +312,7 @@ icon: powerbi.svg
         * Modern visual tooltips
         * Small multiples: now on by default and updated roadmap
         * New field list
-        * Support for removing the sensitivity label in Desktop
+        * Support for removing the sensitivity label in Desktop
     * Analytics
         * Smart Narratives and Anomaly detection
         * Q&A now supports DirectQuery for Power BI datasets and Azure Analysis Services
@@ -222,14 +432,14 @@ icon: powerbi.svg
         * Desktop change log
 * [Power BI February 2021 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-february-2021-feature-summary/)
     * Reporting
-        * DirectQuery for PBI datasets and Azure Analysis Services Updates (preview)
+        * DirectQuery for PBI datasets and Azure Analysis Services Updates (preview)
         * Search Bar
-        * Model View Updates (preview)
+        * Model View Updates (preview)
         * New Field List (preview)
         * Small Multiples (preview): gridlines and background colors
         * Color picker
         * Smart guides for aligning objects are now available in the mobile layout view
-        * New filter operations: “is empty” and “is not empty”
+        * New filter operations: “is empty” and “is not empty”
         * More granular control over certificate revocation check for web connections
     * Analytics
         * Anomaly detection now in ribbon
@@ -305,11 +515,11 @@ icon: powerbi.svg
         * Apps on AppSource
         * Power BI Gold suite
     * Developers
-        * New Admin APIs and Service Principal authentication to make for better tenant metadata scanning
+        * New Admin APIs and Service Principal authentication to make for better tenant metadata scanning
         * Power BI Visuals Platform adds support for conditional formatting
 * [Power BI November 2020 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-november-2020-feature-summary/)
     * Reporting
-        * New Field List (Preview)
+        * New Field List (Preview)
         * New Model View (Preview)
         * Apply all filters is now generally available
         * Visual Zoom Slider
@@ -359,7 +569,7 @@ icon: powerbi.svg
         * Updates to the ‘new look’ experience and release plan
     * Mobile
         * Power BI for HoloLens 2 (preview)
-        * Automatic page refresh is now supported on the Windows app
+        * Automatic page refresh is now supported on the Windows app
         * Support for notch displays
     * Embedded
         * Power BI Automation and APIs
@@ -374,8 +584,8 @@ icon: powerbi.svg
         * Bullet Chart by xViz
         * Editor’s picks
     * Template Apps
-        * Simplified installation
-        * Find template apps from the Power BI Desktop
+        * Simplified installation
+        * Find template apps from the Power BI Desktop
         * DirectQuery support for template apps
     * Community
         * Power Platform Community Conference
@@ -390,16 +600,16 @@ icon: powerbi.svg
         * Q&A now supports arithmetic operations
     * Reporting
         * Data point rectangle select for additional charts
-        * Added general visual option to maintain layer order 
+        * Added general visual option to maintain layer order
         * Search for a workspace during publish
         * Total labels for stacked visuals
-        * Mobile authoring enhancements
-        * Bookmark pane is now available in the Mobile layout view
+        * Mobile authoring enhancements
+        * Bookmark pane is now available in the Mobile layout view
         * New options: turn off gridlines and snap to grid.
     * Mobile
         * Improved navigation tree (iOS and Android)
         * Share from Power BI using your favorite apps (iOS and Android)
-        * Pinch and zoom is now available in all report views – on both phones and tablets (iOS and Android)
+        * Pinch and zoom is now available in all report views – on both phones and tablets (iOS and Android)
         * Auto play a slideshow on startup (Windows)
     * Service
         * New capabilities in lineage view
@@ -1027,7 +1237,7 @@ icon: powerbi.svg
         * Report accessibility improvements
     * Analytics
         * Color saturation on visuals upgraded to use conditional formatting
-        * Related questions in the Q&A explorer
+        * Related questions in the Q&A explorer
     * Modeling
         * New modeling view (preview)
         * Composite models now generally available
@@ -1106,7 +1316,7 @@ icon: powerbi.svg
         * Python integration (preview)
         * Q&A improvements
             * Q&A in Power BI Desktop generally available
-            * Better matching experience for Power BI Desktop and Power BI Premium
+            * Better matching experience for Power BI Desktop and Power BI Premium
     * Modeling
         * Data categories for measures
         * Statistical DAX functions
@@ -1348,7 +1558,7 @@ icon: powerbi.svg
         * Increase the number of data points shown in scatter charts
     * Analytics
         * Quick measures for SSAS live connections
-        * Sales from new customers quick measure
+        * Sales from new customers quick measure
         * Cell-level formatting for multidimensional AS models
     * Data connectivity
         * Vertica connector (beta)
@@ -1409,7 +1619,7 @@ icon: powerbi.svg
             * Drilldown Cartogram
             * Drilldown Player
             * Certified custom visuals
-    * Analytics & modeling
+    * Analytics & modeling
         * Quick measures from the community
             * Star rating
             * Concatenated list of values
@@ -1451,7 +1661,7 @@ icon: powerbi.svg
         * More URL support in table & matrix
         * Mailto links in textbox
     * Analytics
-        * Report level measures for live connections to Analysis Services tabular models & Power BI service datasets
+        * Report level measures for live connections to Analysis Services tabular models & Power BI service datasets
         * 2 new quick measures (preview): Total for category & Rolling average
         * Bin by count
     * Data connectivity
@@ -1507,12 +1717,12 @@ icon: powerbi.svg
         * 2 new Quick Calcs: Percent of row total & percent of column total
     * Data connectivity
         * ODBC and OLE DB connectors: support for selecting related tables
-        * Enhanced Folder connector: support for combining binaries from the Preview dialog
+        * Enhanced Folder connector: support for combining binaries from the Preview dialog
         * Unified text & CSV connectors
         * PowerApps Common Data Service connector
     * Query editing improvements
         * Specify the desired column type and locale in column headers type menus
-        * Easily insert steps in existing queries
+        * Easily insert steps in existing queries
     * Other
         * Solution Templates and Partner Showcase quick access
 * [Power BI Desktop January 2017 Feature Summary](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-january-feature-summary/)
