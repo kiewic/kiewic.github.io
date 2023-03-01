@@ -15,7 +15,11 @@ layout: default
                 <article class="post-list-item">
                     <div class="post-list-date"><time datetime="{{ post.date | date: "%FT%T%:z" }}">{{ post.date | date: "%b %-d, %Y" }}</time></div>
                     <div class="post-list-icon"><img src="{% if post.icon %}{{ post.icon | prepend: '/assets/images/' }}{% else %}/assets/images/not-found.svg{% endif %}" /></div>
-                    <div class="post-list-title"><a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
+                    {% if include.externalUrl == null %}
+                        <div class="post-list-title"><a class="post-list-link" href="{{ post.externalUrl }}" rel=”noopener”>{{ post.title }}</a></div>
+                    {% else %}
+                        <div class="post-list-title"><a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
+                    {% endif %}
                 </article>
             {% endfor %}
         </div>
