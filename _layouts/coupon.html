@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Beer Coupon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .coupon {
+            border: 5px dashed #000;
+            padding: 30px 20px; /* Increased padding between lines */
+            border-radius: 20px;
+            position: relative;
+            width: 600px;
+            height: 300px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .header, .content {
+            text-align: center;
+            margin-bottom: 10px; /* Added margin between lines */
+        }
+
+        h1, h2 {
+            color: #000;
+            margin: 0;
+            font-weight: bold;
+            font-size: 2em; /* Adjusted font size */
+            display: inline-block;
+            position: relative;
+            animation: rainbowAnimation 3s linear infinite;
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red, violet);
+        }
+
+        .footnote {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 20px; /* Added margin for the footnote */
+        }
+
+        @keyframes rainbowAnimation {
+            0% {
+                filter: hue-rotate(0deg);
+                background-position: 100% 0;
+            }
+            100% {
+                filter: hue-rotate(360deg);
+                background-position: -100% 0;
+            }
+        }
+
+        @media print {
+            h1, h2 {
+                background-image: none;
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="coupon">
+        <div class="header">
+            <h1>
+                <span>Happy Birthday!</span>
+            </h1>
+        </div>
+        <div class="content">
+            <h2>Enjoy a Free Beer</h2>
+        </div>
+        <div class="footnote">
+            Coupon Code: 987654321
+        </div>
+    </div>
+</body>
+</html>
