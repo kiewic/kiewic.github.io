@@ -29,6 +29,7 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
+            margin: 20px; /* Added margin */
         }
 
         .header, .content {
@@ -84,7 +85,7 @@
             </h1>
         </div>
         <div class="content">
-            <h2>Enjoy a Free Beer</h2>
+            <h2>{{ page.description }}</h2>
         </div>
         <div class="footnote">
             Coupon Code: {{ page.code }}
