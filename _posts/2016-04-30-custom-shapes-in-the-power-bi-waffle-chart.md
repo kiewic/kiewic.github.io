@@ -27,10 +27,13 @@ Select the path in one of the boxes (there may be only one), copy it, and use it
 
 And that is it.
 
-## Live Example
+## Live Example 1
 
-<iframe style="width: 100%; height: 650px;" src="https://app.powerbi.com/view?r=eyJrIjoiYmEwYjg4Y2MtMTlhZS00ODhlLWFiZDUtYjgxZmIzNGUzODAyIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+<iframe title="WaffleChart-KiewicCom-Apr2017" style="width: 100%; height: 600px;" src="https://app.powerbi.com/view?r=eyJrIjoiZGEwN2Y5NWMtZTNjNS00MjVhLTk3YTMtMjI4M2YzZDFlYzE2IiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
 
+## Live Example 2
+
+<iframe title="WaffleChart (2)" style="width: 100%; height: 600px;" src="https://app.powerbi.com/view?r=eyJrIjoiOGMxN2JmZTktOWE0Yi00N2EyLThlNTItMWRkZGUzZTdmMDFlIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
 
 ## Troubleshooting
 
