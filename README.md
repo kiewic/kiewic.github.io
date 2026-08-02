@@ -29,22 +29,10 @@ This matches jekyll version from https://pages.github.com/versions/
 
 ## Docs
 
-- [Ruby Development Kit][Development-Kit]
-- [Jekyll docs][jekyllrb]
-- [Jekyll sites examples][jekyll-wiki]
-- [Code Snippet Highlighting][code-snippet-highlighting]
-- [Liquid for Designers][liquid-for-designers]
-- [kramdown Quick Reference][kramdown-quickref]
-- DISQUS
-  - [Syntax highlighting][disqus-syntax-highlighting]
-  - [What HTML tags are allowed within comments?][html-tags-are-allowed]
-
-[Development-Kit]: https://github.com/oneclick/rubyinstaller/wiki/Development-Kit
-[jekyllrb]: http://jekyllrb.com/docs/home/
-[jekyll-wiki]: https://github.com/jekyll/jekyll/wiki/Sites
-[code-snippet-highlighting]: http://jekyllrb.com/docs/templates/#code-snippet-highlighting
-[liquid-for-designers]: https://github.com/shopify/liquid/wiki/liquid-for-designers
-[kramdown-quickref]: http://kramdown.gettalong.org/quickref.html
-[html-tags-are-allowed]: https://help.disqus.com/customer/portal/articles/466253-what-html-tags-are-allowed-within-comments
-[disqus-syntax-highlighting]: https://help.disqus.com/customer/portal/articles/665057-syntax-highlighting
-
+- [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
+- [Ruby Development Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
+- [Jekyll docs](http://jekyllrb.com/docs/home/)
+- [Jekyll sites examples](https://github.com/jekyll/jekyll/wiki/Sites)
+- [Code Snippet Highlighting](http://jekyllrb.com/docs/templates/#code-snippet-highlighting)
+- [Liquid for Designers](https://github.com/shopify/liquid/wiki/liquid-for-designers)
+- [kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html)
