@@ -78,6 +78,8 @@ img {
   font-size: clamp(2.2rem, 7vw, 3.7rem);
   line-height: 1.05;
   color: #102a43;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .hero p {
@@ -109,6 +111,8 @@ img {
   margin: 0 0 0.5rem;
   color: #102a43;
   font-size: 1.25rem;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .card p {
