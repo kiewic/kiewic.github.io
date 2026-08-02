@@ -9,5 +9,4 @@ github_username: kiewic
 twitter:
   username: kiewic
 highlighter: rouge
-disqusid: 3372890
 exclude: ['tools', 'vendor']
