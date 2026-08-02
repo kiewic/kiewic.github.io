@@ -1,74 +1,99 @@
----
-layout: simplePage
-title: SVG Paths
-stylesheet: paths.css
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SVG Paths Tool</title>
+    <meta
+      name="description"
+      content="Upload an SVG file and extract its path values."
+    >
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/assets/head/icon192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/head/touch-icon-ipad-retina.png">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/paths.css">
+    <script src="/js/googleanalytics.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="brand" href="/">
+          <img src="/assets/images/logo60x60.png" width="30" height="30" alt="kiewic logo">
+          <span>kiewic</span>
+        </a>
+      </div>
+    </header>
+    <main class="wrapper page">
+      <section class="content">
+        <h1>SVG Paths Tool</h1>
+        <p class="page-meta">Upload an SVG file and extract the path values it contains.</p>
+        <div class="rcorners">
+          <p><input id="theFile" type="file" accept="image/svg+xml"></p>
+          <p><button id="theButton" type="button">Get Paths</button></p>
+        </div>
+        <div id="theMainDiv" hidden></div>
+        <div id="theOtherDiv"></div>
+        <p class="moreInfo">
+          For more information, see
+          <a href="/custom-shapes-in-the-power-bi-waffle-chart/">Custom Shapes in the Power BI Waffle Chart</a>
+          or download the
+          <a href="https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381049?src=office&amp;tab=Overview">Power BI Waffle Chart</a>
+          from
+          <a href="https://appsource.microsoft.com/">Microsoft AppSource</a>.
+        </p>
+        <a class="back-link" href="/">Back to home</a>
+      </section>
+    </main>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+      function processSvg() {
+        var input = document.getElementById("theFile");
+        var file = input.files[0];
 
-<div class="rcorners">
-    <p><input id="theFile" type="file" accept="image/svg+xml" /></p>
-    <p><button id="theButton">Get Paths</button></p>
-</div>
-<div id="theMainDiv"></div>
-<div id="theOtherDiv"></div>
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script>
-    function processSvg() {
-        var myInputFile = document.getElementById("theFile");
-        var file = myInputFile.files[0];
-        if (file) {
-            var reader = new FileReader();
-            reader.readAsText(file, "UTF-8");
-            console.log("loading ...");
-
-            reader.onload = function (evt) {
-                //console.log(evt);
-
-                // Obtain the read file data.
-                var fileString = evt.target.result;
-
-                var myMainDiv = d3.select("#theMainDiv");
-                var myOtherDiv = d3.select("#theOtherDiv");
-                
-                // First, remove old svg in #theOtherDiv.
-                var oldPaths = d3.select("#theOtherDiv").selectAll("*");
-                oldPaths.remove();
-
-                //console.log(myMainDiv);
-                if (myMainDiv[0][0]) {
-                    myMainDiv[0][0].innerHTML = fileString;
-
-                    var paths = d3.select("#theMainDiv").selectAll("path");
-                    for (var i = 0; i < paths[0].length; i++) {
-                        var myPath = paths[0][i];
-                        var mySvg = myOtherDiv.append("svg");
-                        mySvg.html(myPath.outerHTML);
-                        var box = myPath.getBBox();
-                        mySvg.attr({
-                            'height': box.height,
-                            'width': box.width
-                        });
-
-                        var myDiv = myOtherDiv.append("div");
-                        myDiv.attr('class', 'rcorners');
-                        var myInput = myDiv.append("p").append("input");
-                        myInput.attr({
-                            'type': 'text',
-                            'value': myPath.getAttribute('d'),
-                        });
-                    }
-                }
-            };
+        if (!file) {
+          return;
         }
-    }
 
-    var myButton = document.getElementById("theButton");
-    myButton.addEventListener("click", processSvg);
-</script>
-<div class="moreInfo">
-    For more information check the
-    <a href="/custom-shapes-in-the-power-bi-waffle-chart">Custom Shapes in the Power BI Waffle Chart</a>
-    post or download the
-    <a href="https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381049?src=office&tab=Overview">Power BI Waffle Chart</a>
-    from the
-    <a href="https://appsource.microsoft.com/">Microsoft AppSource</a>.
-</div>
+        var reader = new FileReader();
+        reader.readAsText(file, "UTF-8");
+
+        reader.onload = function (event) {
+          var fileString = event.target.result;
+          var mainDiv = d3.select("#theMainDiv");
+          var otherDiv = d3.select("#theOtherDiv");
+
+          otherDiv.selectAll("*").remove();
+          mainDiv.html(fileString);
+
+          var paths = mainDiv.selectAll("path");
+          if (!paths[0] || !paths[0].length) {
+            return;
+          }
+
+          for (var i = 0; i < paths[0].length; i += 1) {
+            var path = paths[0][i];
+            var svg = otherDiv.append("svg");
+            svg.html(path.outerHTML);
+
+            var box = path.getBBox();
+            svg.attr({
+              height: box.height,
+              width: box.width
+            });
+
+            var container = otherDiv.append("div");
+            container.attr("class", "rcorners");
+            var textInput = container.append("p").append("input");
+            textInput.attr({
+              type: "text",
+              value: path.getAttribute("d")
+            });
+          }
+        };
+      }
+
+      document.getElementById("theButton").addEventListener("click", processSvg);
+    </script>
+  </body>
+</html>

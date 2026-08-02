@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What is System.Diagnostics.Debug.WriteLine() equivalent in C++/CX and JavaScript?</title>
+    <meta name="description" content="What is System.Diagnostics.Debug.WriteLine() equivalent in C++/CX and JavaScript?">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/assets/head/icon192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/head/touch-icon-ipad-retina.png">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github-dark.min.css">
+    <script src="/js/googleanalytics.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="brand" href="/">
+          <img src="/assets/images/logo60x60.png" width="30" height="30" alt="kiewic logo">
+          <span>kiewic</span>
+        </a>
+      </div>
+    </header>
+    <main class="wrapper page">
+      <article class="content">
+        <h1>What is System.Diagnostics.Debug.WriteLine() equivalent in C++/CX and JavaScript?</h1>
+        <p class="page-meta">Published on April 26, 2013</p>
+        <p>In Windows Store Apps, to print something to the Output &amp;gt; Debug window use:</p>
+<p>In C#/VB:</p>
+<pre><code class="language-csharp">System.Diagnostics.Debug.WriteLine("Hello monkey!");</code></pre>
+<p>In JavaScript:</p>
+<pre><code class="language-javascript">console.log("Hello monkey!");</code></pre>
+<p>In C++/CX:</p>
+<pre><code class="language-cpp">OutputDebugString(L"Hello monkey!\r\n");</code></pre>
+        <a class="back-link" href="/">Back to home</a>
+      </article>
+    </main>
+    <footer class="site-footer wrapper">
+      <p><a href="https://github.com/kiewic">Follow kiewic on GitHub</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

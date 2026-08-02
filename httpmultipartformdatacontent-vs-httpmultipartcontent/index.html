@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HttpMultipartFormDataContent vs HttpMultipartContent</title>
+    <meta name="description" content="HttpMultipartFormDataContent vs HttpMultipartContent">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/assets/head/icon192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/head/touch-icon-ipad-retina.png">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github-dark.min.css">
+    <script src="/js/googleanalytics.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="brand" href="/">
+          <img src="/assets/images/logo60x60.png" width="30" height="30" alt="kiewic logo">
+          <span>kiewic</span>
+        </a>
+      </div>
+    </header>
+    <main class="wrapper page">
+      <article class="content">
+        <h1>HttpMultipartFormDataContent vs HttpMultipartContent</h1>
+        <p class="page-meta">Published on April 1, 2014</p>
+        <p>Here is an example of how to use the <strong>HttpMultipartFormDataContent</strong> class from the Windows.Web.Http namespace:</p>
+<pre><code>HttpClient client = new HttpClient();
+
+HttpMultipartFormDataContent multipart = new HttpMultipartFormDataContent(&quot;xxXXxxXXXxXXXxXXXxX&quot;);
+multipart.Add(new HttpStringContent(&quot;hello&quot;), &quot;Thing1&quot;);
+multipart.Add(new HttpStringContent(&quot;world&quot;), &quot;Thing2&quot;, &quot;foo.txt&quot;);
+multipart.Add(new HttpBufferContent((new byte[] { 0x21, 0x22, 0x23, 0x24 }).AsBuffer()), &quot;Thing3&quot;);
+
+HttpResponseMessage response = await client.PostAsync(uri, multipart);
+Debug.WriteLine(response);</code></pre>
+<p>Output:</p>
+<pre><code>POST / HTTP/1.1
+Accept-Encoding: gzip, deflate
+Content-Length: 446
+Content-Type: multipart/form-data; boundary=xxXXxxXXXxXXXxXXXxX
+Host: localhost
+Connection: Keep-Alive
+Cache-Control: no-cache
+
+--xxXXxxXXXxXXXxXXXxX
+Content-Length: 5
+Content-Type: text/plain; charset=UTF-8
+Content-Disposition: form-data; name=&quot;Thing1&quot;
+
+hello
+--xxXXxxXXXxXXXxXXXxX
+Content-Length: 5
+Content-Type: text/plain; charset=UTF-8
+Content-Disposition: form-data; name=&quot;Thing2&quot;; filename=&quot;foo.txt&quot;; filename*=UTF-8&#x27;&#x27;foo.txt
+
+world
+--xxXXxxXXXxXXXxXXXxX
+Content-Length: 4
+Content-Disposition: form-data; name=&quot;Thing3&quot;
+
+!&quot;#$
+--xxXXxxXXXxXXXxXXXxX--</code></pre>
+<p>Doing the same thing with <strong>HttpMultipartContent</strong> takes a little bit more of effort:</p>
+<pre><code>HttpClient client = new HttpClient();
+HttpMultipartContent multipart = new HttpMultipartContent(&quot;form-data&quot;, &quot;xxXXxxXXXxXXXxXXXxX&quot;);
+
+IHttpContent content1 = new HttpStringContent(&quot;hello&quot;);
+content1.Headers.Add(&quot;Content-Disposition&quot;, &quot; form-data; name=\&quot;Thing1\&quot;&quot;);
+multipart.Add(content1);
+
+IHttpContent content2 = new HttpStringContent(&quot;world&quot;);
+content2.Headers.Add(
+    &quot;Content-Disposition&quot;,
+    &quot; form-data; name=\&quot;Thing2\&quot;; filename=\&quot;foo.txt\&quot;; filename*=UTF-8&#x27;&#x27;foo.txt&quot;);
+multipart.Add(content2);
+
+IHttpContent content3 = new HttpBufferContent((new byte[] { 0x21, 0x22, 0x23, 0x24 }).AsBuffer());
+content3.Headers.Add(&quot;Content-Disposition&quot;, &quot; form-data; name=\&quot;Thing3\&quot;&quot;);
+multipart.Add(content3);
+
+HttpResponseMessage response = await client.PostAsync(uri, multipart);</code></pre>
+<p>Obviously <strong>HttpMultipartContent</strong> has more flexibility than <strong>HttpMultipartFormDataContent.</strong> There are <a href="http://en.wikipedia.org/wiki/MIME#Multipart_messages">more multipart content types</a> other than <code>multipart/form-data</code>, e.g.: <code>multipart/mixed</code>, <code>multipart/digest</code>, <code>multipart/message</code>, <code>multipart/alternative</code>, <code>multipart/related</code>, etc.</p>
+        <a class="back-link" href="/">Back to home</a>
+      </article>
+    </main>
+    <footer class="site-footer wrapper">
+      <p><a href="https://github.com/kiewic">Follow kiewic on GitHub</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Custom Shapes in the Power BI Waffle Chart</title>
+    <meta
+      name="description"
+      content="Guide for using custom SVG shapes in the Power BI Waffle Chart."
+    >
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/assets/head/icon192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/head/touch-icon-ipad-retina.png">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github-dark.min.css">
+    <script src="/js/googleanalytics.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="brand" href="/">
+          <img src="/assets/images/logo60x60.png" width="30" height="30" alt="kiewic logo">
+          <span>kiewic</span>
+        </a>
+      </div>
+    </header>
+    <main class="wrapper page">
+      <article class="content">
+        <h1>Custom Shapes in the Power BI Waffle Chart</h1>
+        <p class="page-meta">Published on April 30, 2016</p>
+
+        <p>
+          The
+          <a href="https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381049?src=office&amp;tab=Overview">Waffle Chart</a>
+          is a Power BI visualization that lets you compare data as percentages.
+          One especially useful feature is support for custom SVG-based shapes.
+        </p>
+
+        <p>
+          Those custom shapes can be anything that can be represented as an SVG
+          path:
+        </p>
+
+        <figure class="image-frame">
+          <img src="power-bi-waffle-chart.png" alt="Power BI Waffle Chart examples">
+        </figure>
+
+        <p>
+          Once you have an SVG file, you can obtain a path by uploading it at
+          <a href="/paths/">/paths</a>. The tool will list the path values that
+          make up your SVG image.
+        </p>
+
+        <figure class="image-frame">
+          <img src="power-bi-waffle-chart-kiewic-paths.png" alt="SVG paths tool screenshot">
+        </figure>
+
+        <p>
+          Select the path in one of the boxes, copy it, and use it as a string
+          value in your Power BI input file. A CSV file is usually the easiest
+          format:
+        </p>
+
+        <pre><code>47,Transit,"M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z"</code></pre>
+
+        <p>
+          <a href="https://drive.google.com/file/d/0B3v_NS_EPj8-UkIxX3RXTnczcFE/view?usp=sharing">Download the full CSV file example</a>.
+        </p>
+
+        <p>And that is it.</p>
+
+        <h2>Live Example</h2>
+
+        <iframe
+          title="Power BI Waffle Chart live example 1"
+          src="https://app.powerbi.com/view?r=eyJrIjoiYmEwYjg4Y2MtMTlhZS00ODhlLWFiZDUtYjgxZmIzNGUzODAyIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9"
+          allowfullscreen
+        ></iframe>
+
+        <h2>Live Example 2</h2>
+
+        <iframe
+          title="Power BI Waffle Chart live example 2"
+          src="https://app.powerbi.com/view?r=eyJrIjoiOGMxN2JmZTktOWE0Yi00N2EyLThlNTItMWRkZGUzZTdmMDFlIiwidCI6Ijk1Yjk2M2ZiLTgxNDgtNGNmNS05M2UwLWE1YWU2OTZlYjY3YiIsImMiOjZ9"
+          allowfullscreen
+        ></iframe>
+
+        <h2>Troubleshooting</h2>
+
+        <h3>The shapes are not centered</h3>
+        <p>
+          Better results usually come from aligning the path to the top-left
+          corner before importing it. Tools like Adobe Illustrator or Inkscape
+          can help with that.
+        </p>
+
+        <h3>String length limitation in Power BI Web</h3>
+        <p>
+          If the path is very long, the web client may truncate it. That
+          limitation does not affect the Desktop client in the same way.
+        </p>
+
+        <h3>Is the Waffle Chart open source</h3>
+        <p>
+          Yes. The source code is available in the
+          <a href="https://github.com/kiewic/PowerBI-WaffleChart">GitHub repository</a>.
+        </p>
+
+        <h3>Is there a shorter example</h3>
+        <p>Yes, stars and triangles work well as compact examples:</p>
+
+        <pre><code>Group,Values,Shapes
+A,50,"M 0 -1 L 0.588 0.809 -0.951 -0.309 0.951 -0.309 -0.588 0.809 Z"
+B,75,"M150 0 L75 200 L225 200 Z"</code></pre>
+
+        <h2>Credits</h2>
+        <p>
+          Icons in the article were obtained from the
+          <a href="https://thenounproject.com/edward/collection/aiga/">AIGA collection</a>
+          created by
+          <a href="https://thenounproject.com/edward/">Edward Boatman</a>.
+          You can also download SVG files from the
+          <a href="https://thenounproject.com/">Noun Project</a>.
+        </p>
+
+        <a class="back-link" href="/">Back to home</a>
+      </article>
+    </main>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

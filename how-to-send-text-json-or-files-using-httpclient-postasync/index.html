@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to send text, JSON or files using HttpClient.PostAsync()</title>
+    <meta name="description" content="How to send text, JSON or files using HttpClient.PostAsync()">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/assets/head/icon192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/head/touch-icon-ipad-retina.png">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github-dark.min.css">
+    <script src="/js/googleanalytics.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="brand" href="/">
+          <img src="/assets/images/logo60x60.png" width="30" height="30" alt="kiewic logo">
+          <span>kiewic</span>
+        </a>
+      </div>
+    </header>
+    <main class="wrapper page">
+      <article class="content">
+        <h1>How to send text, JSON or files using HttpClient.PostAsync()</h1>
+        <p class="page-meta">Published on October 23, 2014</p>
+        <p>This is a common question in StackOverflow and MSDN forums. So, let’s take a look at the main options.</p>
+<h2>Contents</h2>
+<ul>
+<li>Table of Contents Placeholder</li>
+</ul>
+<h2>HttpStringContent</h2>
+<p>Send a string:</p>
+<pre><code>// E.g. a JSON string
+HttpStringContent stringContent = new HttpStringContent(
+    &quot;{ \&quot;firstName\&quot;: \&quot;John\&quot; }&quot;,
+    UnicodeEncoding.Utf8,
+    &quot;application/json&quot;);
+
+HttpClient client = new HttpClient();
+HttpResponseMessage response = await client.PostAsync(
+    uri,
+    stringContent);</code></pre>
+<p>This sends a POST request like this:</p>
+<pre><code>POST / HTTP/1.1
+Accept-Encoding: gzip, deflate
+Content-Length: 23
+Content-Type: application/json; charset=UTF-8
+Host: kiewic.com
+Connection: Keep-Alive
+Cache-Control: no-cache
+
+{ &quot;firstName&quot;: &quot;John&quot; }</code></pre>
+<p>See here examples of <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh770289.aspx">how to serialize or parse JSON content</a> on Windows Universal apps.</p>
+<h2>HttpFormUrlEncodedContent</h2>
+<p>Send a list of key-value pairs, better known as <strong>x-www-form-urlencoded</strong>:</p>
+<pre><code>Dictionary&lt;string, string&gt; pairs = new Dictionary&lt;string,string&gt;();
+pairs.Add(&quot;Name&quot;, &quot;Bob&quot;);
+pairs.Add(&quot;Age&quot;, &quot;18&quot;);
+pairs.Add(&quot;Gender&quot;, &quot;Male&quot;);
+HttpFormUrlEncodedContent formContent =
+    new HttpFormUrlEncodedContent(pairs);
+ 
+HttpClient client = new HttpClient();
+HttpResponseMessage response = await client.PostAsync(uri, formContent);</code></pre>
+<p>This sends a POST request like this:</p>
+<pre><code>POST / HTTP/1.1
+Accept-Encoding: gzip, deflate
+Content-Length: 27
+Content-Type: application/x-www-form-urlencoded
+Host: kiewic.com
+Connection: Keep-Alive
+Cache-Control: no-cache
+
+Name=Bob&amp;Age=18&amp;Gender=Male</code></pre>
+<p>This is equivalent to submitting the following HTML form from a web browser:</p>
+<pre><code>&lt;form action=&quot;http://kiewic.com/&quot; method=&quot;post&quot;&gt;
+    &lt;input name=&quot;Name&quot; type=&quot;text&quot; value=&quot;Bob&quot; /&gt;
+    &lt;input name=&quot;Age&quot; type=&quot;text&quot; value=&quot;18&quot; /&gt;
+    &lt;input name=&quot;Gender&quot; type=&quot;text&quot; value=&quot;Male&quot; /&gt;
+    &lt;input type=&quot;submit&quot; /&gt;
+&lt;/form&gt;</code></pre>
+<p>The list of key-value pairs can be accessed from PHP using the <a href="http://php.net/manual/en/reserved.variables.post.php">$_POST</a> array, or from ASP.NET using the <a href="https://msdn.microsoft.com/en-us/library/system.web.httprequestbase.form(v=vs.110).aspx">Request.Form</a> property.</p>
+<h2>HttpMultipartFormDataContent</h2>
+<p>Send files, or a mix of text and files, better known as <strong>multipart/form-data</strong>.</p>
+<p>First, create a sample file:</p>
+<pre><code>IStorageFolder folder = ApplicationData.Current.LocalFolder;
+IStorageFile file = await folder.CreateFileAsync(
+    &quot;foo.txt&quot;,
+    CreationCollisionOption.ReplaceExisting);
+await FileIO.WriteTextAsync(
+    file,
+    &quot;The quick brown fox jumps ...&quot;);</code></pre>
+<p>Then, send a request like this:</p>
+<pre><code>IInputStream inputStream = await file.OpenAsync(FileAccessMode.Read);
+
+HttpMultipartFormDataContent multipartContent =
+    new HttpMultipartFormDataContent();
+
+multipartContent.Add(
+    new HttpStreamContent(inputStream),
+    &quot;myFile&quot;,
+    file.Name);
+    
+multipartContent.Add(
+    new HttpStringContent(&quot;Hello World&quot;),
+    &quot;myText&quot;);
+ 
+HttpClient client = new HttpClient();
+HttpResponseMessage response = await client.PostAsync(
+    uri,
+    multipartContent);</code></pre>
+<p>The raw POST request looks like this:</p>
+<pre><code>POST / HTTP/1.1
+Accept-Encoding: gzip, deflate
+Content-Length: 371
+Content-Type: multipart/form-data; boundary=c9b47f5b-ca6c-43bd-a953-6ea78b2ee24b
+Host: kiewic.com
+Connection: Keep-Alive
+Cache-Control: no-cache
+
+--c9b47f5b-ca6c-43bd-a953-6ea78b2ee24b
+Content-Disposition: form-data; name=&quot;myFile&quot;; filename=&quot;foo.txt&quot;; filename*=UTF-8&#x27;&#x27;foo.txt
+
+The quick brown fox jumps ...
+--c9b47f5b-ca6c-43bd-a953-6ea78b2ee24b
+Content-Length: 11
+Content-Type: text/plain; charset=UTF-8
+Content-Disposition: form-data; name=&quot;myText&quot;
+
+Hello World
+--c9b47f5b-ca6c-43bd-a953-6ea78b2ee24b--</code></pre>
+<p>Notice that HttpClient encodes attachment file names using <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a> to support file names with non-ASCII characters:</p>
+<p>filename*=UTF-8&#x27;&#x27;foo.txt</p>
+<p>This is equivalent to submitting the following HTML form from a web browser:</p>
+<pre><code>&lt;form action=&quot;http://kiewic.com/&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;p&gt;&lt;input name=&quot;myFile&quot; type=&quot;file&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input name=&quot;myText&quot; type=&quot;text&quot; value=&quot;Hello World&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+<p>The files can be accessed from PHP using the <a href="http://php.net/manual/en/reserved.variables.files.php">$_FILES</a> array, or from ASP.NET using the <a href="https://msdn.microsoft.com/en-us/library/system.web.httprequestbase.files(v=vs.110).aspx">Request.Files</a> property.</p>
+<h2>HttpBufferContent</h2>
+<p><strong>HttpBufferContent</strong> is similar to <strong>HttpStringContent</strong>, however in this case, the content does not necessarily need to be a string, it can be a binary file or any sequence of bytes.</p>
+<pre><code>IBuffer buffer = new byte[] { 0x1, 0x2, 0x3 }.AsBuffer();
+
+HttpBufferContent content = new HttpBufferContent(buffer);
+content.Headers.Add(&quot;Content-Type&quot;, &quot;application/octet-stream&quot;);
+
+HttpClient client = new HttpClient();
+HttpResponseMessage response = await client.PostAsync(uri, content);</code></pre>
+<p>The raw POST request looks like this:</p>
+<pre><code>POST / HTTP/1.1
+Accept-Encoding: gzip, deflate
+Content-Length: 3
+Content-Type: application/octet-stream
+Host: localhost
+Connection: Keep-Alive
+Cache-Control: no-cache
+
+&lt;0x01&gt;&lt;0x02&gt;&lt;0x03&gt;</code></pre>
+<p>In PHP you can read the content with <a href="https://php.net/manual/en/function.file-get-contents.php">file_get_contents(&quot;php://input&quot;)</a>. In ASP.NET with <a href="https://msdn.microsoft.com/en-us/library/system.web.httprequestbase.inputstream(v=vs.110).aspx">Request.InputStream</a>.</p>
+        <a class="back-link" href="/">Back to home</a>
+      </article>
+    </main>
+    <footer class="site-footer wrapper">
+      <p><a href="https://github.com/kiewic">Follow kiewic on GitHub</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

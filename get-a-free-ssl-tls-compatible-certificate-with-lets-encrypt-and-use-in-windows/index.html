@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to get a free SSL/TLS compatible certificate from Let&#x27;s Encrypt and make it work in Windows.</title>
+    <meta name="description" content="How to get a free SSL/TLS compatible certificate from Let&#x27;s Encrypt and make it work in Windows.">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/assets/head/icon192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/head/touch-icon-ipad-retina.png">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github-dark.min.css">
+    <script src="/js/googleanalytics.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="brand" href="/">
+          <img src="/assets/images/logo60x60.png" width="30" height="30" alt="kiewic logo">
+          <span>kiewic</span>
+        </a>
+      </div>
+    </header>
+    <main class="wrapper page">
+      <article class="content">
+        <h1>How to get a free SSL/TLS compatible certificate from Let&#x27;s Encrypt and make it work in Windows.</h1>
+        <p class="page-meta">Published on January 31, 2016</p>
+        <p>Recently in the <a href="https://www.dreamhost.com/newsletter/0116.html">Dreamhost newsletter</a>, I discovered that <a href="https://letsencrypt.org/">Let&#x27;s Encrypt</a> has been offering, since December 2015, free certificates that are compatible with SSL/TLS. What a great chance to get a certificate for the <a href="https://heyhttp.org/">HeyHttp</a> project. <a href="https://www.ssls.com/ssl-certificates/comodo-positivessl?years=3">Comodo PositiveSSL</a> certificates are available for 5 dollars, but why not keep your five dollars and get this free certificate?</p>
+<p>To get the certificate use the script that Let&#x27;s Encrypt provides for Linux. This script will also automatically install the certificate on Apache servers.</p>
+<p>However, HeyHttp only runs on Windows and it is a server itself, so some extra steps are needed to make the certificate work in Windows.</p>
+<p>Although there are discussions in the forums about porting Let&#x27;s Encrypt to Windows, I just went to my Ubuntu machine, downloaded the enlistment, and executed the script in manual mode. These are the commands needed:</p>
+<pre><code>$ git clone https://github.com/letsencrypt/letsencrypt
+
+$ ./letsencrypt-auto certonly --manual
+
+Make sure your web server displays the following content at
+http://heyhttp.org/.well-known/acme-challenge/EAJKZ2tzWFGgiXA5iOfA7PsTqhkVM82VPQGYvYpX0-g before continuing:
+
+...
+
+Press ENTER to continue</code></pre>
+<p>In the middle of this process, you need to create a file with a key and copy the file to the wwwroot folder on your Windows server.</p>
+<p>Now, go back to Linux and complete the authentication to get two pem files, one with the certificate and one with the private key.</p>
+<p>In the forums, <a href="#">forum</a> posted the following <strong>OpenSSL</strong> command to convert the <strong>pem</strong> files into a <strong>pfx</strong> file:</p>
+<pre><code>sudo -s
+
+cd /etc/letsencrypt/live/heyhttp.org
+
+openssl pkcs12 -export -out &quot;certificate.pfx&quot; -inkey &quot;privkey.pem&quot; -in &quot;cert.pem&quot; -certfile chain.pem</code></pre>
+<p>Copy the resulting pfx file to your Windows machine, double click on it, and install it wherever you want (in the case of HeyHttp, choose &quot;local machine&quot; and then &quot;personal store&quot;).</p>
+<p>That&#x27;s it, now the secure connection is trusted and you can go and spend those five dollars on a latte.</p>
+<h2>Renewing certificate</h2>
+<p>Let&#x27;s Encrypt certificate expire in 90 days. To renew the certificate, you will need to execute the next command:</p>
+<pre><code>sudo letsencrypt renew --manual-public-ip-logging-ok</code></pre>
+<p>And create a new pfx file with the resulting files as done above.</p>
+<h2>Backing up and restoring Let&#x27;s Encrypt account files</h2>
+<p>The key files that you need to keep backed up are:</p>
+<ol>
+<li>Your account directory at <code>/etc/letsencrypt/accounts/acme-v01.api.letsencrypt.org/directory/</code></li>
+<li>Your domain config file at <code>/etc/letsencrypt/renewal/heyhttp.org.conf</code></li>
+<li>Your domain keys directory at <code>/etc/letsencrypt/live/heyhttp.org/</code>, which in reality are symbolic links to the archive of keys.</li>
+<li>The directory containing the archive of keys at <code>/etc/letsencrypt/archive/heyhttp.org/</code></li>
+</ol>
+        <a class="back-link" href="/">Back to home</a>
+      </article>
+    </main>
+    <footer class="site-footer wrapper">
+      <p><a href="https://github.com/kiewic">Follow kiewic on GitHub</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Win32 Mutex, HANDLEs and WinDbg !handle extension.</title>
+    <meta name="description" content="Win32 Mutex, HANDLEs and WinDbg !handle extension.">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/assets/head/icon192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/head/touch-icon-ipad-retina.png">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github-dark.min.css">
+    <script src="/js/googleanalytics.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="brand" href="/">
+          <img src="/assets/images/logo60x60.png" width="30" height="30" alt="kiewic logo">
+          <span>kiewic</span>
+        </a>
+      </div>
+    </header>
+    <main class="wrapper page">
+      <article class="content">
+        <h1>Win32 Mutex, HANDLEs and WinDbg !handle extension.</h1>
+        <p class="page-meta">Published on July 26, 2014</p>
+        <p>A <strong>mutex</strong> is like a lock that is shared between processes. So if we run two instances of the following program at the same time, the second instance will hang/wait 10 seconds before acquiring the mutex.</p>
+<pre><code>#include &quot;stdafx.h&quot;
+#include &lt;Windows.h&gt;
+#include &lt;synchapi.h&gt;
+
+int main(int argc, _TCHAR* argv[])
+{
+    WCHAR* cacheMutexName = L&quot;HelloWorldMutex&quot;;
+    HANDLE handle = ::CreateMutex(nullptr, FALSE, cacheMutexName);
+
+    DWORD result = WaitForSingleObject(handle, INFINITE);
+
+    switch (result)
+    {
+    case WAIT_OBJECT_0:
+        printf(&quot;The thread got ownership of the mutex.\r\n&quot;);
+        break;
+    case WAIT_ABANDONED:
+        printf(&quot;The thread got ownership of an abandoned mutex.\r\n&quot;);
+        break;
+    }
+
+    // Countdown.
+    for (int i = 10; i &gt; 0; i--)
+    {
+        wprintf(L&quot;%d\r\n&quot;, i);
+        Sleep(1000);
+    }
+    wprintf(L&quot;0\r\n&quot;);
+
+    ReleaseMutex(handle);
+    printf(&quot;Mutex released.\r\n&quot;);
+
+    return 0;
+}</code></pre>
+<p>In Win32, once you get the mutex, you can distinguish between two different cases. The first case is <code>WAIT_OBJECT_0</code> and it means the previous owner released the mutex properly by calling <code>ReleaseMutex()</code> and the second case is <code>WAIT_ABANDONED</code> and it means the previous owner terminated without calling <code>ReleaseMutex()</code>.</p>
+<p>To reproduce the <code>WAIT_ABANDONED</code> case with the sample program, press <code>CTRL + C</code> in the first instance before the countdown hits zero.</p>
+<p>When using WinDbg, during live debugging or during dump analysis, the <code>!handle</code> extension comes very handy.</p>
+<p>Just get the handle value:</p>
+<pre><code>0:000&gt; dv
+ argc = 0n1
+ argv = 0x010f6f28
+ handle = 0x00000038
+ result = 0xcccccccc
+ cacheMutexName = 0x003f5858 &quot;HelloWorldMutex&quot;</code></pre>
+<p>And print all the handle info:</p>
+<pre><code>0:000&gt; !handle 0x00000038 f
+Handle 38
+ Type Mutant
+ Attributes 0
+ GrantedAccess 0x1f0001:
+ Delete,ReadControl,WriteDac,WriteOwner,Synch
+ QueryState
+ HandleCount 3
+ PointerCount 98306
+ Name \Sessions\BaseNamedObjects\HelloWorldMutex
+ Object Specific Information
+ Mutex is Owned
+ Mutant Owner 11ac.1628</code></pre>
+<p>Now we know <code>11ac.1628</code> is the owner of the mutex:</p>
+<p>If we print the call stack for each thread in the second instance of the program:</p>
+<pre><code>0:000&gt; ~* kcn
+
+.  0  Id: 29f8.778 Suspend: 1 Teb: 7f15c000 Unfrozen
+ # 
+00 ntdll!NtWaitForSingleObject
+01 KERNELBASE!WaitForSingleObjectEx
+02 KERNELBASE!WaitForSingleObject
+03 MutexExample!main
+04 MutexExample!__tmainCRTStartup
+05 MutexExample!mainCRTStartup
+06 KERNEL32!BaseThreadInitThunk
+07 ntdll!__RtlUserThreadStart
+08 ntdll!_RtlUserThreadStart
+
+#  1  Id: 29f8.ec4 Suspend: 1 Teb: 7f159000 Unfrozen
+ # 
+00 ntdll!DbgBreakPoint
+01 ntdll!DbgUiRemoteBreakin
+02 KERNEL32!BaseThreadInitThunk
+03 ntdll!__RtlUserThreadStart
+04 ntdll!_RtlUserThreadStart</code></pre>
+<p>We do not see any <code>11ac.1628</code> thread.</p>
+<p>But if we print the call stacks of the first process intance:</p>
+<pre><code>0:000&gt; ~* kcn
+
+.  0  Id: 11ac.1628 Suspend: 1 Teb: 7fe7d000 Unfrozen
+ # 
+00 ntdll!NtDelayExecution
+01 KERNELBASE!SleepEx
+02 KERNELBASE!Sleep
+03 MutexExample!main
+04 MutexExample!__tmainCRTStartup
+05 MutexExample!mainCRTStartup
+06 KERNEL32!BaseThreadInitThunk
+07 ntdll!__RtlUserThreadStart
+08 ntdll!_RtlUserThreadStart
+
+#  1  Id: 11ac.1c48 Suspend: 1 Teb: 7fe7a000 Unfrozen
+ # 
+00 ntdll!DbgBreakPoint
+01 ntdll!DbgUiRemoteBreakin
+02 KERNEL32!BaseThreadInitThunk
+03 ntdll!__RtlUserThreadStart
+04 ntdll!_RtlUserThreadStart</code></pre>
+<p>Then we see the <code>11ac.1628</code> thread.</p>
+<p>In fact <code>0x11ac</code> and <code>0x29f8</code> match the PID of the processes:</p>
+<pre><code>C:\&gt;tlist
+4524 MutexExample.exe
+10744 MutexExample.exe</code></pre>
+<p>Happy handle debugging!</p>
+        <a class="back-link" href="/">Back to home</a>
+      </article>
+    </main>
+    <footer class="site-footer wrapper">
+      <p><a href="https://github.com/kiewic">Follow kiewic on GitHub</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

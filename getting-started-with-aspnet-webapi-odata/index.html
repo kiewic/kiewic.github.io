@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting started with ASP.NET OData WebApi</title>
+    <meta name="description" content="Getting started with ASP.NET OData WebApi">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/assets/head/icon192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/head/touch-icon-ipad-retina.png">
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="/js/googleanalytics.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="brand" href="/">
+          <img src="/assets/images/logo60x60.png" width="30" height="30" alt="kiewic logo">
+          <span>kiewic</span>
+        </a>
+      </div>
+    </header>
+    <main class="wrapper page">
+      <article class="content">
+        <h1>Getting started with ASP.NET OData WebApi</h1>
+        <p class="page-meta">Published on April 11, 2016</p>
+        <p>Some notes just for future reference.</p>
+<p>There are two packages for implementing OData services in ASP.NET:</p>
+<ul>
+<li><strong>Microsoft.AspNet.WebApi.OData</strong> for OData v3, and depends on:</li>
+<li>Microsoft.Data.OData</li>
+<li><strong>Microsoft.AspNet.OData</strong> for OData v4, and depends on:</li>
+<li>Microsoft.OData.Core</li>
+<li>Microsoft.OData.Edm</li>
+<li>Microsoft.Spatial</li>
+</ul>
+<p>To implement an OData v4 service (a server), follow the steps at:</p>
+<p><a href="http://odata.github.io/WebApi/">http://odata.github.io/WebApi/</a></p>
+<p>To implement a C# client:</p>
+<ol>
+<li>Create a new C# project, e.g., a C# console application.</li>
+<li>In Visual Studio, go to <em>Extensions and Updates</em>, then select <em>Online</em>, search and install <em>OData v4 Client Code Generator</em>.</li>
+<li>Add a new item of type <em>OData Client</em> file and set <code>MetadataDocumentUri</code> with your service $metadata URI, e.g., <code>http://localhost:17666/$metadata</code></li>
+<li>Save and when the <em>Security Warning</em> dialogue pops up, click <em>OK</em>.</li>
+<li>Then, copy and paste the sample from http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app</li>
+</ol>
+        <a class="back-link" href="/">Back to home</a>
+      </article>
+    </main>
+    <footer class="site-footer wrapper">
+      <p><a href="https://github.com/kiewic">Follow kiewic on GitHub</a></p>
+    </footer>
+  </body>
+</html>
