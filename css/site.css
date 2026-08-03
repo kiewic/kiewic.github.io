@@ -167,12 +167,26 @@ img {
   border-radius: 0.75rem;
   background: #0f172a;
   color: #e2e8f0;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }
 
 .content pre code {
   padding: 0;
   background: transparent;
   color: inherit;
+}
+
+.content pre::-webkit-scrollbar {
+  height: 0.55rem;
+}
+
+.content pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
 }
 
 .content iframe {
